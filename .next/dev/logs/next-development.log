@@ -1,0 +1,190 @@
+[00:00:02.110] Server  LOG     ✓ Ready in 1372ms
+[20:16:21.440] Server  LOG     ○ Compiling / ...
+[20:16:24.682] Server  ERROR   ⨯ ./src/components/mdx.tsx:1:1
+Module not found: Can't resolve 'next-mdx-remote/rsc'
+> 1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import React, { ReactNode } from "react";
+  3 | import { slugify as transliterate } from "transliteration";
+  4 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/components/mdx.tsx:3:1
+Module not found: Can't resolve 'transliteration'
+  1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+  2 | import React, { ReactNode } from "react";
+> 3 | import { slugify as transliterate } from "transliteration";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import {
+  6 |   Heading,
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[20:16:26.930] Browser ERROR   uncaughtError: Error: ./src/components/mdx.tsx:1:1
+Module not found: Can't resolve 'next-mdx-remote/rsc'
+> 1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import React, { ReactNode } from "react";
+  3 | import { slugify as transliterate } from "transliteration";
+  4 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[20:16:28.970] Browser ERROR   ./src/components/mdx.tsx:1:1
+Module not found: Can't resolve 'next-mdx-remote/rsc'
+> 1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import React, { ReactNode } from "react";
+  3 | import { slugify as transliterate } from "transliteration";
+  4 |
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[20:16:28.970] Browser ERROR   ./src/components/mdx.tsx:3:1
+Module not found: Can't resolve 'transliteration'
+  1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+  2 | import React, { ReactNode } from "react";
+> 3 | import { slugify as transliterate } from "transliteration";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import {
+  6 |   Heading,
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[20:16:30.937] Browser ERROR   ./src/components/mdx.tsx:1:1
+Module not found: Can't resolve 'next-mdx-remote/rsc'
+> 1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import React, { ReactNode } from "react";
+  3 | import { slugify as transliterate } from "transliteration";
+  4 |
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[20:16:30.937] Browser ERROR   ./src/components/mdx.tsx:3:1
+Module not found: Can't resolve 'transliteration'
+  1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+  2 | import React, { ReactNode } from "react";
+> 3 | import { slugify as transliterate } from "transliteration";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import {
+  6 |   Heading,
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[22:48:36.214] Browser ERROR   ./src/components/mdx.tsx:1:1
+Module not found: Can't resolve 'next-mdx-remote/rsc'
+> 1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import React, { ReactNode } from "react";
+  3 | import { slugify as transliterate } from "transliteration";
+  4 |
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[22:48:36.218] Browser ERROR   ./src/components/mdx.tsx:3:1
+Module not found: Can't resolve 'transliteration'
+  1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+  2 | import React, { ReactNode } from "react";
+> 3 | import { slugify as transliterate } from "transliteration";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import {
+  6 |   Heading,
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[22:48:36.219] Browser ERROR   ./src/components/mdx.tsx:1:1
+Module not found: Can't resolve 'next-mdx-remote/rsc'
+> 1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import React, { ReactNode } from "react";
+  3 | import { slugify as transliterate } from "transliteration";
+  4 |
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[22:48:36.219] Browser ERROR   ./src/components/mdx.tsx:3:1
+Module not found: Can't resolve 'transliteration'
+  1 | import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+  2 | import React, { ReactNode } from "react";
+> 3 | import { slugify as transliterate } from "transliteration";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import {
+  6 |   Heading,
+
+Import trace:
+  Server Component:
+    ./src/components/mdx.tsx
+    ./src/components/index.ts
+    ./src/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
