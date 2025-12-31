@@ -1,0 +1,27 @@
+/* [project]/Coding_Projects/New Projects/Vithusan_Portfolio/node_modules/@once-ui-system/core/dist/modules/data/Gauge.module.css [app-client] (css) */
+.Gauge-module__Y0LPRq__svg {
+  display: block;
+  overflow: visible;
+}
+
+.Gauge-module__Y0LPRq__activeLine, .Gauge-module__Y0LPRq__inactiveLine {
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.Gauge-module__Y0LPRq__label {
+  font-family: var(--font-code);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@keyframes Gauge-module__Y0LPRq__pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .8;
+  }
+}
+
+/*# sourceMappingURL=f6652_%40once-ui-system_core_dist_modules_data_Gauge_module_css_bad6b30c._.single.css.map*/

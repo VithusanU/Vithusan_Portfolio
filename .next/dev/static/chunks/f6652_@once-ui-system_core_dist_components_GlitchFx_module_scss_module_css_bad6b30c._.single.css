@@ -1,0 +1,102 @@
+/* [project]/Coding_Projects/New Projects/Vithusan_Portfolio/node_modules/@once-ui-system/core/dist/components/GlitchFx.module.scss.module.css [app-client] (css) */
+.GlitchFx-module-scss-module__DjpHHG__glitchLayer {
+  pointer-events: none;
+}
+
+.GlitchFx-module-scss-module__DjpHHG__blueShift {
+  filter: hue-rotate(260deg);
+  z-index: 1;
+  animation: 2.5s infinite GlitchFx-module-scss-module__DjpHHG__glitch-blue;
+}
+
+.GlitchFx-module-scss-module__DjpHHG__redShift {
+  filter: hue-rotate(120deg);
+  z-index: 1;
+  animation: 2.5s infinite GlitchFx-module-scss-module__DjpHHG__glitch-red;
+}
+
+@keyframes GlitchFx-module-scss-module__DjpHHG__glitch-blue {
+  6%, 14%, 70%, 78% {
+    opacity: .25;
+    clip-path: inset(0);
+    transform: none;
+  }
+
+  10%, 12% {
+    opacity: .5;
+    clip-path: inset(50% 0 25%);
+    transform: translate(-5px, -3px)skew(1deg, -2deg);
+  }
+
+  11%, 13% {
+    opacity: .7;
+    clip-path: inset(0 35% 40% 0);
+    transform: translate(4px, -7px)skew(-1deg)scaleX(1.5)scaleY(1.25);
+  }
+
+  14%, 82% {
+    opacity: .3;
+    clip-path: inset(30% 5% 25% 40%);
+    transform: translate(-5px, -3px)skew(1deg, -1deg);
+  }
+
+  75%, 83% {
+    opacity: .2;
+    clip-path: inset(0 35% 45% 10%);
+    transform: translate(-9px, 2px)skew(-1deg);
+  }
+}
+
+@keyframes GlitchFx-module-scss-module__DjpHHG__glitch-red {
+  6%, 14%, 70%, 78% {
+    opacity: 0;
+    clip-path: inset(0);
+    transform: none;
+  }
+
+  10%, 12% {
+    opacity: .5;
+    clip-path: inset(5% 0 10%);
+    transform: translate(6px, 4px)skew(1deg);
+  }
+
+  11%, 13% {
+    opacity: .7;
+    clip-path: inset(5% 0 10%);
+    transform: translate(-4px, 5px)skew(0deg, -1deg);
+  }
+
+  14%, 82% {
+    opacity: .2;
+    clip-path: inset(50% 25% 25% 0);
+    transform: translate(-7px, -4px)skew(1deg, -1deg);
+  }
+
+  75%, 80% {
+    opacity: .3;
+    clip-path: inset(0 0 20% 50%);
+    transform: translate(4px, -6px)skew(-1deg)scaleX(2)scaleY(1.25);
+  }
+}
+
+.GlitchFx-module-scss-module__DjpHHG__slow {
+  animation-duration: 3.5s;
+}
+
+.GlitchFx-module-scss-module__DjpHHG__medium {
+  animation-duration: 2.5s;
+}
+
+.GlitchFx-module-scss-module__DjpHHG__fast {
+  animation-duration: 1.5s;
+}
+
+.GlitchFx-module-scss-module__DjpHHG__active .GlitchFx-module-scss-module__DjpHHG__blueShift, .GlitchFx-module-scss-module__DjpHHG__active .GlitchFx-module-scss-module__DjpHHG__redShift {
+  animation-play-state: running;
+}
+
+.GlitchFx-module-scss-module__DjpHHG__glitchFx:not(.GlitchFx-module-scss-module__DjpHHG__active) .GlitchFx-module-scss-module__DjpHHG__blueShift, .GlitchFx-module-scss-module__DjpHHG__glitchFx:not(.GlitchFx-module-scss-module__DjpHHG__active) .GlitchFx-module-scss-module__DjpHHG__redShift {
+  animation-play-state: paused;
+}
+
+/*# sourceMappingURL=f6652_%40once-ui-system_core_dist_components_GlitchFx_module_scss_module_css_bad6b30c._.single.css.map*/

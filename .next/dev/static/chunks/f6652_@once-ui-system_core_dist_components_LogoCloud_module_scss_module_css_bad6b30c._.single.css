@@ -1,0 +1,48 @@
+/* [project]/Coding_Projects/New Projects/Vithusan_Portfolio/node_modules/@once-ui-system/core/dist/components/LogoCloud.module.scss.module.css [app-client] (css) */
+.LogoCloud-module-scss-module__MTH77G__logo {
+  will-change: opacity, filter, transform;
+  transform-origin: center;
+  animation: 5s ease-out both LogoCloud-module-scss-module__MTH77G__fadeInOut;
+}
+
+.LogoCloud-module-scss-module__MTH77G__staticLogo {
+  will-change: opacity, filter, transform;
+  transform-origin: center;
+  animation: 1s ease-out forwards LogoCloud-module-scss-module__MTH77G__fadeIn;
+}
+
+@keyframes LogoCloud-module-scss-module__MTH77G__fadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(1.5rem);
+    transform: scale(.2);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur();
+    transform: scale(1);
+  }
+}
+
+@keyframes LogoCloud-module-scss-module__MTH77G__fadeInOut {
+  0% {
+    opacity: 0;
+    filter: blur(1.5rem);
+    transform: scale(.2);
+  }
+
+  4%, 96% {
+    opacity: 1;
+    filter: blur();
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(1.5rem);
+    transform: scale(.2);
+  }
+}
+
+/*# sourceMappingURL=f6652_%40once-ui-system_core_dist_components_LogoCloud_module_scss_module_css_bad6b30c._.single.css.map*/

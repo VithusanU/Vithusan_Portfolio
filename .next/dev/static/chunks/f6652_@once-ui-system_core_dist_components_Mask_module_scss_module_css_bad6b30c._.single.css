@@ -1,0 +1,10 @@
+/* [project]/Coding_Projects/New Projects/Vithusan_Portfolio/node_modules/@once-ui-system/core/dist/components/Mask.module.scss.module.css [app-client] (css) */
+.Mask-module-scss-module__1WU30W__mask {
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-image: radial-gradient(var(--mask-radius) at var(--mask-position-x) var(--mask-position-y), black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(var(--mask-radius) at var(--mask-position-x) var(--mask-position-y), black 0%, transparent 100%);
+  mask-image: radial-gradient(var(--mask-radius) at var(--mask-position-x) var(--mask-position-y), black 0%, transparent 100%);
+}
+
+/*# sourceMappingURL=f6652_%40once-ui-system_core_dist_components_Mask_module_scss_module_css_bad6b30c._.single.css.map*/

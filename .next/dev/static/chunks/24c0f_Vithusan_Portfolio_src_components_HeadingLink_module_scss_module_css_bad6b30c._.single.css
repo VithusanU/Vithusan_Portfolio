@@ -1,0 +1,26 @@
+/* [project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/components/HeadingLink.module.scss.module.css [app-client] (css) */
+.HeadingLink-module-scss-module__BUrbKq__control {
+  cursor: pointer;
+}
+
+.HeadingLink-module-scss-module__BUrbKq__control:hover .HeadingLink-module-scss-module__BUrbKq__visibility {
+  opacity: 1;
+}
+
+.HeadingLink-module-scss-module__BUrbKq__control:hover .HeadingLink-module-scss-module__BUrbKq__text {
+  text-decoration-line: underline;
+}
+
+.HeadingLink-module-scss-module__BUrbKq__text {
+  text-underline-offset: .25em;
+  text-decoration-thickness: 1px;
+  -webkit-text-decoration-color: var(--neutral-border-strong);
+  text-decoration-color: var(--neutral-border-strong);
+}
+
+.HeadingLink-module-scss-module__BUrbKq__visibility {
+  opacity: 0;
+  transform: scale(.875);
+}
+
+/*# sourceMappingURL=24c0f_Vithusan_Portfolio_src_components_HeadingLink_module_scss_module_css_bad6b30c._.single.css.map*/

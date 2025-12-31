@@ -1,0 +1,47 @@
+/* [project]/Coding_Projects/New Projects/Vithusan_Portfolio/node_modules/@once-ui-system/core/dist/components/Option.module.scss.module.css [app-client] (css) */
+.Option-module-scss-module__ay4_BG__option {
+  border-color: var(--static-transparent);
+}
+
+.Option-module-scss-module__ay4_BG__option.Option-module-scss-module__ay4_BG__highlighted:not(:hover):not(:focus) {
+  background: var(--static-transparent);
+  border-color: var(--neutral-alpha-medium);
+}
+
+.Option-module-scss-module__ay4_BG__option.Option-module-scss-module__ay4_BG__selected:not(:hover):not(:focus) {
+  background: var(--neutral-alpha-medium);
+  border-color: var(--neutral-alpha-medium);
+}
+
+.Option-module-scss-module__ay4_BG__option:hover, .Option-module-scss-module__ay4_BG__option:focus {
+  background: var(--neutral-alpha-weak);
+  border-color: var(--neutral-alpha-medium);
+  outline: none;
+}
+
+.Option-module-scss-module__ay4_BG__option:hover:disabled, .Option-module-scss-module__ay4_BG__option:focus:disabled {
+  background: var(--neutral-alpha-weak);
+  color: var(--neutral-on-background-weak);
+}
+
+.Option-module-scss-module__ay4_BG__option.Option-module-scss-module__ay4_BG__danger {
+  color: var(--danger-on-background-medium);
+}
+
+.Option-module-scss-module__ay4_BG__option.Option-module-scss-module__ay4_BG__danger:hover, .Option-module-scss-module__ay4_BG__option.Option-module-scss-module__ay4_BG__danger:focus {
+  background: var(--danger-solid-strong);
+  color: var(--danger-on-solid-strong);
+  border-color: var(--danger-border-strong);
+}
+
+.Option-module-scss-module__ay4_BG__focused {
+  background: var(--neutral-background-strong);
+}
+
+.Option-module-scss-module__ay4_BG__disabled {
+  background: var(--neutral-alpha-weak);
+  color: var(--neutral-on-background-weak);
+  border: none;
+}
+
+/*# sourceMappingURL=f6652_%40once-ui-system_core_dist_components_Option_module_scss_module_css_bad6b30c._.single.css.map*/

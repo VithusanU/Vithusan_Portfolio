@@ -1,0 +1,24 @@
+/* [project]/Coding_Projects/New Projects/Vithusan_Portfolio/node_modules/@once-ui-system/core/dist/modules/media/MediaUpload.module.scss.module.css [app-client] (css) */
+.MediaUpload-module-scss-module__3OglnW__container:hover, .MediaUpload-module-scss-module__3OglnW__container:focus {
+  background-color: var(--neutral-background-strong);
+}
+
+.MediaUpload-module-scss-module__3OglnW__text {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+
+.MediaUpload-module-scss-module__3OglnW__upload:hover {
+  background: var(--backdrop);
+  -webkit-backdrop-filter: blur(.25rem);
+  backdrop-filter: blur(.25rem);
+}
+
+.MediaUpload-module-scss-module__3OglnW__upload:hover .MediaUpload-module-scss-module__3OglnW__text {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+/*# sourceMappingURL=4b54f_core_dist_modules_media_MediaUpload_module_scss_module_css_bad6b30c._.single.css.map*/

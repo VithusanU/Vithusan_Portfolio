@@ -1,0 +1,20 @@
+/* [project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/components/about/about.module.scss.module.css [app-client] (css) */
+.about-module-scss-module__kXtf7a__hover {
+  transition: var(--transition-micro-medium);
+}
+
+.about-module-scss-module__kXtf7a__hover:hover {
+  transform: translateX(var(--static-space-4));
+}
+
+@media (max-width: 768px) {
+  .about-module-scss-module__kXtf7a__textAlign {
+    text-align: center;
+  }
+
+  .about-module-scss-module__kXtf7a__blockAlign {
+    align-self: center;
+  }
+}
+
+/*# sourceMappingURL=24c0f_Vithusan_Portfolio_src_components_about_about_module_scss_module_c299da91.css.map*/
