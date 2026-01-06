@@ -118,9 +118,43 @@ const home = {
     label: "Home",
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
-        children: "Building bridges between design and code"
-    }, void 0, false),
+    headline: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        style: {
+            lineHeight: 1.1
+        },
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f40$once$2d$ui$2d$system$2f$core$2f$dist$2f$components$2f$Text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Text"], {
+                size: "md",
+                color: "gray",
+                children: "Hi I’m"
+            }, void 0, false, {
+                fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
+                lineNumber: 65,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
+                lineNumber: 69,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f40$once$2d$ui$2d$system$2f$core$2f$dist$2f$components$2f$Text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Text"], {
+                size: "4xl",
+                weight: "bold",
+                style: {
+                    letterSpacing: "-0.03em"
+                },
+                children: person.firstName
+            }, void 0, false, {
+                fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
+                lineNumber: 71,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
+        lineNumber: 64,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0)),
     featured: {
         display: true,
         title: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f40$once$2d$ui$2d$system$2f$core$2f$dist$2f$components$2f$Row$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Row"], {
@@ -132,7 +166,7 @@ const home = {
                     children: "Once UI"
                 }, void 0, false, {
                     fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                    lineNumber: 68,
+                    lineNumber: 87,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 " ",
@@ -142,7 +176,7 @@ const home = {
                     height: "20"
                 }, void 0, false, {
                     fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                    lineNumber: 69,
+                    lineNumber: 88,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f40$once$2d$ui$2d$system$2f$core$2f$dist$2f$components$2f$Text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Text"], {
@@ -151,37 +185,47 @@ const home = {
                     children: "Featured work"
                 }, void 0, false, {
                     fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                    lineNumber: 70,
+                    lineNumber: 89,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-            lineNumber: 67,
+            lineNumber: 86,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/work/building-once-ui-a-customizable-design-system"
     },
     subline: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
-            "I'm Selene, a design engineer at ",
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f40$once$2d$ui$2d$system$2f$core$2f$dist$2f$components$2f$Text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Text"], {
-                as: "span",
                 size: "xl",
-                weight: "strong",
-                children: "ONCE UI"
+                children: [
+                    "Product Manager focused on turning ambiguous problems into",
+                    " ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                        children: "shipped solutions, "
+                    }, void 0, false, {
+                        fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
+                        lineNumber: 100,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
+                lineNumber: 98,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f40$once$2d$ui$2d$system$2f$core$2f$dist$2f$components$2f$Text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Text"], {
+                size: "md",
+                color: "gray",
+                marginTop: "8",
+                children: "Blending product thinking with hands-on execution."
             }, void 0, false, {
                 fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                lineNumber: 79,
-                columnNumber: 38
-            }, ("TURBOPACK compile-time value", void 0)),
-            ", where I craft intuitive ",
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                lineNumber: 79,
-                columnNumber: 120
-            }, ("TURBOPACK compile-time value", void 0)),
-            " user experiences. After hours, I build my own projects."
+                lineNumber: 103,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true)
 };
@@ -205,8 +249,21 @@ const about = {
         display: true,
         title: "Introduction",
         description: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
-            children: "Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology."
-        }, void 0, false)
+            children: [
+                "Vithusan is a product-minded software developer with a strong foundation in business and operations. He specializes in building thoughtful, user-focused web applications and AI-powered tools that solve real problems. With experience spanning product strategy, frontend development, and system thinking, he bridges the gap between technical execution and product vision.",
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                    fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
+                    lineNumber: 136,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                    fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
+                    lineNumber: 136,
+                    columnNumber: 13
+                }, ("TURBOPACK compile-time value", void 0)),
+                "His work focuses on clarity, scalability, and impact — turning complex ideas into practical, well-designed digital products."
+            ]
+        }, void 0, true)
     },
     work: {
         display: true,

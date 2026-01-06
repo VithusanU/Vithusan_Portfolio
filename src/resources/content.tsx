@@ -60,7 +60,26 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+headline: (
+  <div style={{ lineHeight: 1.1 }}>
+    <Text size="md" color="gray">
+      Hi I’m
+    </Text>
+
+    <br />
+
+    <Text
+      size="4xl"
+      weight="bold"
+      style={{ letterSpacing: "-0.03em" }}
+    >
+      {person.firstName}
+    </Text>
+  </div>
+  
+) ,
+
+
   featured: {
     display: true,
     title: (
@@ -76,9 +95,17 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      <Text size="xl">
+        Product Manager focused on turning ambiguous problems into{" "}
+        <strong>shipped solutions, </strong>
+      </Text>
+
+      <Text size="md" color="gray" marginTop="8">
+        Blending product thinking with hands-on execution.
+      </Text>
+    </>
   ),
+
 };
 
 const about: About = {
@@ -97,17 +124,21 @@ const about: About = {
     display: true,
     link: "https://cal.com",
   },
-  intro: {
-    display: true,
-    title: "Introduction",
-    description: (
-      <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
-      </>
-    ),
-  },
+ intro: {
+  display: true,
+  title: "Introduction",
+  description: (
+    <>
+      Vithusan is a product-minded software developer with a strong foundation in business and
+      operations. He specializes in building thoughtful, user-focused web applications and AI-powered
+      tools that solve real problems. With experience spanning product strategy, frontend development,
+      and system thinking, he bridges the gap between technical execution and product vision.
+      <br /><br />
+      His work focuses on clarity, scalability, and impact — turning complex ideas into practical,
+      well-designed digital products.
+    </>
+  ),
+},
   work: {
     display: true, // set to false to hide this section
     title: "Work Experience",
