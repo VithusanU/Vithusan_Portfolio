@@ -1,1 +1,83 @@
-[00:00:01.312] Server  LOG     ✓ Ready in 921ms
+[00:00:01.276] Server  LOG     ✓ Ready in 878ms
+[00:00:04.240] Browser WARN    Image with src "/images/projects/project-01/cover-01.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:04.297] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/avatar.jpg" "received" null
+[00:00:23.048] Browser WARN    Icon "layers" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "layers" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "story" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "story" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "roadmap" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "roadmap" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "agile" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "agile" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "users" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "users" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "design" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "design" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "flow" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "flow" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "prototype" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "prototype" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "html" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "html" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "css" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "css" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "react" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "react" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "nodejs" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "nodejs" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "express" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "express" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "postgres" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "postgres" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "api" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "api" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "test" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "test" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "test" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "test" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "vercel" does not exist in the library.
+[00:00:23.048] Browser WARN    Icon "vercel" does not exist in the library.
+[00:00:23.048] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:25.835] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/avatar.jpg" "received" null
+[00:00:30.795] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/avatar.jpg" "received" null
+[00:24:30.464] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/avatar.jpg" "received" null
+[00:24:37.818] Browser WARN    Icon "layers" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "layers" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "story" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "story" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "roadmap" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "roadmap" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "agile" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "agile" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "users" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "users" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "design" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "design" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "flow" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "flow" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "prototype" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "prototype" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "html" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "html" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "css" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "css" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "react" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "react" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "nodejs" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "nodejs" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "express" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "express" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "postgres" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "postgres" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "api" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "api" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "test" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "test" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "test" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "test" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "vercel" does not exist in the library.
+[00:24:37.819] Browser WARN    Icon "vercel" does not exist in the library.
+[00:24:44.242] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/avatar.jpg" "received" null
+[01:03:13.680] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/avatar.jpg" "received" null
+[01:03:13.681] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

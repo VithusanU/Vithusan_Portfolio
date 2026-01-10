@@ -32,12 +32,11 @@ const person = {
     lastName: "Uruthirakumaran",
     name: `Vithusan Uruthirakumaran`,
     role: "Product Manager/Software Developer",
-    avatar: "/images/avatar.jpg",
+    avatar: "/images/avatar.png",
     email: "vithusan.business@gmail.com",
     location: "America/Toronto",
     languages: [
-        "English",
-        "Bahasa"
+        "English"
     ]
 };
 const newsletter = {
@@ -105,12 +104,12 @@ const home = {
                 children: "Hi I’m"
             }, void 0, false, {
                 fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                lineNumber: 65,
+                lineNumber: 66,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                 fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                lineNumber: 69,
+                lineNumber: 70,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f40$once$2d$ui$2d$system$2f$core$2f$dist$2f$components$2f$Text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -122,13 +121,13 @@ const home = {
                 children: person.firstName
             }, void 0, false, {
                 fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                lineNumber: 71,
+                lineNumber: 72,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-        lineNumber: 64,
+        lineNumber: 65,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0)),
     featured: {
@@ -142,7 +141,7 @@ const home = {
                     children: "Once UI"
                 }, void 0, false, {
                     fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                    lineNumber: 87,
+                    lineNumber: 88,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 " ",
@@ -152,7 +151,7 @@ const home = {
                     height: "20"
                 }, void 0, false, {
                     fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                    lineNumber: 88,
+                    lineNumber: 89,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f40$once$2d$ui$2d$system$2f$core$2f$dist$2f$components$2f$Text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -161,13 +160,13 @@ const home = {
                     children: "Featured work"
                 }, void 0, false, {
                     fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                    lineNumber: 89,
+                    lineNumber: 90,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-            lineNumber: 86,
+            lineNumber: 87,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/work/building-once-ui-a-customizable-design-system"
@@ -183,13 +182,13 @@ const home = {
                         children: "shipped solutions, "
                     }, void 0, false, {
                         fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                        lineNumber: 100,
+                        lineNumber: 101,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                lineNumber: 98,
+                lineNumber: 99,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f40$once$2d$ui$2d$system$2f$core$2f$dist$2f$components$2f$Text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -199,7 +198,7 @@ const home = {
                 children: "Blending product thinking with hands-on execution."
             }, void 0, false, {
                 fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                lineNumber: 103,
+                lineNumber: 104,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -229,12 +228,12 @@ const about = {
                 "Vithusan is a product-minded software developer with a strong foundation in business and operations. He specializes in building thoughtful, user-focused web applications and AI-powered tools that solve real problems. With experience spanning product strategy, frontend development, and system thinking, he bridges the gap between technical execution and product vision.",
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                     fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                    lineNumber: 136,
+                    lineNumber: 137,
                     columnNumber: 7
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                     fileName: "[project]/Coding_Projects/New Projects/Vithusan_Portfolio/src/resources/content.tsx",
-                    lineNumber: 136,
+                    lineNumber: 137,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0)),
                 "His work focuses on clarity, scalability, and impact — turning complex ideas into practical, well-designed digital products."
@@ -288,54 +287,97 @@ const about = {
         title: "Studies",
         institutions: [
             {
-                name: "University of Jakarta",
+                name: "University of Toronto",
                 description: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                    children: "Studied software engineering."
+                    children: "Completed a Software Development bootcamp with a focus on full-stack web development."
                 }, void 0, false)
             },
             {
-                name: "Build the Future",
+                name: "York University",
                 description: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                    children: "Studied online marketing and personal branding."
+                    children: "Bachelor of Commerce (BCom) with a concentration in business and finance."
+                }, void 0, false)
+            },
+            {
+                name: "Coursera",
+                description: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: "Completed coursework in product management, agile methodologies, and software development fundamentals."
+                }, void 0, false)
+            },
+            {
+                name: "CodeAcademy",
+                description: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: "Completed hands-on courses in full-stack development, JavaScript, and modern web technologies."
                 }, void 0, false)
             }
         ]
     },
     technical: {
         display: true,
-        title: "Technical skills",
+        title: "Product & Technical Skills",
         skills: [
             {
-                title: "Figma",
+                title: "Product Management",
                 description: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                    children: "Able to prototype in Figma with Once UI with unnatural speed."
+                    children: "End-to-end product ownership from discovery to delivery, with a strong focus on user value and execution."
+                }, void 0, false),
+                tags: [
+                    {
+                        name: "Product Discovery",
+                        icon: "search"
+                    },
+                    {
+                        name: "MVP Scoping",
+                        icon: "layers"
+                    },
+                    {
+                        name: "User Stories",
+                        icon: "story"
+                    },
+                    {
+                        name: "Roadmapping",
+                        icon: "roadmap"
+                    },
+                    {
+                        name: "Agile / Scrum",
+                        icon: "agile"
+                    },
+                    {
+                        name: "Stakeholder Alignment",
+                        icon: "users"
+                    }
+                ],
+                images: []
+            },
+            {
+                title: "Design & UX",
+                description: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: "Translating product requirements into clear UX flows, wireframes, and high-fidelity prototypes."
                 }, void 0, false),
                 tags: [
                     {
                         name: "Figma",
                         icon: "figma"
-                    }
-                ],
-                // optional: leave the array empty if you don't want to display images
-                images: [
-                    {
-                        src: "/images/projects/project-01/cover-02.jpg",
-                        alt: "Project image",
-                        width: 16,
-                        height: 9
                     },
                     {
-                        src: "/images/projects/project-01/cover-03.jpg",
-                        alt: "Project image",
-                        width: 16,
-                        height: 9
+                        name: "Once UI",
+                        icon: "design"
+                    },
+                    {
+                        name: "UX Flows",
+                        icon: "flow"
+                    },
+                    {
+                        name: "Prototyping",
+                        icon: "prototype"
                     }
-                ]
+                ],
+                images: []
             },
             {
-                title: "Next.js",
+                title: "Frontend Engineering (Execution)",
                 description: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                    children: "Building next gen apps with Next.js + Once UI + Supabase."
+                    children: "Implementing product features and interfaces to validate ideas and ship production-ready MVPs."
                 }, void 0, false),
                 tags: [
                     {
@@ -343,23 +385,81 @@ const about = {
                         icon: "javascript"
                     },
                     {
+                        name: "HTML",
+                        icon: "html"
+                    },
+                    {
+                        name: "CSS",
+                        icon: "css"
+                    },
+                    {
+                        name: "React",
+                        icon: "react"
+                    },
+                    {
                         name: "Next.js",
                         icon: "nextjs"
+                    }
+                ],
+                images: []
+            },
+            {
+                title: "Backend, Data & Auth",
+                description: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: "Supporting product functionality with APIs, authentication, and data persistence."
+                }, void 0, false),
+                tags: [
+                    {
+                        name: "Node.js",
+                        icon: "nodejs"
+                    },
+                    {
+                        name: "Express.js",
+                        icon: "express"
                     },
                     {
                         name: "Supabase",
                         icon: "supabase"
+                    },
+                    {
+                        name: "PostgreSQL",
+                        icon: "postgres"
+                    },
+                    {
+                        name: "REST APIs",
+                        icon: "api"
                     }
                 ],
-                // optional: leave the array empty if you don't want to display images
-                images: [
+                images: []
+            },
+            {
+                title: "Testing & Delivery",
+                description: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Coding_Projects$2f$New__Projects$2f$Vithusan_Portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: "Validating product behavior through testing, iteration, and deployment."
+                }, void 0, false),
+                tags: [
                     {
-                        src: "/images/projects/project-01/cover-04.jpg",
-                        alt: "Project image",
-                        width: 16,
-                        height: 9
+                        name: "Chai",
+                        icon: "test"
+                    },
+                    {
+                        name: "JSDOM",
+                        icon: "test"
+                    },
+                    {
+                        name: "Manual QA",
+                        icon: "check"
+                    },
+                    {
+                        name: "Vercel",
+                        icon: "vercel"
+                    },
+                    {
+                        name: "GitHub",
+                        icon: "github"
                     }
-                ]
+                ],
+                images: []
             }
         ]
     }

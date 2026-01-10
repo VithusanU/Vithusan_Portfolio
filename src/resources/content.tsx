@@ -1,15 +1,16 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
+
 const person: Person = {
   firstName: "Vithusan",
   lastName: "Uruthirakumaran",
   name: `Vithusan Uruthirakumaran`,
   role: "Product Manager/Software Developer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/avatar.png",
   email: "vithusan.business@gmail.com",
   location: "America/Toronto", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
@@ -190,77 +191,100 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "University of Toronto",
+      description: <>Completed a Software Development bootcamp with a focus on full-stack web development.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "York University",
+      description: <>Bachelor of Commerce (BCom) with a concentration in business and finance.</>,
       },
+      {
+        name: "Coursera",
+      description: <>Completed coursework in product management, agile methodologies, and software development fundamentals.</>,
+      },
+      {
+        name: "CodeAcademy",
+      description: <>Completed hands-on courses in full-stack development, JavaScript, and modern web technologies.</>,
+      }
     ],
   },
-  technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
-    skills: [
-      {
-        title: "Figma",
-        description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-    ],
-  },
+ technical: {
+  display: true,
+  title: "Product & Technical Skills",
+  skills: [
+    {
+      title: "Product Management",
+      description: (
+        <>End-to-end product ownership from discovery to delivery, with a strong focus on user value and execution.</>
+      ),
+      tags: [
+        { name: "Product Discovery", icon: "search" },
+        { name: "MVP Scoping", icon: "layers" },
+        { name: "User Stories", icon: "story" },
+        { name: "Roadmapping", icon: "roadmap" },
+        { name: "Agile / Scrum", icon: "agile" },
+        { name: "Stakeholder Alignment", icon: "users" },
+      ],
+      images: [],
+    },
+    {
+      title: "Design & UX",
+      description: (
+        <>Translating product requirements into clear UX flows, wireframes, and high-fidelity prototypes.</>
+      ),
+      tags: [
+        { name: "Figma", icon: "figma" },
+        { name: "Once UI", icon: "design" },
+        { name: "UX Flows", icon: "flow" },
+        { name: "Prototyping", icon: "prototype" },
+      ],
+      images: [],
+    },
+    {
+      title: "Frontend Engineering (Execution)",
+      description: (
+        <>Implementing product features and interfaces to validate ideas and ship production-ready MVPs.</>
+      ),
+      tags: [
+        { name: "JavaScript", icon: "javascript" },
+        { name: "HTML", icon: "html" },
+        { name: "CSS", icon: "css" },
+        { name: "React", icon: "react" },
+        { name: "Next.js", icon: "nextjs" },
+      ],
+      images: [],
+    },
+    {
+      title: "Backend, Data & Auth",
+      description: (
+        <>Supporting product functionality with APIs, authentication, and data persistence.</>
+      ),
+      tags: [
+        { name: "Node.js", icon: "nodejs" },
+        { name: "Express.js", icon: "express" },
+        { name: "Supabase", icon: "supabase" },
+        { name: "PostgreSQL", icon: "postgres" },
+        { name: "REST APIs", icon: "api" },
+      ],
+      images: [],
+    },
+    {
+      title: "Testing & Delivery",
+      description: (
+        <>Validating product behavior through testing, iteration, and deployment.</>
+      ),
+      tags: [
+        { name: "Chai", icon: "test" },
+        { name: "JSDOM", icon: "test" },
+        { name: "Manual QA", icon: "check" },
+        { name: "Vercel", icon: "vercel" },
+        { name: "GitHub", icon: "github" },
+      ],
+      images: [],
+    },
+  ],
+},
+
 };
 
 const blog: Blog = {
