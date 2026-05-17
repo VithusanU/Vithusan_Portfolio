@@ -1,7 +1,0 @@
-(globalThis.TURBOPACK_CHUNK_LISTS || (globalThis.TURBOPACK_CHUNK_LISTS = [])).push({
-    script: typeof document === "object" ? document.currentScript : undefined,
-    chunks: [
-  "static/chunks/f6652_prismjs_components_prism-kumir_f84e2ad2.js"
-],
-    source: "dynamic"
-});
