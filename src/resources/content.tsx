@@ -70,7 +70,7 @@ headline: (
     <br />
 
     <Text
-      size="4xl"
+      size="xl"
       weight="bold"
       style={{ letterSpacing: "-0.03em" }}
     >
@@ -101,7 +101,7 @@ headline: (
         <strong>shipped solutions, </strong>
       </Text>
 
-      <Text size="md" color="gray" marginTop="8">
+      <Text size="m" color="gray" marginTop="8">
         Blending product thinking with hands-on execution.
       </Text>
     </>
