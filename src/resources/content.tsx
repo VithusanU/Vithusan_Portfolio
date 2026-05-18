@@ -71,7 +71,7 @@ headline: (
 
     <Text
       size="xl"
-      weight="bold"
+      weight="strong"
       style={{ letterSpacing: "-0.03em" }}
     >
       {person.firstName}
