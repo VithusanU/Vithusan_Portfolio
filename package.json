@@ -20,7 +20,8 @@
     "next-mdx-remote": "^5.0.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "transliteration": "^2.6.0"
+    "transliteration": "^2.6.0",
+    "tzdata": "^1.0.49"
   },
   "devDependencies": {
     "@types/node": "25.0.3",
