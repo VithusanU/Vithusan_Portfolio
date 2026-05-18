@@ -63,7 +63,7 @@ const home: Home = {
   description: `Portfolio website showcasing my work as a ${person.role}`,
 headline: (
   <div style={{ lineHeight: 1.1 }}>
-    <Text size="m" color="gray">
+    <Text size="m" onBackground="neutral-weak">
       Hi I’m
     </Text>
 
@@ -101,7 +101,7 @@ headline: (
         <strong>shipped solutions, </strong>
       </Text>
 
-      <Text size="m" color="gray" marginTop="8">
+      <Text size="m" onBackground="neutral-weak" marginTop="8">
         Blending product thinking with hands-on execution.
       </Text>
     </>
