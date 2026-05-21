@@ -332,7 +332,7 @@ const gallery: Gallery = {
   // These are placeholder images, replace with your own
   images: [
     {
-      src: "/images/gallery/DrivnRecording.mp4",
+      src: "/images/gallery/DrivnVideo.mp4",
       alt: "drivn – App walkthrough",
       orientation: "horizontal",
     },
