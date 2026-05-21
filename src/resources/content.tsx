@@ -14,37 +14,22 @@ const person: Person = {
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Thoughts on product, building in public, and the PM journey — coming soon.</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/VithusanU?tab=overview&from=2025-12-01&to=2025-12-31",
+    link: "https://github.com/VithusanU",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
     link: "https://www.linkedin.com/in/vithusan-uruthirakumaran-00b3b91b9/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
     essential: true,
   },
   {
@@ -85,14 +70,14 @@ headline: (
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">drivn</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/drivn",
   },
   subline: (
     <>
@@ -122,7 +107,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
  intro: {
@@ -141,45 +126,78 @@ const about: About = {
   ),
 },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Self-Directed",
+        timeframe: "2023 – Present",
+        role: "Product Builder & Full-Stack Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Designed and shipped <strong>drivn</strong> — a productivity PWA with a Next Best Action
+            engine, habit tracking, focus sessions, push notifications, and a real-time admin
+            dashboard. Acquired 10 users within the first week with no marketing spend.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Completed an intensive full-stack software development certification at the University of
+            Toronto, covering the MERN stack, REST APIs, authentication, and database design.
+          </>,
+          <>
+            Built 4+ production web applications applying product thinking at each stage — from
+            writing user stories before coding to measuring completion rates post-launch.
+          </>,
+          <>
+            Completed product management and agile coursework (Coursera), reinforcing frameworks for
+            discovery, prioritization, and delivery. Pursuing BCom Finance at York University
+            (3.7 GPA) with concentration in management science and decision analysis.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Atripco Delivery Service",
+        timeframe: "Jul 2019 – Feb 2023",
+        role: "Operations Supervisor",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Owned end-to-end operational planning for a 12-person team — implemented data-driven
+            scheduling that reduced processing time by <strong>40%</strong> and cut delivery times
+            by <strong>15%</strong>.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Generated and analyzed weekly performance reports to surface workflow bottlenecks,
+            driving a <strong>20% improvement</strong> in operational efficiency.
+          </>,
+          <>
+            Managed 50+ daily customer touchpoints with a <strong>95% first-contact resolution
+            rate</strong> — developing strong user empathy and stakeholder communication skills
+            directly transferable to PM work.
+          </>,
+          <>
+            Built and maintained Excel dashboards tracking team KPIs, scheduling, and performance
+            data, reducing scheduling conflicts by <strong>30%</strong>.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Atripco Delivery Service",
+        timeframe: "Jun 2018 – Jul 2019",
+        role: "Lead Hand",
+        achievements: [
+          <>
+            Designed and delivered onboarding programs for 12+ new hires, reducing ramp-up time by
+            <strong> 30%</strong> through structured documentation and hands-on mentorship.
+          </>,
+          <>
+            Maintained detailed process documentation for production workflows and employee
+            performance, reducing operational errors by <strong>15%</strong> and improving
+            transparency across the team.
+          </>,
+          <>
+            Provided daily team leadership across a 12-person crew, contributing to a{" "}
+            <strong>20% improvement</strong> in overall team efficiency.
           </>,
         ],
         images: [],
@@ -314,44 +332,44 @@ const gallery: Gallery = {
   // These are placeholder images, replace with your own
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      src: "/images/gallery/drivn-dashboard.jpg",
+      alt: "drivn – Next Best Action dashboard",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
+      src: "/images/gallery/drivn-onboarding.jpg",
+      alt: "drivn – Onboarding screen",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      src: "/images/gallery/drivn-habits.jpg",
+      alt: "drivn – Habit tracking",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      src: "/images/gallery/drivn-summary.jpg",
+      alt: "drivn – Activity summary calendar",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "/images/gallery/drivn-admin.jpg",
+      alt: "drivn – Admin dashboard with growth metrics",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/gallery/hangman-title.jpg",
+      alt: "Hangman – Title screen",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
+      src: "/images/gallery/hangman-gameplay.jpg",
+      alt: "Hangman – Mid-game with letter feedback",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/book-search.jpg",
+      alt: "Book Search Engine – Search results",
+      orientation: "horizontal",
     },
   ],
 };

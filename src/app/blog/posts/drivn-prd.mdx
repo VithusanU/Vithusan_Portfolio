@@ -1,0 +1,139 @@
+---
+title: "drivn — Product Requirements Document (PRD)"
+publishedAt: "2025-04-01"
+summary: "The PRD written before building drivn — covering problem statement, user personas, feature requirements, success metrics, and deliberate out-of-scope decisions."
+tag: "PRD"
+---
+
+**Version:** 1.0 &nbsp;|&nbsp; **Status:** Shipped &nbsp;|&nbsp; **Author:** Vithusan Uruthirakumaran &nbsp;|&nbsp; **Last Updated:** April 2025
+
+---
+
+## Problem Statement
+
+Knowledge workers and self-directed learners struggle with **task initiation** — not task capture. Existing productivity tools optimize for organization (folders, tags, priorities) but fail at the moment of action: deciding what to do right now.
+
+**Root cause:** Too many competing tasks with no clear signal of what matters most at any given moment.
+
+**Result:** Users open their task manager, feel overwhelmed by choices, and close it without starting anything.
+
+---
+
+## Target User
+
+**Primary Persona: The Self-Directed Builder**
+
+- Age: 22–35
+- Context: Student, freelancer, or early-career professional managing their own goals and projects
+- Behaviour: Uses multiple productivity tools, maintains lists that go stale, struggles with follow-through on personal goals
+- Job-to-be-done: *"When I open my task app, I want to know exactly what to do next — without thinking about it."*
+
+---
+
+## Goals & Success Metrics
+
+| Goal | Metric | Target (v1) |
+|------|--------|-------------|
+| Reduce time-to-first-action | Time from app open to starting a task | < 10 seconds |
+| Improve task completion | Weekly completion rate | > 35% |
+| Build retention | D7 retention | > 40% |
+| Validate core concept | Qualitative feedback | Positive sentiment on NBA concept |
+
+**Actual v1 results:** 10 users, 38% completion rate, habit tracker as highest-engagement feature.
+
+---
+
+## Feature Requirements
+
+### P0 — Must Ship
+
+**Next Best Action Engine**
+- Surfaces one task at a time based on urgency, due date, and recency weighting
+- Updates dynamically as tasks are completed or skipped
+- Supports "Skip" action to surface the next-ranked task without marking complete
+
+**Task Management**
+- Create, edit, delete tasks
+- Set due dates and priority levels
+- Mark complete
+
+**Habit Tracking**
+- Create daily habits with emoji icons and custom names
+- Log completion per day
+- Display current streak and progress toward daily goal
+
+**User Authentication**
+- Email/password signup and login via Supabase Auth
+- Persistent sessions across devices
+
+### P1 — Ship If Time Allows
+
+**Focus Sessions**
+- Distraction-free timer linked to the current NBA task
+- Session completion logged to momentum tracking
+
+**Summary / Calendar View**
+- Monthly calendar heatmap of activity
+- Aggregate stats: active days, habits logged, tasks completed
+
+**Web Push Notifications**
+- Daily reminder via Web Push API to re-engage users
+
+**Admin Dashboard**
+- Real-time growth metrics (total users, signups this week)
+- Product usage stats (tasks created, tasks completed, completion rate)
+- PostHog and Sentry integration links
+
+### P2 — Future Consideration
+
+- Collaborative task sharing
+- Spotify integration for focus playlists
+- AI-generated task suggestions based on patterns
+- Mobile native app (iOS/Android)
+
+---
+
+## Deliberately Out of Scope (v1)
+
+| Feature | Reason excluded |
+|---------|----------------|
+| Project/folder organization | Contradicts the core premise of simplicity |
+| Tags and labels | Adds maintenance overhead without solving initiation |
+| Team/collaboration features | Single-user focus for v1; validate solo use first |
+| Calendar integrations | Post-launch complexity; not core to MVP |
+| Subtasks | Encourages over-planning; against product philosophy |
+
+The exclusions are as important as the inclusions. Every feature cut kept the product aligned with its core brief: *help users start, not plan*.
+
+---
+
+## Technical Constraints
+
+- Must work as a PWA (installable, offline-capable for core task viewing)
+- Authentication and database via Supabase (free tier sufficient for v1)
+- Deployed on Vercel
+- Analytics via PostHog (free tier, event-based)
+- Error monitoring via Sentry (free tier)
+
+---
+
+## Risks & Mitigations
+
+| Risk | Likelihood | Impact | Mitigation |
+|------|-----------|--------|-----------|
+| NBA algorithm surfaces wrong tasks | Medium | High | Manual tuning through personal use before launch |
+| Low D7 retention | Medium | High | Push notifications and habit streaks as retention hooks |
+| Scope creep delays launch | High | Medium | Strict P0/P1/P2 tiering; ship P0 only if needed |
+| Free tier limits hit early | Low | Medium | Monitor Supabase usage; upgrade path is clear |
+
+---
+
+## Launch Plan
+
+1. Personal use and algorithm tuning (2 weeks)
+2. Soft launch to 5–10 beta users (friends and network)
+3. Collect qualitative feedback via direct messages
+4. Iterate on highest-friction points
+5. Open access
+
+[Read the build story →](/blog/building-drivn)

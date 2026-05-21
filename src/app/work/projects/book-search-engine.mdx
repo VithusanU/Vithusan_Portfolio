@@ -1,0 +1,41 @@
+---
+title: "Book Search Engine — MERN + GraphQL"
+publishedAt: "2023-10-01"
+summary: "A full-stack book discovery app built with the MERN stack, refactored from REST to GraphQL — demonstrating product iteration thinking applied to architecture."
+images:
+  - "/images/projects/book-search/search-results.jpg"
+team:
+  - name: "Vithusan Uruthirakumaran"
+    role: "Full-Stack Developer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/vithusan-uruthirakumaran-00b3b91b9/"
+---
+
+## Overview
+
+A full-stack book discovery app that lets users search for any book by title or author using the Google Books API. Users can create accounts, save books to a personal reading list, and manage their saved titles from a personal dashboard.
+
+[View on GitHub →](https://github.com/VithusanU/Book-Search-Engine)
+
+## The Refactor
+
+The core engineering challenge of this project was migrating an existing REST API backend to **GraphQL** using Apollo Server and Apollo Client. This mirrors a common real-world product engineering decision: trading short-term migration effort for long-term query flexibility and performance.
+
+It's also a useful analogy for product thinking — sometimes the right move is to revisit a decision that made sense at v1 and upgrade it for what the product actually needs to do now.
+
+## Features
+
+- **Book Search** — Real-time results from the Google Books API with cover images, titles, authors, and descriptions
+- **User Authentication** — JWT-based signup and login with bcrypt password hashing
+- **Save & Manage Books** — Authenticated users can save books to their account and remove them from a personal dashboard
+- **Responsive Design** — Bootstrap-based layout that adapts across screen sizes
+- **GraphQL API** — Apollo Server on the backend, Apollo Client on the frontend replacing the original REST layer
+
+## Tech Stack
+
+- **Frontend:** React.js, Bootstrap
+- **Backend:** Node.js, Express.js, Apollo Server
+- **Database:** MongoDB with Mongoose ODM
+- **API Layer:** GraphQL (refactored from REST)
+- **Auth:** JWT + bcrypt
+- **External API:** Google Books API

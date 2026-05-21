@@ -1,0 +1,65 @@
+---
+title: "Building drivn: How I Designed a Next Best Action Engine"
+publishedAt: "2025-05-10"
+summary: "How I went from 'I need a better to-do app' to shipping a productivity PWA with a task prioritization engine, habit tracking, and real users."
+tag: "Building"
+---
+
+## The Problem I Kept Ignoring
+
+I had a to-do list problem. Not the kind where you don't have a system — I had too many systems. Notion, Apple Reminders, sticky notes. The lists were long, organized, and completely useless by Wednesday.
+
+The real problem wasn't organization. It was **starting**. I'd open my task manager, spend five minutes deciding what to work on, feel overwhelmed, and close it.
+
+I started asking: what if the app just *told me* what to do next?
+
+## The Idea: One Task, Always Ready
+
+Most productivity apps solve for *capture* and *organization*. drivn solves for *initiation*. The core idea is the **Next Best Action** — a single, algorithmically selected task that surfaces the moment you open the app.
+
+No list to sort. No decision to make. Just: *do this*.
+
+## Designing the Ranking Algorithm
+
+The NBA engine ranks tasks by combining three signals:
+
+1. **Urgency** — Is it overdue? Due today? Due this week?
+2. **Recency** — Has this task been sitting untouched for a long time?
+3. **Priority** — Did the user mark it as important?
+
+The weights aren't fixed. I tuned them through personal use over several weeks, watching which tasks the algorithm surfaced and whether they felt right. When a task surfaced at the top and felt wrong, I'd trace back to why and adjust the weighting.
+
+This is iterative product design applied to an algorithm. Same principle, different medium.
+
+## Scope Creep Almost Killed It
+
+The first version had: task categories, subtasks, project groupings, tags, collaborative sharing, and three view modes.
+
+None of it shipped. I was building a project management tool when I wanted to build a focus tool. The product brief I wrote before building anything said: *"Help users start the most important thing, right now."* The feature list contradicted that brief entirely.
+
+I cut it down to the core: tasks, habits, focus sessions, and the NBA engine. That's what shipped.
+
+## What I Learned From Real Users
+
+After launch, the admin dashboard told a story. 10 users signed up. 41 tasks created. 25 completed. **38% task completion rate**.
+
+38% sounds low — but for a v1 with no onboarding optimization and no marketing, it's a real signal. The habit tracker had the highest engagement of any feature. The focus timer was used but rarely completed.
+
+That's a backlog insight: habit tracking is sticky, focus sessions need work. In a real PM role, that's the next sprint.
+
+## Tech Choices as Product Decisions
+
+Every technical decision in drivn was a product decision:
+
+- **Supabase over Firebase** — Better SQL structure for task relationships, cleaner pricing at scale
+- **Zustand over Redux** — Less boilerplate meant faster iteration on state logic
+- **PostHog for analytics** — Event-based tracking so I could measure exactly what I cared about
+- **PWA over native app** — Zero install friction for early users
+
+## What's Next
+
+drivn is live and being used. The next iteration focuses on improving the onboarding flow (current drop-off is visible in PostHog), refining the completion tracking UX, and exploring a Spotify integration for focus sessions.
+
+Building drivn was the most complete product experience I've had — from idea to shipped product to real user data. That's the loop I want to run, at scale, in a PM role.
+
+[Read the drivn PRD →](/blog/drivn-prd)
