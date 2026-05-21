@@ -332,6 +332,16 @@ const gallery: Gallery = {
   // These are placeholder images, replace with your own
   images: [
     {
+      src: "/images/gallery/DrivnRecording.mp4",
+      alt: "drivn – App walkthrough",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/hangman-app.mp4",
+      alt: "Hangman – Gameplay walkthrough",
+      orientation: "horizontal",
+    },
+    {
       src: "/images/gallery/hangman-title.jpg",
       alt: "Hangman – Title screen",
       orientation: "horizontal",
