@@ -332,33 +332,13 @@ const gallery: Gallery = {
   // These are placeholder images, replace with your own
   images: [
     {
-      src: "/images/gallery/drivn-dashboard.jpg",
-      alt: "drivn – Next Best Action dashboard",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/drivn-onboarding.jpg",
-      alt: "drivn – Onboarding screen",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/drivn-habits.jpg",
-      alt: "drivn – Habit tracking",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/drivn-summary.jpg",
-      alt: "drivn – Activity summary calendar",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/drivn-admin.jpg",
-      alt: "drivn – Admin dashboard with growth metrics",
-      orientation: "horizontal",
-    },
-    {
       src: "/images/gallery/hangman-title.jpg",
       alt: "Hangman – Title screen",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/drivn-dashboard.jpg",
+      alt: "drivn – Next Best Action dashboard",
       orientation: "horizontal",
     },
     {
@@ -367,8 +347,33 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
+      src: "/images/gallery/drivn-admin.jpg",
+      alt: "drivn – Admin dashboard with growth metrics",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/drivn-habits.jpg",
+      alt: "drivn – Habit tracking",
+      orientation: "horizontal",
+    },
+    {
       src: "/images/gallery/book-search.jpg",
       alt: "Book Search Engine – Search results",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/drivn-onboarding.jpg",
+      alt: "drivn – Onboarding screen",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/drivn-summary.jpg",
+      alt: "drivn – Activity summary calendar",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/ecommerce-readme.jpg",
+      alt: "E-Commerce Back End – README",
       orientation: "horizontal",
     },
   ],
