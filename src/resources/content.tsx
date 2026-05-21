@@ -150,7 +150,7 @@ const about: About = {
           <>
             Completed product management and agile coursework (Coursera), reinforcing frameworks for
             discovery, prioritization, and delivery. Pursuing BCom Finance at York University
-            (3.7 GPA) with concentration in management science and decision analysis.
+            (3.45 GPA) with concentration in management science and decision analysis.
           </>,
         ],
         images: [],
