@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drivn — Interactive Wireframe</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+:root {
+  --color-background-secondary: #111118;
+  --color-border-secondary: rgba(255,255,255,0.1);
+  --color-text-tertiary: rgba(255,255,255,0.35);
+  --border-radius-lg: 20px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#0d0d14;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:24px 16px}
+.wrap{display:flex;flex-direction:column;align-items:center;gap:24px;padding:16px 0;background:var(--color-background-secondary);border-radius:var(--border-radius-lg);width:100%;max-width:420px}
+.screen-label{font-size:10px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:0.8px;text-transform:uppercase;text-align:center;margin-bottom:4px}
+.phone{width:340px;border-radius:32px;border:2px solid var(--color-border-secondary);background:#0a0a0f;overflow:hidden;font-family:var(--font-sans)}
+.phone.light{background:#f8f8f8}
+.status-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 20px 4px;background:#0a0a0f}
+.status-bar.light{background:#f8f8f8}
+.status-time{font-size:12px;font-weight:500;color:#fff}
+.status-time.light-t{color:#0a0a0f}
+.status-icons{display:flex;gap:4px;align-items:center}
+.status-icons i{font-size:13px;color:#fff}
+.status-icons i.light-t{color:#0a0a0f}
+.app-header{padding:14px 18px 10px;background:#0a0a0f;display:flex;justify-content:space-between;align-items:flex-start}
+.app-header.light{background:#f8f8f8}
+.greeting{font-size:18px;font-weight:500;color:#fff;line-height:1.2}
+.greeting.light-t{color:#0a0a0f}
+.sub-greet{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
+.sub-greet.light-t{color:rgba(10,10,15,0.45)}
+.hdr-right{display:flex;gap:8px;align-items:center}
+.streak-pill{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.08);border-radius:20px;padding:4px 10px}
+.streak-pill.light{background:rgba(0,0,0,0.06)}
+.streak-pill span{font-size:12px;font-weight:500;color:#fff}
+.streak-pill.light span{color:#0a0a0f}
+.streak-pill i{font-size:13px;color:#EF9F27}
+.notif-btn{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center}
+.notif-btn.light{background:rgba(0,0,0,0.06)}
+.notif-btn i{font-size:15px;color:rgba(255,255,255,0.7)}
+.notif-btn.light i{color:rgba(10,10,15,0.6)}
+.scroll-area{background:#0a0a0f;padding:0 14px 80px}
+.scroll-area.light{background:#f8f8f8}
+.nba-card{background:#141420;border-radius:20px;padding:16px;margin-bottom:12px;border:0.5px solid rgba(255,255,255,0.08)}
+.nba-card.light{background:#fff;border:0.5px solid rgba(0,0,0,0.08)}
+.nba-label{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.nba-label span{font-size:10px;font-weight:500;letter-spacing:0.6px;color:#7F77DD;text-transform:uppercase}
+.nba-label i{font-size:12px;color:#7F77DD}
+.nba-task{font-size:16px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:12px}
+.nba-task.light-t{color:#0a0a0f}
+.nba-meta{display:flex;gap:6px;align-items:center;margin-bottom:14px}
+.pill{border-radius:20px;padding:3px 9px;font-size:11px;font-weight:500}
+.pill-high{background:rgba(226,75,74,0.15);color:#F09595}
+.pill-med{background:rgba(239,159,39,0.15);color:#FAC775}
+.pill-low{background:rgba(29,158,117,0.15);color:#5DCAA5}
+.pill-time{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.5)}
+.pill-time.light{background:rgba(0,0,0,0.06);color:rgba(10,10,15,0.45)}
+.nba-actions{display:flex;gap:8px}
+.nba-btn-done{flex:1;padding:10px;border-radius:12px;background:#7F77DD;border:none;font-size:13px;font-weight:500;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px}
+.nba-btn-done i{font-size:14px}
+.nba-btn-skip{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.nba-btn-skip.light{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.1)}
+.nba-btn-skip i{font-size:16px;color:rgba(255,255,255,0.4)}
+.nba-btn-skip.light i{color:rgba(10,10,15,0.4)}
+.nba-btn-focus{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.nba-btn-focus.light{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.1)}
+.nba-btn-focus i{font-size:16px;color:rgba(255,255,255,0.4)}
+.section-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding:0 2px}
+.sec-title{font-size:12px;font-weight:500;color:rgba(255,255,255,0.35);letter-spacing:0.5px;text-transform:uppercase}
+.sec-title.light-t{color:rgba(10,10,15,0.35)}
+.habit-strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px;scrollbar-width:none}
+.habit-strip::-webkit-scrollbar{display:none}
+.habit-chip{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;cursor:pointer}
+.habit-icon{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;border:0.5px solid rgba(255,255,255,0.1)}
+.habit-icon.done{border-color:transparent}
+.habit-icon.light{border-color:rgba(0,0,0,0.1)}
+.habit-name{font-size:10px;color:rgba(255,255,255,0.4);text-align:center;max-width:50px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.habit-name.light-t{color:rgba(10,10,15,0.4)}
+.task-group-hd{font-size:11px;font-weight:500;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;margin-top:4px}
+.task-group-hd.light-t{color:rgba(10,10,15,0.25)}
+.task-row{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:#141420;margin-bottom:4px;cursor:pointer;border:0.5px solid rgba(255,255,255,0.05)}
+.task-row.light{background:#fff;border-color:rgba(0,0,0,0.06)}
+.task-row.done-row .t-text{text-decoration:line-through;color:rgba(255,255,255,0.25)}
+.task-row.done-row.light .t-text{color:rgba(10,10,15,0.25)}
+.t-check{width:18px;height:18px;border-radius:6px;border:1.5px solid rgba(255,255,255,0.2);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.t-check.light{border-color:rgba(0,0,0,0.2)}
+.t-check.checked{background:#7F77DD;border-color:#7F77DD}
+.t-check.checked i{font-size:11px;color:#fff}
+.t-text{flex:1;font-size:13px;color:#fff;line-height:1.3}
+.t-text.light-t{color:#0a0a0f}
+.t-badge{font-size:10px;font-weight:500;padding:2px 7px;border-radius:8px;flex-shrink:0}
+.t-badge.high{background:rgba(226,75,74,0.15);color:#F09595}
+.t-badge.med{background:rgba(239,159,39,0.12);color:#FAC775}
+.t-badge.low{background:rgba(29,158,117,0.12);color:#5DCAA5}
+.t-time{font-size:10px;color:rgba(255,255,255,0.3);flex-shrink:0}
+.t-time.light-t{color:rgba(10,10,15,0.3)}
+.momentum-card{background:#141420;border-radius:16px;padding:14px;margin-bottom:12px;border:0.5px solid rgba(255,255,255,0.06)}
+.momentum-card.light{background:#fff;border-color:rgba(0,0,0,0.06)}
+.mom-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.mom-title{font-size:12px;font-weight:500;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.5px}
+.mom-title.light-t{color:rgba(10,10,15,0.35)}
+.mom-stats{display:flex;gap:16px}
+.mom-stat{text-align:center}
+.mom-num{font-size:20px;font-weight:500;color:#fff;line-height:1}
+.mom-num.light-t{color:#0a0a0f}
+.mom-lbl{font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px}
+.mom-lbl.light-t{color:rgba(10,10,15,0.35)}
+.cal-row{display:flex;gap:4px}
+.cal-day{width:18px;height:18px;border-radius:5px;flex-shrink:0}
+.cal-day.empty{background:rgba(255,255,255,0.04)}
+.cal-day.empty.light{background:rgba(0,0,0,0.06)}
+.cal-day.done-d{background:#7F77DD}
+.cal-day.done-light{background:rgba(127,119,221,0.4)}
+.quick-capture{padding:10px 14px;background:#0e0e18;border-top:0.5px solid rgba(255,255,255,0.08)}
+.quick-capture.light{background:#fff;border-color:rgba(0,0,0,0.08)}
+.capture-inner{display:flex;align-items:center;gap:8px;background:#1a1a28;border-radius:12px;padding:8px 12px;border:0.5px solid rgba(255,255,255,0.08)}
+.capture-inner.light{background:#f0f0f0;border-color:rgba(0,0,0,0.08)}
+.capture-placeholder{flex:1;font-size:13px;color:rgba(255,255,255,0.25)}
+.capture-placeholder.light-t{color:rgba(10,10,15,0.3)}
+.mic-btn{width:30px;height:30px;border-radius:50%;background:#7F77DD;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mic-btn i{font-size:14px;color:#fff}
+.bottom-nav{display:flex;justify-content:space-around;align-items:center;padding:8px 0 12px;background:#0e0e18;border-top:0.5px solid rgba(255,255,255,0.07)}
+.bottom-nav.light{background:#fff;border-color:rgba(0,0,0,0.07)}
+.nav-item-b{display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 12px;cursor:pointer}
+.nav-item-b i{font-size:20px;color:rgba(255,255,255,0.25)}
+.nav-item-b i.light-t{color:rgba(10,10,15,0.25)}
+.nav-item-b i.nav-active{color:#7F77DD}
+.nav-item-b span{font-size:9px;color:rgba(255,255,255,0.25)}
+.nav-item-b span.light-t{color:rgba(10,10,15,0.25)}
+.nav-item-b span.nav-active{color:#7F77DD}
+.focus-screen{background:#0a0a0f;padding:0}
+.focus-hd{padding:14px 18px 10px;display:flex;align-items:center;justify-content:space-between}
+.focus-back{width:32px;height:32px;border-radius:10px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center}
+.focus-back i{font-size:16px;color:rgba(255,255,255,0.6)}
+.focus-hd-title{font-size:14px;font-weight:500;color:rgba(255,255,255,0.6)}
+.focus-body{padding:20px 18px}
+.focus-task-name{font-size:17px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:6px}
+.focus-tag{font-size:11px;color:rgba(127,119,221,0.8);margin-bottom:28px}
+.timer-ring-wrap{display:flex;justify-content:center;margin-bottom:24px}
+.timer-ring-inner{width:160px;height:160px;position:relative}
+.timer-svg{width:160px;height:160px}
+.timer-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.timer-digits{font-size:32px;font-weight:500;color:#fff;letter-spacing:-1px;font-family:var(--font-mono)}
+.timer-subtitle{font-size:11px;color:rgba(255,255,255,0.3);margin-top:2px}
+.focus-btns{display:flex;gap:10px;margin-bottom:20px}
+.f-btn{flex:1;padding:12px;border-radius:14px;border:0.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);font-size:13px;font-weight:500;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.f-btn i{font-size:15px}
+.f-btn.primary{background:#7F77DD;border-color:#7F77DD}
+.session-info{background:#141420;border-radius:14px;padding:12px 14px;border:0.5px solid rgba(255,255,255,0.06)}
+.session-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:0.5px solid rgba(255,255,255,0.05)}
+.session-row:last-child{border-bottom:none}
+.s-label{font-size:12px;color:rgba(255,255,255,0.35)}
+.s-val{font-size:12px;font-weight:500;color:rgba(255,255,255,0.7)}
+.tab-bar{display:flex;border-bottom:0.5px solid rgba(255,255,255,0.08);background:#0a0a0f}
+.tab{flex:1;padding:10px 0;text-align:center;font-size:12px;color:rgba(255,255,255,0.3);cursor:pointer;border-bottom:2px solid transparent}
+.tab.active{color:#7F77DD;border-bottom-color:#7F77DD}
+.summary-body{background:#0a0a0f;padding:16px 14px 80px}
+.heatmap-grid{display:grid;grid-template-columns:repeat(13,1fr);gap:3px;margin-bottom:16px}
+.h-cell{height:20px;border-radius:4px;background:rgba(255,255,255,0.04)}
+.h-cell.l1{background:rgba(127,119,221,0.2)}
+.h-cell.l2{background:rgba(127,119,221,0.45)}
+.h-cell.l3{background:#7F77DD}
+.week-labels{display:flex;justify-content:space-between;margin-bottom:6px}
+.week-labels span{font-size:9px;color:rgba(255,255,255,0.2)}
+.sum-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.sum-stat{background:#141420;border-radius:12px;padding:12px;border:0.5px solid rgba(255,255,255,0.05)}
+.sum-stat-n{font-size:22px;font-weight:500;color:#fff}
+.sum-stat-l{font-size:11px;color:rgba(255,255,255,0.3);margin-top:3px}
+.sum-streak-row{display:flex;gap:6px;align-items:center;margin-bottom:16px}
+.streak-block{flex:1;height:32px;border-radius:8px;background:#141420;border:0.5px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,0.25)}
+.streak-block.active{background:#7F77DD;color:#fff;font-weight:500}
+.screen-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:0 16px}
+.stab{padding:6px 14px;border-radius:20px;border:0.5px solid var(--color-border-secondary);background:transparent;font-size:12px;color:var(--color-text-tertiary);cursor:pointer}
+.stab.sel{background:#7F77DD;border-color:#7F77DD;color:#fff;font-weight:500}
+.screen-container{display:none}
+.screen-container.visible{display:block}
+</style>
+</head>
+<body>
+
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Interactive Drivn PWA wireframe with Home, Focus session, and Summary screens</h2>
+
+<div class="wrap">
+  <div class="screen-tabs">
+    <button class="stab sel" onclick="showScreen('home')">Home</button>
+    <button class="stab" onclick="showScreen('focus')">Focus session</button>
+    <button class="stab" onclick="showScreen('summary')">Summary</button>
+  </div>
+
+  <div id="sc-home" class="screen-container visible">
+    <div class="screen-label">Home — dashboard</div>
+    <div class="phone">
+      <div class="status-bar">
+        <span class="status-time">9:41</span>
+        <div class="status-icons">
+          <i class="ti ti-wifi" aria-hidden="true"></i>
+          <i class="ti ti-battery-2" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="app-header">
+        <div>
+          <div class="greeting">Good morning, Vith.</div>
+          <div class="sub-greet">Friday · 6 tasks · streak day 12</div>
+        </div>
+        <div class="hdr-right">
+          <div class="streak-pill">
+            <i class="ti ti-flame" aria-hidden="true"></i>
+            <span>12</span>
+          </div>
+          <div class="notif-btn"><i class="ti ti-bell" aria-hidden="true"></i></div>
+        </div>
+      </div>
+      <div class="scroll-area" id="home-scroll">
+        <div style="height:10px"></div>
+        <div class="nba-card" id="nba-card">
+          <div class="nba-label">
+            <i class="ti ti-brain" aria-hidden="true"></i>
+            <span>Next best action</span>
+          </div>
+          <div class="nba-task" id="nba-task-text">Define v1 success metrics for Drivn MVP</div>
+          <div class="nba-meta">
+            <span class="pill pill-high">High</span>
+            <span class="pill pill-time">45 min</span>
+            <span class="pill pill-time">Due today</span>
+          </div>
+          <div class="nba-actions">
+            <button class="nba-btn-done" id="nba-done-btn" onclick="markNBADone()">
+              <i class="ti ti-check" aria-hidden="true"></i> Mark done
+            </button>
+            <div class="nba-btn-focus" title="Start focus session" onclick="showScreen('focus')" style="cursor:pointer">
+              <i class="ti ti-player-play" aria-hidden="true"></i>
+            </div>
+            <div class="nba-btn-skip" title="Skip task" onclick="skipNBA()">
+              <i class="ti ti-arrow-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-hd">
+          <span class="sec-title">Habits</span>
+          <span style="font-size:11px;color:rgba(127,119,221,0.7)">3 / 5 done</span>
+        </div>
+        <div class="habit-strip" id="habit-strip">
+          <div class="habit-chip" onclick="toggleHabit(this)">
+            <div class="habit-icon done" style="background:rgba(29,158,117,0.2)"><i class="ti ti-droplet" style="font-size:18px;color:#5DCAA5" aria-hidden="true"></i></div>
+            <span class="habit-name">Water</span>
+          </div>
+          <div class="habit-chip" onclick="toggleHabit(this)">
+            <div class="habit-icon done" style="background:rgba(29,158,117,0.2)"><i class="ti ti-run" style="font-size:18px;color:#5DCAA5" aria-hidden="true"></i></div>
+            <span class="habit-name">Exercise</span>
+          </div>
+          <div class="habit-chip" onclick="toggleHabit(this)">
+            <div class="habit-icon done" style="background:rgba(29,158,117,0.2)"><i class="ti ti-book" style="font-size:18px;color:#5DCAA5" aria-hidden="true"></i></div>
+            <span class="habit-name">Read</span>
+          </div>
+          <div class="habit-chip" onclick="toggleHabit(this)">
+            <div class="habit-icon" style="background:rgba(255,255,255,0.05)"><i class="ti ti-moon" style="font-size:18px;color:rgba(255,255,255,0.25)" aria-hidden="true"></i></div>
+            <span class="habit-name">Sleep</span>
+          </div>
+          <div class="habit-chip" onclick="toggleHabit(this)">
+            <div class="habit-icon" style="background:rgba(255,255,255,0.05)"><i class="ti ti-pencil" style="font-size:18px;color:rgba(255,255,255,0.25)" aria-hidden="true"></i></div>
+            <span class="habit-name">Journal</span>
+          </div>
+        </div>
+
+        <div class="momentum-card">
+          <div class="mom-row">
+            <span class="mom-title">Momentum</span>
+            <div class="mom-stats">
+              <div class="mom-stat">
+                <div class="mom-num">12</div>
+                <div class="mom-lbl">streak</div>
+              </div>
+              <div class="mom-stat">
+                <div class="mom-num">31</div>
+                <div class="mom-lbl">longest</div>
+              </div>
+              <div class="mom-stat">
+                <div class="mom-num">87%</div>
+                <div class="mom-lbl">this month</div>
+              </div>
+            </div>
+          </div>
+          <div class="cal-row" id="cal-row"></div>
+        </div>
+
+        <div class="task-group-hd">Now</div>
+        <div class="task-row" id="task-1">
+          <div class="t-check" onclick="toggleTask(this,event)"></div>
+          <span class="t-text">Define v1 success metrics for Drivn MVP</span>
+          <span class="t-badge high">High</span>
+        </div>
+        <div class="task-row" id="task-2">
+          <div class="t-check" onclick="toggleTask(this,event)"></div>
+          <span class="t-text">Draft Shopify APM cover letter</span>
+          <span class="t-badge med">Med</span>
+        </div>
+
+        <div class="task-group-hd" style="margin-top:10px">Soon</div>
+        <div class="task-row">
+          <div class="t-check" onclick="toggleTask(this,event)"></div>
+          <span class="t-text">PM mock interview prep — Wealthsimple</span>
+          <span class="t-time">7 PM</span>
+        </div>
+        <div class="task-row">
+          <div class="t-check" onclick="toggleTask(this,event)"></div>
+          <span class="t-text">Review RICE framework notes</span>
+          <span class="t-badge low">Low</span>
+        </div>
+
+        <div class="task-group-hd" style="margin-top:10px">Later</div>
+        <div class="task-row done-row">
+          <div class="t-check checked"><i class="ti ti-check" aria-hidden="true"></i></div>
+          <span class="t-text">Competitive analysis — Notion, Linear</span>
+          <span class="t-time">done</span>
+        </div>
+        <div class="task-row done-row">
+          <div class="t-check checked"><i class="ti ti-check" aria-hidden="true"></i></div>
+          <span class="t-text">Update resume metrics</span>
+          <span class="t-time">done</span>
+        </div>
+      </div>
+      <div class="quick-capture">
+        <div class="capture-inner">
+          <i class="ti ti-plus" style="font-size:16px;color:rgba(255,255,255,0.25)" aria-hidden="true"></i>
+          <span class="capture-placeholder">Add a task... or tap mic to speak</span>
+          <div class="mic-btn"><i class="ti ti-microphone" aria-hidden="true"></i></div>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <div class="nav-item-b">
+          <i class="ti ti-home nav-active" aria-hidden="true"></i>
+          <span class="nav-active">Home</span>
+        </div>
+        <div class="nav-item-b" onclick="showScreen('summary')">
+          <i class="ti ti-chart-bar" aria-hidden="true"></i>
+          <span>Summary</span>
+        </div>
+        <div class="nav-item-b">
+          <i class="ti ti-heart" aria-hidden="true"></i>
+          <span>Habits</span>
+        </div>
+        <div class="nav-item-b">
+          <i class="ti ti-user" aria-hidden="true"></i>
+          <span>Profile</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sc-focus" class="screen-container">
+    <div class="screen-label">Focus session — /focus/[id]</div>
+    <div class="phone">
+      <div class="status-bar"><span class="status-time">9:46</span><div class="status-icons"><i class="ti ti-wifi" aria-hidden="true"></i><i class="ti ti-battery-2" aria-hidden="true"></i></div></div>
+      <div class="focus-hd">
+        <div class="focus-back" onclick="showScreen('home')" style="cursor:pointer"><i class="ti ti-arrow-left" aria-hidden="true"></i></div>
+        <span class="focus-hd-title">Focus session</span>
+        <div style="width:32px"></div>
+      </div>
+      <div class="focus-body">
+        <div class="focus-task-name">Define v1 success metrics for Drivn MVP</div>
+        <div class="focus-tag">Drivn PRD  ·  High priority</div>
+        <div class="timer-ring-wrap">
+          <div class="timer-ring-inner">
+            <svg class="timer-svg" viewBox="0 0 160 160">
+              <circle cx="80" cy="80" r="68" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+              <circle id="ring-progress" cx="80" cy="80" r="68" fill="none" stroke="#7F77DD" stroke-width="6"
+                stroke-linecap="round" stroke-dasharray="427" stroke-dashoffset="106"
+                transform="rotate(-90 80 80)"/>
+            </svg>
+            <div class="timer-center">
+              <div class="timer-digits" id="focus-timer">20:22</div>
+              <div class="timer-subtitle">remaining</div>
+            </div>
+          </div>
+        </div>
+        <div class="focus-btns">
+          <button class="f-btn" id="f-break-btn" onclick="focusBreak()"><i class="ti ti-coffee" aria-hidden="true"></i> Break</button>
+          <button class="f-btn primary" id="f-pause-btn" onclick="focusPause()"><i class="ti ti-player-pause" aria-hidden="true"></i> Pause</button>
+          <button class="f-btn" onclick="focusDone()"><i class="ti ti-check" aria-hidden="true"></i> Done</button>
+        </div>
+        <div class="session-info">
+          <div class="session-row">
+            <span class="s-label">Session type</span>
+            <span class="s-val">25 min deep work</span>
+          </div>
+          <div class="session-row">
+            <span class="s-label">Sessions today</span>
+            <span class="s-val">2 of 4 goal</span>
+          </div>
+          <div class="session-row">
+            <span class="s-label">Total focus today</span>
+            <span class="s-val">1h 40m</span>
+          </div>
+          <div class="session-row">
+            <span class="s-label">Notification</span>
+            <span class="s-val" style="color:#5DCAA5">Enabled</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sc-summary" class="screen-container">
+    <div class="screen-label">Summary — monthly calendar heatmap</div>
+    <div class="phone">
+      <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons"><i class="ti ti-wifi" aria-hidden="true"></i><i class="ti ti-battery-2" aria-hidden="true"></i></div></div>
+      <div class="app-header">
+        <div><div class="greeting">May 2026</div><div class="sub-greet">Monthly overview</div></div>
+      </div>
+      <div class="summary-body">
+        <div class="sum-stat-row">
+          <div class="sum-stat"><div class="sum-stat-n">31</div><div class="sum-stat-l">Tasks completed</div></div>
+          <div class="sum-stat"><div class="sum-stat-n">12</div><div class="sum-stat-l">Current streak</div></div>
+          <div class="sum-stat"><div class="sum-stat-n">87%</div><div class="sum-stat-l">Completion rate</div></div>
+          <div class="sum-stat"><div class="sum-stat-n">8h 20m</div><div class="sum-stat-l">Focus time</div></div>
+        </div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">Activity heatmap</div>
+        <div class="week-labels"><span>May 1</span><span>May 8</span><span>May 15</span><span>May 22</span></div>
+        <div class="heatmap-grid" id="heatmap"></div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px">
+          <span style="font-size:10px;color:rgba(255,255,255,0.25)">Less</span>
+          <div style="width:14px;height:14px;border-radius:4px;background:rgba(255,255,255,0.04)"></div>
+          <div style="width:14px;height:14px;border-radius:4px;background:rgba(127,119,221,0.2)"></div>
+          <div style="width:14px;height:14px;border-radius:4px;background:rgba(127,119,221,0.45)"></div>
+          <div style="width:14px;height:14px;border-radius:4px;background:#7F77DD"></div>
+          <span style="font-size:10px;color:rgba(255,255,255,0.25)">More</span>
+        </div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">Streak history</div>
+        <div class="sum-streak-row" id="streak-row"></div>
+      </div>
+      <div class="bottom-nav">
+        <div class="nav-item-b" onclick="showScreen('home')"><i class="ti ti-home" aria-hidden="true"></i><span>Home</span></div>
+        <div class="nav-item-b"><i class="ti ti-chart-bar nav-active" aria-hidden="true"></i><span class="nav-active">Summary</span></div>
+        <div class="nav-item-b"><i class="ti ti-heart" aria-hidden="true"></i><span>Habits</span></div>
+        <div class="nav-item-b"><i class="ti ti-user" aria-hidden="true"></i><span>Profile</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const nbaQueue = [
+  {text:"Draft Shopify APM cover letter", p:"Med", t:"30 min", d:"Due today"},
+  {text:"PM mock interview prep — Wealthsimple", p:"Low", t:"60 min", d:"7 PM"},
+  {text:"Review RICE framework notes", p:"Low", t:"20 min", d:"Later"},
+];
+let nbaIdx = 0;
+let focusRunning = true;
+let focusSecs = 20*60+22;
+let focusTotal = 25*60;
+
+function showScreen(id) {
+  document.querySelectorAll('.screen-container').forEach(s=>s.classList.remove('visible'));
+  document.getElementById('sc-'+id).classList.add('visible');
+  document.querySelectorAll('.stab').forEach(b=>{
+    b.classList.toggle('sel', b.textContent.toLowerCase().startsWith(id==='summary'?'sum':id));
+  });
+}
+
+function markNBADone() {
+  const btn = document.getElementById('nba-done-btn');
+  btn.innerHTML = '<i class="ti ti-check" aria-hidden="true"></i> Done!';
+  btn.style.background = '#1D9E75';
+  setTimeout(()=>loadNextNBA(), 900);
+}
+function skipNBA() { loadNextNBA(); }
+function loadNextNBA() {
+  if(nbaIdx >= nbaQueue.length) return;
+  const n = nbaQueue[nbaIdx++];
+  const pClass = n.p==='High'?'pill-high':n.p==='Med'?'pill-med':'pill-low';
+  document.getElementById('nba-task-text').textContent = n.text;
+  const meta = document.querySelector('.nba-meta');
+  meta.innerHTML = `<span class="pill ${pClass}">${n.p}</span><span class="pill pill-time">${n.t}</span><span class="pill pill-time">${n.d}</span>`;
+  const btn = document.getElementById('nba-done-btn');
+  btn.innerHTML = '<i class="ti ti-check" aria-hidden="true"></i> Mark done';
+  btn.style.background = '#7F77DD';
+}
+
+function toggleTask(el, e) {
+  e.stopPropagation();
+  const row = el.closest('.task-row');
+  const isDone = el.classList.contains('checked');
+  if(isDone) {
+    el.classList.remove('checked'); el.innerHTML='';
+    row.classList.remove('done-row');
+  } else {
+    el.classList.add('checked'); el.innerHTML='<i class="ti ti-check" aria-hidden="true"></i>';
+    row.classList.add('done-row');
+  }
+}
+
+function toggleHabit(chip) {
+  const icon = chip.querySelector('.habit-icon');
+  const i = chip.querySelector('i');
+  const isDone = icon.classList.contains('done');
+  if(isDone) {
+    icon.classList.remove('done');
+    icon.style.background='rgba(255,255,255,0.05)';
+    i.style.color='rgba(255,255,255,0.25)';
+  } else {
+    icon.classList.add('done');
+    icon.style.background='rgba(29,158,117,0.2)';
+    i.style.color='#5DCAA5';
+  }
+}
+
+const calEl = document.getElementById('cal-row');
+const pattern = [1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1];
+pattern.forEach((v,i)=>{
+  const d = document.createElement('div');
+  d.className = 'cal-day '+(i<19?(v?'done-d':'empty'):(i===19?'done-d':'done-light'));
+  calEl.appendChild(d);
+});
+
+const hm = document.getElementById('heatmap');
+const hmPat = [0,1,2,3,1,2,3,2,1,3,2,1,0,1,2,2,3,1,0,2,3,1,1,2,3,0,0,0,0,0,0];
+hmPat.forEach(v=>{
+  const c = document.createElement('div');
+  c.className = 'h-cell'+(v===0?'':v===1?' l1':v===2?' l2':' l3');
+  hm.appendChild(c);
+});
+
+const sr = document.getElementById('streak-row');
+['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach((d,i)=>{
+  const b = document.createElement('div');
+  b.className = 'streak-block'+(i<5?' active':'');
+  b.textContent = d;
+  sr.appendChild(b);
+});
+
+function fmt(s){const m=Math.floor(s/60),sc=s%60;return(m<10?'0':'')+m+':'+(sc<10?'0':'')+sc;}
+function updateRing(){
+  const pct=focusSecs/focusTotal;
+  const circ=2*Math.PI*68;
+  document.getElementById('ring-progress').setAttribute('stroke-dashoffset', Math.round(circ*(1-pct)));
+}
+const focusTick = setInterval(()=>{
+  if(!focusRunning) return;
+  focusSecs--;
+  if(focusSecs<=0){focusSecs=0;clearInterval(focusTick);}
+  document.getElementById('focus-timer').textContent=fmt(focusSecs);
+  updateRing();
+},1000);
+
+function focusPause(){
+  focusRunning=!focusRunning;
+  const btn=document.getElementById('f-pause-btn');
+  btn.innerHTML=focusRunning?'<i class="ti ti-player-pause" aria-hidden="true"></i> Pause':'<i class="ti ti-player-play" aria-hidden="true"></i> Resume';
+}
+function focusBreak(){focusRunning=false;focusSecs=5*60;document.getElementById('focus-timer').textContent=fmt(focusSecs);updateRing();}
+function focusDone(){focusSecs=0;document.getElementById('focus-timer').textContent='00:00';updateRing();document.getElementById('f-pause-btn').innerHTML='<i class="ti ti-check" aria-hidden="true"></i> Complete';}
+</script>
+</body>
+</html>
