@@ -2,6 +2,7 @@
 title: "Building drivn: How I Designed a Next Best Action Engine"
 publishedAt: "2025-05-10"
 summary: "How I went from 'I need a better to-do app' to shipping a productivity PWA with a task prioritization engine, habit tracking, and real users."
+image: "/images/gallery/drivn-dashboard.jpg"
 tag: "Building"
 ---
 
@@ -18,6 +19,8 @@ I started asking: what if the app just *told me* what to do next?
 Most productivity apps solve for *capture* and *organization*. drivn solves for *initiation*. The core idea is the **Next Best Action** — a single, algorithmically selected task that surfaces the moment you open the app.
 
 No list to sort. No decision to make. Just: *do this*.
+
+![drivn home screen — one task, always ready](/images/gallery/drivn-dashboard.jpg)
 
 ## Designing the Ranking Algorithm
 
@@ -41,6 +44,8 @@ I cut it down to the core: tasks, habits, focus sessions, and the NBA engine. Th
 
 ## What I Learned From Real Users
 
+![Habit tracker — the highest-engagement feature in drivn v1](/images/gallery/drivn-habits.jpg)
+
 After launch, the admin dashboard told a story. 10 users signed up. 41 tasks created. 25 completed. **38% task completion rate**.
 
 38% sounds low — but for a v1 with no onboarding optimization and no marketing, it's a real signal. The habit tracker had the highest engagement of any feature. The focus timer was used but rarely completed.
@@ -55,6 +60,8 @@ Every technical decision in drivn was a product decision:
 - **Zustand over Redux** — Less boilerplate meant faster iteration on state logic
 - **PostHog for analytics** — Event-based tracking so I could measure exactly what I cared about
 - **PWA over native app** — Zero install friction for early users
+
+![Admin dashboard — real user metrics after launch](/images/gallery/drivn-admin.jpg)
 
 ## What's Next
 
