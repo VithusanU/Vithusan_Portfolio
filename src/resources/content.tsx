@@ -6,7 +6,7 @@ const person: Person = {
   firstName: "Vithusan",
   lastName: "Uruthirakumaran",
   name: `Vithusan Uruthirakumaran`,
-  role: "Product Manager/Software Developer",
+  role: "Product Manager",
   avatar: "/images/avatar.png",
   email: "vithusan.business@gmail.com",
   location: "America/Toronto", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -47,23 +47,17 @@ const home: Home = {
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
 headline: (
-  <div style={{ lineHeight: 1.1 }}>
-    <Text size="m" onBackground="neutral-weak">
-      Hi I’m
-    </Text>
-
-    <br />
-
+  <>
+    {person.name}
     <Text
-      size="xl"
-      weight="strong"
-      style={{ letterSpacing: "-0.03em" }}
+      variant="label-default-m"
+      onBackground="neutral-weak"
+      style={{ display: "block", marginTop: "14px", letterSpacing: "0.12em" }}
     >
-      {person.firstName}
+      Product Manager · Builder · Ex-Ops
     </Text>
-  </div>
-  
-) ,
+  </>
+),
 
 
   featured: {
@@ -81,14 +75,9 @@ headline: (
   },
   subline: (
     <>
-      <Text size="xl">
-        Product Manager focused on turning ambiguous problems into{" "}
-        <strong>shipped solutions, </strong>
-      </Text>
-
-      <Text size="m" onBackground="neutral-weak" marginTop="8">
-        Blending product thinking with hands-on execution.
-      </Text>
+      Focused on turning ambiguous problems into{" "}
+      <strong>shipped solutions</strong> — blending product thinking
+      with hands-on engineering.
     </>
   ),
 
@@ -115,13 +104,13 @@ const about: About = {
   title: "Introduction",
   description: (
     <>
-      Vithusan is a product-minded software developer with a strong foundation in business and
-      operations. He specializes in building thoughtful, user-focused web applications and AI-powered
-      tools that solve real problems. With experience spanning product strategy, frontend development,
-      and system thinking, he bridges the gap between technical execution and product vision.
+      Vithusan is a product manager and builder with a background in operations leadership and
+      full-stack software development. He brings a rare combination of strategic product thinking
+      and hands-on technical execution — capable of going from problem definition to shipped product.
       <br /><br />
-      His work focuses on clarity, scalability, and impact — turning complex ideas into practical,
-      well-designed digital products.
+      With experience spanning product strategy, frontend and backend engineering, and data-driven
+      operations, he bridges the gap between user needs and technical reality — and has the receipts
+      to prove it.
     </>
   ),
 },
@@ -308,8 +297,8 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: "On product, building, and the ops-to-PM journey",
+  description: `Thoughts on PM craft, building in public, and the long game of career transition`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
@@ -318,7 +307,7 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  description: `From PRD to production — products built end-to-end by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
@@ -327,7 +316,7 @@ const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
+  description: `Screenshots, walkthroughs, and builds`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [
