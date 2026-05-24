@@ -2,7 +2,7 @@
 title: "Why I Built a Tool to Run My Own PM Job Search"
 publishedAt: "2026-05-24"
 summary: "My spreadsheet was failing me. So I built PM Career Ops — a full-stack job tracker with an AI-powered import, ATS keyword extraction, and a proper pipeline. Here's the honest story of why, what I learned, and what I'd do differently."
-image: "/images/projects/pm-career-ops/dashboard.png"
+image: "/images/projects/pm-career-ops/companies.png"
 tag: "Building"
 ---
 
@@ -18,8 +18,6 @@ At some point I stopped asking "why doesn't a good tool for this exist" and star
 
 ## Treating the Job Search Like a Product
 
-![PM Career Ops — Command Center dashboard with daily routine, metrics, and upcoming actions](/images/projects/pm-career-ops/dashboard.png)
-
 The PM job search is, structurally, a pipeline problem. You have inputs (applications), stages (Researching → Applied → Phone Screen → Interview → Final Round → Offer), and a conversion rate you're trying to optimize. Every PM knows how to think about a pipeline. Almost no one applies that thinking to their own job search.
 
 That reframe changed everything. A pipeline needs:
@@ -29,6 +27,8 @@ That reframe changed everything. A pipeline needs:
 - **Signal** — what keywords are companies asking for, who did you talk to, what's the follow-up date
 
 That's the product brief. Build it.
+
+![Company Research Hub — deep analysis cards for every target company in your pipeline](/images/projects/pm-career-ops/companies.png)
 
 ## Efficiency: Killing the Manual Work
 
@@ -47,6 +47,8 @@ The pipeline view solves something a spreadsheet genuinely can't: **spatial awar
 The stage-change dropdown directly in the table row was a deliberate UX decision. The friction of opening a form to move a stage is the friction that causes people to stop updating their tracker. One click. The row updates instantly. That's it.
 
 The fit score (1–100) was the feature I debated most. It feels arbitrary — how do you score a job? But in practice it's the most useful filter. When you have 40 applications and three days to prep for interviews, you need to know which three deserve your full energy. A score forces the decision. Even an imperfect one is better than treating every application as equally important.
+
+![Network page — message templates and example contacts for PM outreach](/images/projects/pm-career-ops/network.png)
 
 ## The Learning Experience
 
