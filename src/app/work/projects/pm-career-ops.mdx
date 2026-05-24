@@ -50,10 +50,26 @@ A purpose-built application OS. Everything in one place — a visual pipeline by
 - **AI Integration:** Server-side HTML scraping (JSON-LD, OpenGraph, title fallback) with Jina AI bypass for bot-protected pages
 - **Deployment:** Vercel
 
+## Iteration in Practice — The Import Feature
+
+The job import feature is a good case study in how a real product problem compounds once users start using something.
+
+**v1:** Server-side URL fetch → extract company, role, and keywords from page HTML. Worked on most ATS platforms (Greenhouse, Lever, Workday, Ashby).
+
+**The failure signal:** LinkedIn and Indeed — the two sites where most job searches start — returned blocked or empty responses. Users pasting the most common job URLs got no import, no feedback, and no explanation. From a user's perspective the feature just didn't work.
+
+**Diagnosis:** Both platforms actively block server-side requests. This is intentional — bot protection is core to how they operate. A server-side fetch would never reliably work here.
+
+**Iteration 1 — Jina AI fallback:** Routed bot-blocked URLs through Jina AI's headless browser service, which renders the page before returning the content. This recovered the import for many LinkedIn and Indeed URLs. New failure signal: some pages returned Cloudflare challenge pages even through Jina, which the parser was reading as content and extracting garbage (most memorably: "Reviews" as the company name instead of the actual employer).
+
+**Iteration 2 — Bot signal detection + URL slug extraction:** Added detection for Cloudflare/bot-block signals in the returned content. When detected, the system falls back to extracting the company name directly from the URL slug (`ca.indeed.com/cmp/Inbox-Monster` → "Inbox Monster"). Not perfect, but a meaningful improvement — the user gets a partially filled form with the company name rather than a confusing error.
+
+**Iteration 3 — Bookmarklet for client-side extraction:** Built a browser bookmarklet that runs in the user's own browser session (where LinkedIn and Indeed have no reason to block them), extracts the job data from the live DOM, and opens the pipeline page with a pre-filled form. This solved the root problem — the import now works from inside the user's authenticated session, where bot protection doesn't apply.
+
+Each failure revealed something real about the technical constraints of the two biggest job sites on the internet. The bookmarklet wasn't in scope for v1. It became the most reliable import method.
+
 ## What I Learned
 
-Building PM Career Ops compressed a lot of real product decisions into a small surface area. The job import feature alone went through four iterations — direct scrape, bot detection, Jina fallback, and URL-slug extraction — because every new site revealed a new failure mode. That's the same iterative loop you run on any product feature, just with a faster feedback cycle.
-
-The most interesting moment was realizing the ATS keyword extraction wasn't just a nice-to-have — it's the core job-to-be-done for a PM searching at scale. That reframing changed the information architecture of the whole app.
+The ATS keyword extraction reframe was the most useful product insight from the project. It started as a convenience feature — grab the job description keywords automatically. In practice, it became the core job-to-be-done for anyone applying at volume. When you have 40 open applications, the keywords are what you use to quickly align your resume and answers to each role. That realization changed how the feature was prioritized and how prominently it was surfaced in the UI.
 
 [Read the full story behind it →](/blog/pm-career-ops)

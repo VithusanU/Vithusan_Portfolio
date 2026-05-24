@@ -1,4 +1,4 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { Column, Heading, Text, Meta, Schema } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 
@@ -11,6 +11,9 @@ export async function generateMetadata() {
     path: work.path,
   });
 }
+
+const RECENT_SLUGS  = ["drivn", "pm-career-ops"];
+const EARLIER_SLUGS = ["hangman-app", "book-search-engine", "ecommerce-backend"];
 
 export default function Work() {
   return (
@@ -28,10 +31,34 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Heading marginBottom="l" variant="heading-strong-xl" align="center">
-        {work.title}
+
+      {/* Recent Work */}
+      <Heading marginBottom="4" variant="heading-strong-xl" align="center">
+        Recent Work
       </Heading>
-      <Projects />
+      <Text
+        align="center"
+        onBackground="neutral-weak"
+        variant="body-default-m"
+        marginBottom="xl"
+      >
+        Products built end-to-end — from problem definition to shipped code.
+      </Text>
+      <Projects exclude={EARLIER_SLUGS} />
+
+      {/* Earlier Work */}
+      <Heading marginTop="xl" marginBottom="4" variant="heading-strong-l" align="center">
+        Earlier Work
+      </Heading>
+      <Text
+        align="center"
+        onBackground="neutral-weak"
+        variant="body-default-m"
+        marginBottom="xl"
+      >
+        Learning projects from the development bootcamp — included for technical breadth.
+      </Text>
+      <Projects exclude={RECENT_SLUGS} />
     </Column>
   );
 }

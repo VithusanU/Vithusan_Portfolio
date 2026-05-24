@@ -59,12 +59,28 @@ drivn removes the decision entirely. One recommended task. Always ready. No fold
 - **Error Monitoring:** Sentry
 - **Deployment:** Vercel (PWA-ready)
 
-## Product Metrics
+## Metrics & What They Taught Me
 
-Since launch, drivn has onboarded **10 users**, with **41 tasks created** and a **38% task completion rate** — a meaningful baseline for a v1 product shipped with zero marketing spend.
+**The hypothesis going in:** removing the decision of *what to do* from the task manager experience would increase task completion compared to list-based alternatives.
+
+**v1 results — zero marketing spend:**
+
+| Metric | Result |
+|---|---|
+| Users onboarded (week 1) | 10 |
+| Tasks created | 41 |
+| Task completion rate | 38% |
+| Highest-engagement feature | Habit tracking |
+| Lowest-completion feature | Focus timer |
+
+**What 38% actually means:** It isn't a headline win, but it's a real signal for a v1 with no onboarding optimization. More useful was the pattern *within* the data — habit tracking had significantly higher engagement than task completion, and the focus timer was opened regularly but rarely completed to the end.
+
+That pointed to two things: users responded to the accountability structure (streaks, daily habits), but the task-to-completion loop still had friction — likely in the focus session experience itself.
+
+**What I'd test next:** Simplify the focus timer to a single-tap start with no configuration, A/B test the default session length, and measure whether users who complete a focus session in their first three days have higher 7-day retention. The hypothesis is that the timer is being abandoned mid-session, not ignored — and that reducing the setup friction would directly improve completion rates.
 
 ## Learnings
 
-Building drivn reinforced the value of aggressive scope reduction. The first instinct was to build a full project management tool. The real insight — that the core job-to-be-done was *starting*, not *planning* — led to the Next Best Action concept, which became the entire product identity.
+The most important product decision on drivn was a cut, not a build. The first version had categories, subtasks, project groupings, tags, and three view modes. None of it shipped. Staying anchored to the core job-to-be-done — *help the user start the highest-priority thing* — made every scope decision easier. If a feature didn't serve that moment, it wasn't v1.
 
 [Read the full PRD →](/blog/drivn-prd)
