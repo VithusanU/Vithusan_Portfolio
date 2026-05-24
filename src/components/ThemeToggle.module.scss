@@ -1,23 +1,10 @@
-.swatch {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background-color: var(--swatch-color);
-  border: 1.5px solid rgba(128, 128, 128, 0.35);
-  cursor: pointer;
-  padding: 0;
-  flex-shrink: 0;
-  transition: transform 0.15s ease, outline-offset 0.15s ease, outline-color 0.15s ease;
-  outline: 2px solid transparent;
-  outline-offset: 3px;
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &:hover {
-    transform: scale(1.2);
-    outline-color: rgba(128, 128, 128, 0.4);
-  }
-
-  &.active {
-    transform: scale(1.15);
-    outline-color: rgba(128, 128, 128, 0.7);
+  svg {
+    width: 1em;
+    height: 1em;
   }
 }
