@@ -82,19 +82,17 @@ export default async function RootLayout({
                     return themeValue;
                   };
                   
-                  // Apply saved theme
+                  // Clear any stale style overrides from previous theme experiments
+                  const styleKeys = Object.keys(config);
+                  styleKeys.forEach(key => {
+                    localStorage.removeItem('data-' + key);
+                  });
+                  localStorage.removeItem('portfolio-theme-preset');
+
+                  // Apply saved light/dark preference only
                   const savedTheme = localStorage.getItem('data-theme');
                   const resolvedTheme = resolveTheme(savedTheme);
                   root.setAttribute('data-theme', resolvedTheme);
-                  
-                  // Apply any saved style overrides
-                  const styleKeys = Object.keys(config);
-                  styleKeys.forEach(key => {
-                    const value = localStorage.getItem('data-' + key);
-                    if (value) {
-                      root.setAttribute('data-' + key, value);
-                    }
-                  });
                 } catch (e) {
                   console.error('Failed to initialize theme:', e);
                   document.documentElement.setAttribute('data-theme', 'dark');
