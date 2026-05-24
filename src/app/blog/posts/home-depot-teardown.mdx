@@ -1,0 +1,61 @@
+---
+title: "Home Depot's App Has One Job. It Doesn't Do It."
+publishedAt: "2026-03-18"
+summary: "The Home Depot app is opened by millions of people standing in a Home Depot store. That single use case should drive every product decision. It doesn't."
+tag: "Product"
+---
+
+## Where People Actually Use This App
+
+Before talking about what Home Depot's app does wrong, it's worth being specific about *when* people open it.
+
+Most retail apps are opened at home — browsing, researching, buying. Home Depot's app is opened in a Home Depot store, standing in an aisle, trying to find something specific. That's the dominant use case. I know this partly from my own experience, and partly because it's obvious: Home Depot's physical stores are enormous (often over 100,000 sq ft), and the product catalog is in the hundreds of thousands of SKUs. Navigating that without help is genuinely difficult.
+
+The primary job-to-be-done for the Home Depot app is: **help me find the thing I came to get.**
+
+The app doesn't do this well. Everything else is secondary.
+
+## The In-Store Navigation Problem
+
+Home Depot has aisle and bay location data for every product in every store. This information is surfaced in the app when you look up a specific product — it will say "Aisle 14, Bay 003" for a particular item. This part works.
+
+What doesn't work:
+
+**Search quality for natural language queries.** Search "drill bit for ceramic tile" and you'll get a results page that mixes diamond hole saws, regular drill bits, tile saws, and a few completely irrelevant products. For a professional contractor who knows exactly what a "diamond core bit" is, this is fine. For the weekend DIYer — a segment that makes up a significant portion of Home Depot's customer base — it's not helpful.
+
+There's no guided search that asks *"What are you drilling through? What size hole do you need?"* and narrows results accordingly. The filtering system is powerful on paper but assumes product category knowledge that most DIY shoppers don't have.
+
+**No store map.** Aisle 14 in a 120,000 sq ft store is not immediately obvious. The app tells you the aisle number but doesn't show you where that aisle is or the fastest path to it from your current location. Some competitors and third-party apps have solved this. Home Depot hasn't.
+
+## The Pro/DIY Split
+
+Home Depot serves two fundamentally different users:
+
+**The Pro** — a contractor, electrician, or plumber. They know exactly what they need by SKU. They buy in volume. They're often on a job site timeline. They use the Pro app features, business accounts, and volume pricing.
+
+**The DIYer** — a homeowner fixing something around the house. They often don't know the technical name for what they need. They're searching by symptom ("my toilet keeps running") not product category ("flapper valve"). They need guidance.
+
+The current app mostly serves the Pro. The search results, product pages, and filtering assume a level of product knowledge that the DIY customer doesn't have. The Pro is a high-value segment worth protecting. But the DIY market is enormous, and this app creates unnecessary friction for them at every step.
+
+The opportunity is not to build two separate apps. It's to build a single app that adapts to context — detecting purchase history patterns and adjusting the experience accordingly. A user who has bought professional-grade materials six times probably doesn't need guided search. A user making their first purchase in the plumbing category probably does.
+
+## What I'd Prioritize
+
+**1. Guided search for DIY queries.** A symptom-based search mode — "What are you trying to fix?" — that walks the user through a short decision tree and surfaces the right product with confidence. This reduces search abandonment and the frustration of arriving at the wrong aisle.
+
+**2. In-store wayfinding.** Take the aisle/bay data that already exists and display it on a store map. If GPS-accurate indoor navigation is out of scope for v1, even a static store layout image with the relevant aisle highlighted would be meaningfully better than "Aisle 14" with no context.
+
+**3. Project mode.** Most Home Depot visits are part of a project — a bathroom renovation, a deck build, a fence repair. A "project" container in the app that holds a shopping list, past purchases for that project, how-to guides, and estimated costs would create significant retention and session depth. It also shifts the app from a transactional tool to a project companion.
+
+## What I'd Measure
+
+- **Search-to-product page conversion** — what % of searches result in a product page visit?
+- **Search abandonment rate by query type** — are natural language queries abandoning at higher rates than exact-match searches?
+- **In-store app opens vs. online-only sessions** — understanding the split helps prioritize the in-store experience correctly
+- **Project feature retention** — do users who create a project have higher 90-day return rates?
+
+## The Bigger Point
+
+Home Depot's physical stores are the product. The app exists to make the physical store experience better. When the product brief starts there — "how do we make the 60 minutes a customer spends in our store more successful?" — the priorities become obvious: search, wayfinding, project context.
+
+Right now the app feels like it was built to serve the website's use cases and then carried into the store context. The two experiences are meaningfully different, and the store experience deserves its own purpose-built feature set.
