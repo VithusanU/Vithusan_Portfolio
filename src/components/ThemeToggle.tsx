@@ -127,7 +127,7 @@ export const ThemeToggle: React.FC = () => {
   if (!mounted) return null;
 
   return (
-    <Row gap="6" vertical="center">
+    <Row gap="4" vertical="center">
       {THEMES.map((t) => (
         <button
           key={t.id}
