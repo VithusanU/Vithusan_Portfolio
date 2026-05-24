@@ -18,8 +18,8 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
       href={`/blog/${post.slug}`}
       transition="micro-medium"
       direction={direction}
-      border="transparent"
-      background="transparent"
+      border="neutral-alpha-weak"
+      background="surface"
       padding="4"
       radius="l-4"
       gap={direction === "column" ? undefined : "24"}
