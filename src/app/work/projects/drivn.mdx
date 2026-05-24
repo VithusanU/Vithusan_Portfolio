@@ -1,0 +1,68 @@
+---
+title: "drivn — A Next Best Action Productivity App"
+publishedAt: "2025-05-01"
+summary: "A full-stack productivity PWA that eliminates decision fatigue by always surfacing the one task you should do right now."
+images:
+  - "/images/gallery/DrivnVideo.mp4"
+  - "/images/gallery/drivn-dashboard.jpg"
+  - "/images/gallery/drivn-admin.jpg"
+  - "/images/gallery/drivn-habits.jpg"
+  - "/images/gallery/drivn-onboarding.jpg"
+  - "/images/gallery/drivn-summary.jpg"
+team:
+  - name: "Vithusan Uruthirakumaran"
+    role: "Product Manager & Developer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/vithusan-uruthirakumaran-00b3b91b9/"
+---
+
+## Overview
+
+Most productivity apps help you plan. drivn helps you **start**.
+
+The insight behind drivn is simple: people already know what needs doing. The problem is deciding what to do *right now*. drivn eliminates that friction with a **Next Best Action engine** — an algorithm that ranks your tasks by urgency, due date, and recency, then surfaces exactly one thing to focus on.
+
+[Live App →](https://getdrivn.app) &nbsp;|&nbsp; [View on GitHub →](https://github.com/VithusanU/drivn)
+
+## Interactive Wireframe
+
+Tap the screen tabs to explore the three core screens — Home, Focus session, and Summary. The Home screen is fully interactive: mark tasks done, skip to the next best action, and toggle habits.
+
+<iframe src="/wireframes/drivn-wireframe.html" width="100%" height="820" style={{border:"none",borderRadius:"16px",overflow:"hidden"}} title="Drivn interactive wireframe" loading="lazy" />
+
+## The Problem
+
+Decision fatigue is real. Traditional to-do apps present endless lists, nested folders, and tagging systems. The overhead of maintaining the system often outweighs the benefit of using it. Users open their task manager, spend five minutes deciding what to work on — then close it without starting anything.
+
+## The Solution
+
+drivn removes the decision entirely. One recommended task. Always ready. No folders, no tags, no system to maintain.
+
+## Key Features
+
+- **Next Best Action Engine** — Ranks tasks by urgency, due date, and recency. Surfaces one task at a time.
+- **Habit Tracking** — Daily habits with streaks, two priority tiers (essential vs. nice-to-have), and visual progress tracking.
+- **Focus Sessions** — Distraction-free timers for deep work.
+- **Momentum Tracking** — Daily streaks and calendar heatmaps to visualize consistency.
+- **Web Push Notifications** — Daily reminders to keep users on track.
+- **Admin Dashboard** — Real-time growth metrics, product analytics via PostHog, and error monitoring via Sentry.
+- **Interactive Onboarding** — Guided first-run experience to reduce drop-off.
+
+## Tech Stack
+
+- **Frontend:** Next.js 14, TypeScript, Tailwind CSS, Framer Motion
+- **State Management:** Zustand
+- **Backend & Auth:** Supabase (PostgreSQL)
+- **Analytics:** PostHog (events & funnels)
+- **Error Monitoring:** Sentry
+- **Deployment:** Vercel (PWA-ready)
+
+## Product Metrics
+
+Since launch, drivn has onboarded **10 users**, with **41 tasks created** and a **38% task completion rate** — a meaningful baseline for a v1 product shipped with zero marketing spend.
+
+## Learnings
+
+Building drivn reinforced the value of aggressive scope reduction. The first instinct was to build a full project management tool. The real insight — that the core job-to-be-done was *starting*, not *planning* — led to the Next Best Action concept, which became the entire product identity.
+
+[Read the full PRD →](/blog/drivn-prd)

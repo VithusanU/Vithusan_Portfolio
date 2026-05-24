@@ -1,0 +1,58 @@
+---
+title: "PM Career Ops — Job Application OS"
+publishedAt: "2025-04-30"
+summary: "A full-stack job application tracker built to replace spreadsheets — with a live pipeline, AI-powered job import, ATS keyword extraction, and a curated PM resources hub."
+images: []
+team:
+  - name: "Vithusan Uruthirakumaran"
+    role: "Product Manager & Developer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/vithusan-uruthirakumaran-00b3b91b9/"
+link: "https://pm-career-ops.vercel.app"
+---
+
+## Overview
+
+PM Career Ops is a full-stack job application tracker I built to replace the chaotic spreadsheet-and-sticky-note system most job seekers rely on. It treats the job search like a product problem — a pipeline that needs stages, metrics, and the right tooling to run efficiently.
+
+[Live App →](https://pm-career-ops.vercel.app) &nbsp;|&nbsp; [View on GitHub →](https://github.com/VithusanU/pm-career-ops)
+
+## The Problem
+
+The PM job search is high-volume and high-stakes. At any given point you're tracking 30+ applications across different stages, companies, contacts, and follow-up deadlines — while simultaneously prepping for phone screens, practicing case studies, and managing outreach. A spreadsheet works until it doesn't. It stops working fast.
+
+The core issues with spreadsheets:
+- No visibility into what stage each application is in at a glance
+- No reminder or next-action system — things fall through the cracks
+- No way to capture ATS keywords per role to align your resume
+- No single place for contact info, recruiter names, and job post links
+- No signal on which applications are worth the most energy
+
+## The Solution
+
+A purpose-built application OS. Everything in one place — a visual pipeline by stage, fit scoring, ATS keyword tracking per role, contact management, and a next-action system so nothing slips.
+
+## Key Features
+
+- **AI-Powered Job Import** — Paste any job posting URL and the app auto-extracts company, role, ATS keywords, and description notes. Uses JSON-LD structured data, OpenGraph tags, and a Jina AI headless-browser fallback to bypass bot protection on sites like LinkedIn and Indeed.
+- **Application Pipeline** — Track every role across 8 stages: Researching → Applied → Phone Screen → Interview → Final Round → Offer → Rejected / Withdrawn.
+- **ATS Keyword Tracker** — Stores the PM-relevant keywords found in each job description so you know exactly what to mirror on your resume and in your answers.
+- **Fit Scoring (1–100)** — Score each role by fit to prioritize where to focus your energy and prep time.
+- **Next Action System** — Every application holds a next step and a date, so the tracker tells you what needs to happen and when.
+- **Contact Tracking** — Recruiter and hiring manager details linked per application.
+- **PM Resources Hub** — A curated library of PM interview frameworks, case study prep guides, and the exact job boards where PM hiring managers actually source candidates.
+
+## Tech Stack
+
+- **Frontend:** Next.js 14, TypeScript, Tailwind CSS
+- **Backend & Auth:** Supabase (PostgreSQL + Row-Level Security + Google OAuth)
+- **AI Integration:** Server-side HTML scraping (JSON-LD, OpenGraph, title fallback) with Jina AI bypass for bot-protected pages
+- **Deployment:** Vercel
+
+## What I Learned
+
+Building PM Career Ops compressed a lot of real product decisions into a small surface area. The job import feature alone went through four iterations — direct scrape, bot detection, Jina fallback, and URL-slug extraction — because every new site revealed a new failure mode. That's the same iterative loop you run on any product feature, just with a faster feedback cycle.
+
+The most interesting moment was realizing the ATS keyword extraction wasn't just a nice-to-have — it's the core job-to-be-done for a PM searching at scale. That reframing changed the information architecture of the whole app.
+
+[Read the full story behind it →](/blog/pm-career-ops)

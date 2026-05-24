@@ -1,0 +1,76 @@
+---
+title: "Why I Built a Tool to Run My Own PM Job Search"
+publishedAt: "2026-05-24"
+summary: "My spreadsheet was failing me. So I built PM Career Ops — a full-stack job tracker with an AI-powered import, ATS keyword extraction, and a proper pipeline. Here's the honest story of why, what I learned, and what I'd do differently."
+tag: "Building"
+---
+
+## The Spreadsheet Was Lying to Me
+
+I had a Google Sheet. Columns for company, role, stage, applied date, recruiter name, follow-up date. It looked organized. It wasn't.
+
+By week three of my job search I had 25 rows, three different stage naming conventions I'd invented on different days, a contact column that was half-empty, and zero idea which applications I was actually supposed to be following up on. The sheet tracked the past — it did nothing for what was next.
+
+I kept adding columns. A notes column. A "why I'm interested" column. A priority column I never updated. The spreadsheet became a graveyard of good intentions.
+
+At some point I stopped asking "why doesn't a good tool for this exist" and started asking a more useful question: what would I actually build?
+
+## Treating the Job Search Like a Product
+
+The PM job search is, structurally, a pipeline problem. You have inputs (applications), stages (Researching → Applied → Phone Screen → Interview → Final Round → Offer), and a conversion rate you're trying to optimize. Every PM knows how to think about a pipeline. Almost no one applies that thinking to their own job search.
+
+That reframe changed everything. A pipeline needs:
+- **Visibility** into what's at each stage right now
+- **A next action** on every open deal
+- **A way to prioritize** — not all applications deserve the same energy
+- **Signal** — what keywords are companies asking for, who did you talk to, what's the follow-up date
+
+That's the product brief. Build it.
+
+## Efficiency: Killing the Manual Work
+
+The most tedious part of tracking applications is data entry. Every new role means copying a job title, a company name, a URL, a source, keywords from the JD into however many columns you've decided exist this week.
+
+The first feature I built after the basic CRUD was the URL import. Paste a link, get the form pre-filled. Company, role, source, ATS keywords extracted from the job description — all done.
+
+It sounds simple. It wasn't. LinkedIn blocks server-side requests. Indeed serves Cloudflare challenges. Workday varies by company. Building reliable extraction across dozens of ATS platforms turned into a real engineering problem: JSON-LD structured data parsing, OpenGraph tag fallback, page title heuristics, URL slug extraction, and ultimately a Jina AI headless-browser fallback for bot-protected pages.
+
+But the user experience at the end is: paste a URL, click Import, review a pre-filled form, save. That's the job. The complexity is invisible — which is exactly the point.
+
+## Building the Pipeline
+
+The pipeline view solves something a spreadsheet genuinely can't: **spatial awareness**. When you can see that you have 12 applications in "Researching" and zero in "Final Round," that's information. When you can filter to see only "Phone Screen" roles and sort by score, that's a decision-making tool, not just a record.
+
+The stage-change dropdown directly in the table row was a deliberate UX decision. The friction of opening a form to move a stage is the friction that causes people to stop updating their tracker. One click. The row updates instantly. That's it.
+
+The fit score (1–100) was the feature I debated most. It feels arbitrary — how do you score a job? But in practice it's the most useful filter. When you have 40 applications and three days to prep for interviews, you need to know which three deserve your full energy. A score forces the decision. Even an imperfect one is better than treating every application as equally important.
+
+## The Learning Experience
+
+I built PM Career Ops on the same stack as my main project, drivn — Next.js, TypeScript, Supabase, Vercel. But the problems were different enough that it pushed me into new territory.
+
+**Google OAuth with PKCE.** The Supabase auth flow for OAuth seems simple until you hit the edge cases: cookie encoding for non-ASCII characters in Google profile metadata, BOM characters injected by PowerShell into environment variables, x-forwarded-host headers on Vercel edge functions. Each one of these is a bug that looks like a deployment misconfiguration until you understand what's actually happening. I understand it now.
+
+**Server-side scraping at scale.** The job import feature taught me more about how the web actually works than any tutorial. Robots, bot-protection layers, structured data standards, HTML entity encoding, URL parsing — real practical stuff that doesn't show up in courses.
+
+**Row-Level Security.** Supabase's RLS is genuinely elegant once you understand it. Every row in the applications table is locked to a user ID. The security model is enforced at the database layer, not the API layer. That's the right architecture, and understanding why took building something that uses it for real data.
+
+Every one of these problems had a moment where the error message made no sense, the documentation didn't cover my case, and I had to reason through what was actually happening. That's the learning. Not the syntax — the debugging mindset.
+
+## What I'd Do Differently
+
+**Bookmarklet first.** The URL import works well for most ATS platforms, but LinkedIn and Indeed block server-side requests by design. I built a bookmarklet (a browser bookmark that extracts job data from the live page and opens the app with a pre-filled form) — but I should have built that first, not last. It's the most reliable method for the two sites that matter most.
+
+**Job scoring earlier.** I added the fit score as an afterthought. If I'd made it prominent from the start — and built UI that encouraged scoring every application — I'd have a much richer dataset to reason about.
+
+**More opinionated defaults.** The "Next Action" field is free text, which means sometimes it has useful notes and sometimes it has nothing. A small set of default options ("Follow up via LinkedIn", "Prepare case study", "Send thank you note") would have made the field more consistently useful.
+
+## Why It's Worth Having in a Portfolio
+
+Most PM candidates show business cases, mock PRDs, and strategy decks. Those are important. But a PM who ships a product — identifies a real pain, makes product decisions, builds, iterates, and deploys — has demonstrated something different.
+
+The job import feature alone went through four distinct iterations because each new site revealed a new failure mode. That's not a tutorial exercise. That's how real product development works: you ship something, reality pushes back, you figure out why, and you make it better.
+
+PM Career Ops is live at [pm-career-ops.vercel.app](https://pm-career-ops.vercel.app). I use it every day.
+
+[View the project →](/work/pm-career-ops)
