@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM Career Ops — Interactive Wireframe</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+:root {
+  --brand:       #0ea5e9;
+  --brand-dim:   rgba(14,165,233,0.14);
+  --brand-ring:  rgba(14,165,233,0.28);
+  --bg:          #0d0d14;
+  --surface:     #111118;
+  --card:        #1a1a26;
+  --border:      rgba(255,255,255,0.08);
+  --text:        rgba(255,255,255,0.92);
+  --text-dim:    rgba(255,255,255,0.42);
+  --text-faint:  rgba(255,255,255,0.18);
+  --radius-lg:   20px;
+  --font:        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px 16px;font-family:var(--font)}
+
+.wrap{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;max-width:860px;background:var(--surface);border-radius:var(--radius-lg);padding:16px 0}
+
+/* Screen tabs */
+.screen-tabs{display:flex;gap:8px;justify-content:center;padding:0 16px;flex-wrap:wrap}
+.stab{padding:6px 16px;border-radius:20px;border:0.5px solid var(--border);background:transparent;font-size:12px;color:var(--text-dim);cursor:pointer;font-family:var(--font);transition:all .15s}
+.stab.sel{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:500}
+.screen-container{display:none;width:100%}
+.screen-container.visible{display:block}
+
+/* Browser chrome */
+.browser{width:100%;border-radius:14px;border:1.5px solid var(--border);overflow:hidden;background:var(--bg)}
+.browser-chrome{display:flex;align-items:center;gap:8px;padding:8px 14px;background:#16161f;border-bottom:1px solid var(--border)}
+.dots{display:flex;gap:5px}
+.dot{width:9px;height:9px;border-radius:50%}
+.dot-r{background:rgba(255,80,80,.55)}.dot-y{background:rgba(255,185,60,.55)}.dot-g{background:rgba(40,200,100,.55)}
+.url-bar{flex:1;text-align:center;font-size:11px;color:var(--text-faint);background:rgba(255,255,255,0.04);border-radius:6px;padding:3px 10px;margin:0 8px}
+
+/* App shell */
+.app-shell{display:flex;height:610px}
+
+/* Sidebar */
+.sidebar{width:176px;flex-shrink:0;background:#0e0e1a;border-right:1px solid var(--border);display:flex;flex-direction:column;padding:14px 0}
+.logo{display:flex;align-items:center;gap:9px;padding:0 14px 14px;border-bottom:1px solid var(--border);margin-bottom:10px}
+.logo-box{width:28px;height:28px;background:var(--brand);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.logo-box i{font-size:15px;color:#fff}
+.logo-name{font-size:13px;font-weight:600;color:var(--text)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:8px 14px;cursor:pointer;transition:background .1s}
+.nav-link.active{background:var(--brand-dim);border-right:2px solid var(--brand)}
+.nav-link i{font-size:16px;color:var(--text-dim)}
+.nav-link.active i{color:var(--brand)}
+.nav-link span{font-size:12px;color:var(--text-dim)}
+.nav-link.active span{color:var(--brand);font-weight:500}
+.sidebar-foot{margin-top:auto;padding:12px 14px;border-top:1px solid var(--border)}
+.theme-row{display:flex;align-items:center;justify-content:space-between}
+.theme-lbl{font-size:11px;color:var(--text-faint)}
+.toggle{width:28px;height:16px;border-radius:8px;background:rgba(255,255,255,0.1);position:relative}
+.toggle::after{content:'';width:12px;height:12px;background:rgba(255,255,255,.4);border-radius:50%;position:absolute;top:2px;left:2px}
+
+/* Main content */
+.main{flex:1;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.page-hd{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 10px;border-bottom:1px solid var(--border);flex-shrink:0}
+.page-title{font-size:15px;font-weight:600;color:var(--text)}
+.page-sub{font-size:11px;color:var(--text-dim);margin-top:2px}
+.btn-import{display:flex;align-items:center;gap:6px;padding:7px 13px;background:var(--brand);border:none;border-radius:8px;font-size:12px;font-weight:500;color:#fff;cursor:pointer;font-family:var(--font);white-space:nowrap}
+.btn-import i{font-size:13px}
+
+/* KPI row */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px 18px;flex-shrink:0}
+.kpi{background:var(--card);border-radius:10px;padding:10px 12px;border:0.5px solid var(--border)}
+.kpi-n{font-size:22px;font-weight:700;color:var(--text);line-height:1}
+.kpi-l{font-size:10px;color:var(--text-dim);margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.kpi.hi .kpi-n{color:var(--brand)}
+
+/* Filters */
+.filters{display:flex;gap:6px;padding:0 18px 10px;flex-shrink:0;flex-wrap:wrap;align-items:center}
+.fpill{padding:4px 10px;border-radius:20px;font-size:11px;border:0.5px solid var(--border);color:var(--text-dim);cursor:pointer;background:transparent;font-family:var(--font)}
+.fpill.on{background:var(--brand-dim);border-color:var(--brand-ring);color:var(--brand);font-weight:500}
+.fsep{width:1px;height:14px;background:var(--border)}
+
+/* Table */
+.tbl-wrap{flex:1;overflow-y:auto;padding:0 18px 12px}
+.tbl-wrap::-webkit-scrollbar{width:4px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead th{text-align:left;padding:7px 8px;color:var(--text-faint);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border);white-space:nowrap}
+tbody tr{border-bottom:.5px solid rgba(255,255,255,.04);cursor:pointer;transition:background .1s}
+tbody tr:hover{background:rgba(255,255,255,.03)}
+td{padding:9px 8px;color:var(--text);vertical-align:middle}
+.co-n{font-size:12px;font-weight:500;color:var(--text)}
+.co-r{font-size:11px;color:var(--text-dim);margin-top:1px}
+
+/* Badges */
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:500;white-space:nowrap}
+.b-research{background:rgba(100,116,139,.2);color:#94a3b8}
+.b-applied{background:rgba(14,165,233,.14);color:#7dd3fc}
+.b-phone{background:rgba(234,179,8,.14);color:#fde047}
+.b-interview{background:rgba(168,85,247,.14);color:#d8b4fe}
+.b-final{background:rgba(99,102,241,.14);color:#a5b4fc}
+.b-offer{background:rgba(34,197,94,.14);color:#86efac}
+.b-ph{background:rgba(239,68,68,.14);color:#fca5a5;border:.5px solid rgba(239,68,68,.25)}
+.b-pm{background:rgba(234,179,8,.14);color:#fde047;border:.5px solid rgba(234,179,8,.25)}
+.b-pl{background:rgba(100,116,139,.2);color:#94a3b8;border:.5px solid rgba(100,116,139,.3)}
+
+/* Fit score */
+.fit{display:inline-flex;align-items:center;justify-content:center;width:32px;height:20px;border-radius:6px;font-size:11px;font-weight:700}
+.fit-h{background:rgba(34,197,94,.14);color:#86efac}
+.fit-m{background:rgba(234,179,8,.12);color:#fde047}
+.fit-l{background:rgba(239,68,68,.12);color:#fca5a5}
+
+/* Keyword chips */
+.kw{display:inline-flex;align-items:center;padding:2px 7px;border-radius:4px;font-size:10px;background:rgba(14,165,233,.1);color:rgba(14,165,233,.85);margin-right:3px;white-space:nowrap}
+.na-txt{font-size:11px;color:var(--text-dim)}
+.na-dt{font-size:10px;color:var(--text-faint);margin-top:1px}
+
+/* ── IMPORT MODAL ─────────────────────────────── */
+.overlay{background:rgba(0,0,0,.62);display:flex;align-items:center;justify-content:center;height:610px}
+.modal{background:var(--card);border-radius:16px;border:1px solid rgba(255,255,255,.12);padding:22px;width:470px}
+.modal-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px}
+.modal-sub{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.field-lbl{font-size:10px;font-weight:600;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.url-row{display:flex;gap:8px;margin-bottom:14px}
+.url-in{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--text);font-family:var(--font)}
+.btn-extract{padding:8px 14px;background:var(--brand);border:none;border-radius:8px;font-size:12px;font-weight:500;color:#fff;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:5px;white-space:nowrap}
+.extracted{display:flex;align-items:center;gap:7px;padding:8px 12px;background:rgba(34,197,94,.1);border:.5px solid rgba(34,197,94,.22);border-radius:8px;margin-bottom:14px;font-size:11px;color:#86efac}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.f-in{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:7px 10px;font-size:12px;color:var(--text);font-family:var(--font);width:100%}
+.kw-box{display:flex;flex-wrap:wrap;gap:5px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:9px;margin-bottom:12px;min-height:42px}
+.kw-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11px;background:rgba(14,165,233,.12);color:#7dd3fc;border:.5px solid rgba(14,165,233,.2)}
+.kw-tag i{font-size:9px;opacity:.45}
+.modal-foot{display:flex;justify-content:flex-end;gap:8px}
+.btn-cancel{padding:8px 14px;background:transparent;border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:12px;color:var(--text-dim);cursor:pointer;font-family:var(--font)}
+.btn-save{padding:8px 18px;background:var(--brand);border:none;border-radius:8px;font-size:12px;font-weight:500;color:#fff;cursor:pointer;font-family:var(--font)}
+
+/* ── DETAIL MODAL ─────────────────────────────── */
+.detail-card{background:var(--card);border-radius:16px;border:1px solid rgba(255,255,255,.12);padding:22px;width:500px}
+.detail-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.detail-co{font-size:17px;font-weight:700;color:var(--text)}
+.detail-role{font-size:12px;color:var(--text-dim);margin-top:3px}
+.detail-link{font-size:11px;color:var(--brand);display:flex;align-items:center;gap:4px;margin-top:5px}
+.score-big{font-size:30px;font-weight:800;color:#86efac;line-height:1}
+.score-lbl{font-size:10px;color:var(--text-faint);margin-top:2px;text-align:right}
+.badges-row{display:flex;gap:6px;align-items:center;margin-bottom:14px}
+.detail-sec-lbl{font-size:10px;font-weight:600;color:var(--text-faint);text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px;margin-top:13px}
+.kw-grid{display:flex;flex-wrap:wrap;gap:5px}
+.notes-box{background:rgba(255,255,255,.03);border:.5px solid var(--border);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--text-dim);line-height:1.5}
+.next-box{display:flex;align-items:center;gap:9px;background:rgba(14,165,233,.08);border:.5px solid rgba(14,165,233,.2);border-radius:8px;padding:9px 12px}
+.next-box i{font-size:16px;color:var(--brand);flex-shrink:0}
+.next-box-txt{flex:1;font-size:12px;color:var(--text)}
+.next-box-dt{font-size:11px;color:var(--text-dim);white-space:nowrap}
+.detail-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
+.btn-back{padding:7px 14px;background:transparent;border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:12px;color:var(--text-dim);cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:5px}
+.btn-move{display:flex;align-items:center;gap:6px;padding:7px 14px;background:var(--brand-dim);border:.5px solid var(--brand-ring);border-radius:8px;font-size:12px;color:var(--brand);cursor:pointer}
+
+/* ── DASHBOARD / PRIORITIZE FRAMEWORK ────────────── */
+.dash-body{flex:1;overflow-y:auto;padding:14px 18px 14px;display:flex;flex-direction:column;gap:14px}
+.dash-body::-webkit-scrollbar{width:4px}
+.dash-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px}
+.section-lbl{font-size:10px;font-weight:600;color:var(--text-faint);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px}
+
+/* Framework criteria cards */
+.fw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.fw-card{background:var(--card);border:0.5px solid var(--border);border-radius:10px;padding:10px 12px}
+.fw-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
+.fw-card-name{font-size:11px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:6px}
+.fw-card-name i{font-size:13px;color:var(--brand)}
+.fw-weight{font-size:11px;font-weight:700;color:var(--brand)}
+.fw-desc{font-size:10px;color:var(--text-dim);line-height:1.5}
+.fw-bullets{list-style:none;margin-top:5px;display:flex;flex-direction:column;gap:2px}
+.fw-bullets li{font-size:9.5px;color:var(--text-faint);display:flex;align-items:center;gap:4px}
+.fw-bullets li::before{content:'›';color:var(--brand);font-size:11px}
+
+/* Score breakdown */
+.sb-wrap{background:var(--card);border:0.5px solid var(--border);border-radius:10px;padding:12px 14px}
+.sb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.sb-co{font-size:12px;font-weight:600;color:var(--text)}
+.sb-co-role{font-size:10px;color:var(--text-dim);margin-top:1px}
+.sb-score-big{font-size:26px;font-weight:800;color:#86efac;line-height:1;text-align:right}
+.sb-score-lbl{font-size:9px;color:var(--text-faint);text-align:right;margin-top:1px}
+.sb-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.sb-label{font-size:10px;color:var(--text-dim);width:120px;flex-shrink:0}
+.sb-bar-bg{flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden}
+.sb-bar{height:100%;border-radius:3px}
+.sb-bar.role{background:linear-gradient(90deg,#0ea5e9,#38bdf8)}
+.sb-bar.stage{background:linear-gradient(90deg,#a78bfa,#c4b5fd)}
+.sb-bar.growth{background:linear-gradient(90deg,#34d399,#86efac)}
+.sb-bar.logistics{background:linear-gradient(90deg,#fb923c,#fdba74)}
+.sb-val{font-size:10px;color:var(--text-dim);width:36px;text-align:right;flex-shrink:0}
+
+/* Stage snapshot */
+.snap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.snap-card{background:var(--card);border:0.5px solid var(--border);border-radius:10px;padding:9px 11px;display:flex;flex-direction:column;gap:4px}
+.snap-num{font-size:20px;font-weight:700;color:var(--text);line-height:1}
+.snap-stage{font-size:10px;color:var(--text-dim)}
+.snap-tag{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:500;margin-top:2px}
+.snap-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.snap-card.urgent .snap-num{color:#fde047}
+.snap-card.hot .snap-num{color:#86efac}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="screen-tabs">
+    <button class="stab sel" onclick="show('pipeline')">Pipeline</button>
+    <button class="stab" onclick="show('import')">Job Import</button>
+    <button class="stab" onclick="show('detail')">App Detail</button>
+    <button class="stab" onclick="show('dashboard')">How I Prioritize</button>
+  </div>
+
+  <!-- ── PIPELINE ───────────────────────────────────── -->
+  <div id="sc-pipeline" class="screen-container visible">
+    <div class="browser">
+      <div class="browser-chrome">
+        <div class="dots"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+        <div class="url-bar">pm-career-ops.vercel.app/pipeline</div>
+        <i class="ti ti-refresh" style="font-size:13px;color:var(--text-faint)"></i>
+      </div>
+      <div class="app-shell">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="logo">
+            <div class="logo-box"><i class="ti ti-briefcase"></i></div>
+            <span class="logo-name">PM Career Ops</span>
+          </div>
+          <div class="nav-link"><i class="ti ti-home"></i><span>Dashboard</span></div>
+          <div class="nav-link active"><i class="ti ti-git-branch"></i><span>Pipeline</span></div>
+          <div class="nav-link"><i class="ti ti-building"></i><span>Companies</span></div>
+          <div class="nav-link"><i class="ti ti-books"></i><span>Resources</span></div>
+          <div class="nav-link"><i class="ti ti-users"></i><span>Network</span></div>
+          <div class="nav-link"><i class="ti ti-pencil"></i><span>Content</span></div>
+          <div class="sidebar-foot">
+            <div class="theme-row"><span class="theme-lbl">Theme</span><div class="toggle"></div></div>
+          </div>
+        </div>
+        <!-- Main -->
+        <div class="main">
+          <div class="page-hd">
+            <div>
+              <div class="page-title">Pipeline</div>
+              <div class="page-sub">47 applications tracked · sorted by fit score</div>
+            </div>
+            <button class="btn-import" onclick="show('import')"><i class="ti ti-plus"></i> Import Job</button>
+          </div>
+          <div class="kpi-row">
+            <div class="kpi"><div class="kpi-n">47</div><div class="kpi-l">Total Apps</div></div>
+            <div class="kpi hi"><div class="kpi-n">23</div><div class="kpi-l">Active</div></div>
+            <div class="kpi"><div class="kpi-n">4</div><div class="kpi-l">Interviews</div></div>
+            <div class="kpi"><div class="kpi-n">74</div><div class="kpi-l">Avg Fit Score</div></div>
+          </div>
+          <div class="filters">
+            <button class="fpill on">All (47)</button>
+            <button class="fpill">Applied (18)</button>
+            <button class="fpill">Phone Screen (5)</button>
+            <button class="fpill">Interview (4)</button>
+            <button class="fpill">Offer (1)</button>
+            <div class="fsep"></div>
+            <button class="fpill" style="display:flex;align-items:center;gap:4px"><i class="ti ti-arrows-sort" style="font-size:11px"></i> Fit ↓</button>
+          </div>
+          <div class="tbl-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Company / Role</th>
+                  <th>Stage</th>
+                  <th>Priority</th>
+                  <th>Fit</th>
+                  <th>ATS Keywords</th>
+                  <th>Next Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr onclick="show('detail')">
+                  <td><div class="co-n">Linear</div><div class="co-r">PM — Developer Tools</div></td>
+                  <td><span class="badge b-final">Final Round</span></td>
+                  <td><span class="badge b-ph">High</span></td>
+                  <td><span class="fit fit-h">95</span></td>
+                  <td><span class="kw">Dev Tools</span><span class="kw">PLG</span></td>
+                  <td><div class="na-txt">System design prep</div><div class="na-dt">May 24</div></td>
+                </tr>
+                <tr onclick="show('detail')">
+                  <td><div class="co-n">Shopify</div><div class="co-r">Associate Product Manager</div></td>
+                  <td><span class="badge b-interview">Interview</span></td>
+                  <td><span class="badge b-ph">High</span></td>
+                  <td><span class="fit fit-h">92</span></td>
+                  <td><span class="kw">Discovery</span><span class="kw">Agile</span></td>
+                  <td><div class="na-txt">Prep case study</div><div class="na-dt">May 26</div></td>
+                </tr>
+                <tr onclick="show('detail')">
+                  <td><div class="co-n">Wealthsimple</div><div class="co-r">Product Manager</div></td>
+                  <td><span class="badge b-phone">Phone Screen</span></td>
+                  <td><span class="badge b-ph">High</span></td>
+                  <td><span class="fit fit-h">88</span></td>
+                  <td><span class="kw">Fintech</span><span class="kw">OKRs</span></td>
+                  <td><div class="na-txt">Send thank-you</div><div class="na-dt">May 25</div></td>
+                </tr>
+                <tr onclick="show('detail')">
+                  <td><div class="co-n">Notion</div><div class="co-r">Senior PM</div></td>
+                  <td><span class="badge b-applied">Applied</span></td>
+                  <td><span class="badge b-pm">Medium</span></td>
+                  <td><span class="fit fit-m">76</span></td>
+                  <td><span class="kw">B2B SaaS</span><span class="kw">PLG</span></td>
+                  <td><div class="na-txt">Follow up</div><div class="na-dt">May 29</div></td>
+                </tr>
+                <tr onclick="show('detail')">
+                  <td><div class="co-n">Google</div><div class="co-r">Associate PM</div></td>
+                  <td><span class="badge b-applied">Applied</span></td>
+                  <td><span class="badge b-pm">Medium</span></td>
+                  <td><span class="fit fit-m">71</span></td>
+                  <td><span class="kw">Analytics</span><span class="kw">SQL</span></td>
+                  <td><div class="na-txt">Tailor resume</div><div class="na-dt">May 27</div></td>
+                </tr>
+                <tr onclick="show('detail')">
+                  <td><div class="co-n">Duolingo</div><div class="co-r">Product Manager</div></td>
+                  <td><span class="badge b-research">Researching</span></td>
+                  <td><span class="badge b-pl">Low</span></td>
+                  <td><span class="fit fit-l">58</span></td>
+                  <td><span class="kw">Growth</span></td>
+                  <td><div class="na-txt">Research company</div><div class="na-dt">Jun 2</div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── IMPORT ──────────────────────────────────────── -->
+  <div id="sc-import" class="screen-container">
+    <div class="browser">
+      <div class="browser-chrome">
+        <div class="dots"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+        <div class="url-bar">pm-career-ops.vercel.app/pipeline</div>
+        <i class="ti ti-refresh" style="font-size:13px;color:var(--text-faint)"></i>
+      </div>
+      <div class="overlay">
+        <div class="modal">
+          <div class="modal-title">Import Job Posting</div>
+          <div class="modal-sub">Paste a job URL — company, role, and ATS keywords auto-extract.</div>
+
+          <div class="field-lbl">Job URL</div>
+          <div class="url-row">
+            <input class="url-in" type="text" value="https://jobs.lever.co/shopify/apm-2026" readonly />
+            <button class="btn-extract"><i class="ti ti-wand"></i> Extract</button>
+          </div>
+
+          <div class="extracted">
+            <i class="ti ti-circle-check" style="font-size:14px;flex-shrink:0"></i>
+            Extracted: Shopify · Associate Product Manager · 8 ATS keywords found
+          </div>
+
+          <div class="form-grid">
+            <div>
+              <div class="field-lbl">Company</div>
+              <input class="f-in" type="text" value="Shopify" readonly />
+            </div>
+            <div>
+              <div class="field-lbl">Role</div>
+              <input class="f-in" type="text" value="Associate Product Manager" readonly />
+            </div>
+            <div>
+              <div class="field-lbl">Stage</div>
+              <select class="f-in" style="appearance:none;cursor:pointer">
+                <option selected>Researching</option>
+                <option>Applied</option>
+                <option>Phone Screen</option>
+              </select>
+            </div>
+            <div>
+              <div class="field-lbl">Priority</div>
+              <select class="f-in" style="appearance:none;cursor:pointer">
+                <option>Low</option>
+                <option selected>Medium</option>
+                <option>High</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-lbl">ATS Keywords <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-faint)">(auto-extracted)</span></div>
+          <div class="kw-box">
+            <span class="kw-tag"><i class="ti ti-x"></i>Product Discovery</span>
+            <span class="kw-tag"><i class="ti ti-x"></i>Agile / Scrum</span>
+            <span class="kw-tag"><i class="ti ti-x"></i>Roadmapping</span>
+            <span class="kw-tag"><i class="ti ti-x"></i>Stakeholder Mgmt</span>
+            <span class="kw-tag"><i class="ti ti-x"></i>Go-to-Market</span>
+            <span class="kw-tag"><i class="ti ti-x"></i>Data-Driven</span>
+            <span class="kw-tag"><i class="ti ti-x"></i>User Research</span>
+            <span class="kw-tag"><i class="ti ti-x"></i>OKRs</span>
+          </div>
+
+          <div class="modal-foot">
+            <button class="btn-cancel" onclick="show('pipeline')">Cancel</button>
+            <button class="btn-save" onclick="show('pipeline')">Save to Pipeline</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DETAIL ──────────────────────────────────────── -->
+  <div id="sc-detail" class="screen-container">
+    <div class="browser">
+      <div class="browser-chrome">
+        <div class="dots"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+        <div class="url-bar">pm-career-ops.vercel.app/pipeline</div>
+        <i class="ti ti-refresh" style="font-size:13px;color:var(--text-faint)"></i>
+      </div>
+      <div class="overlay">
+        <div class="detail-card">
+          <div class="detail-hd">
+            <div>
+              <div class="detail-co">Shopify</div>
+              <div class="detail-role">Associate Product Manager</div>
+              <div class="detail-link"><i class="ti ti-external-link" style="font-size:11px"></i> View job posting</div>
+            </div>
+            <div>
+              <div class="score-big">92</div>
+              <div class="score-lbl">fit score</div>
+            </div>
+          </div>
+
+          <div class="badges-row">
+            <span class="badge b-interview">Interview</span>
+            <span class="badge b-ph">High Priority</span>
+            <span style="font-size:11px;color:var(--text-faint);margin-left:4px">Added May 12, 2026</span>
+          </div>
+
+          <div class="next-box">
+            <i class="ti ti-arrow-right-circle"></i>
+            <div class="next-box-txt">Prep product sense case study for final round</div>
+            <div class="next-box-dt">Due May 26</div>
+          </div>
+
+          <div class="detail-sec-lbl">ATS Keywords</div>
+          <div class="kw-grid">
+            <span class="kw-tag">Product Discovery</span>
+            <span class="kw-tag">Agile / Scrum</span>
+            <span class="kw-tag">Roadmapping</span>
+            <span class="kw-tag">Stakeholder Mgmt</span>
+            <span class="kw-tag">Go-to-Market</span>
+            <span class="kw-tag">Data-Driven</span>
+            <span class="kw-tag">User Research</span>
+            <span class="kw-tag">OKRs</span>
+          </div>
+
+          <div class="detail-sec-lbl">Notes</div>
+          <div class="notes-box">
+            Strong fintech PM track preferred but not required. Interview loop includes product sense + metrics case. Hiring manager: Emily Chen (LinkedIn). Referral contact at Shopify: TBD.
+          </div>
+
+          <div class="detail-foot">
+            <button class="btn-back" onclick="show('pipeline')"><i class="ti ti-arrow-left"></i> Back</button>
+            <div class="btn-move"><i class="ti ti-git-branch"></i> Move to Final Round</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DASHBOARD / HOW I PRIORITIZE ─────────────────── -->
+  <div id="sc-dashboard" class="screen-container">
+    <div class="browser">
+      <div class="browser-chrome">
+        <div class="dots"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+        <div class="url-bar">pm-career-ops.vercel.app/dashboard</div>
+        <i class="ti ti-refresh" style="font-size:13px;color:var(--text-faint)"></i>
+      </div>
+      <div class="app-shell">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="logo">
+            <div class="logo-box"><i class="ti ti-briefcase"></i></div>
+            <span class="logo-name">PM Career Ops</span>
+          </div>
+          <div class="nav-link active"><i class="ti ti-home"></i><span>Dashboard</span></div>
+          <div class="nav-link"><i class="ti ti-git-branch"></i><span>Pipeline</span></div>
+          <div class="nav-link"><i class="ti ti-building"></i><span>Companies</span></div>
+          <div class="nav-link"><i class="ti ti-books"></i><span>Resources</span></div>
+          <div class="nav-link"><i class="ti ti-users"></i><span>Network</span></div>
+          <div class="nav-link"><i class="ti ti-pencil"></i><span>Content</span></div>
+          <div class="sidebar-foot">
+            <div class="theme-row"><span class="theme-lbl">Theme</span><div class="toggle"></div></div>
+          </div>
+        </div>
+        <!-- Main -->
+        <div class="main">
+          <div class="page-hd">
+            <div>
+              <div class="page-title">Dashboard</div>
+              <div class="page-sub">How I score and prioritize every application</div>
+            </div>
+          </div>
+
+          <!-- KPI row -->
+          <div class="kpi-row">
+            <div class="kpi"><div class="kpi-n">47</div><div class="kpi-l">Total Apps</div></div>
+            <div class="kpi hi"><div class="kpi-n">4</div><div class="kpi-l">Interviews</div></div>
+            <div class="kpi"><div class="kpi-n">74</div><div class="kpi-l">Avg Fit Score</div></div>
+            <div class="kpi"><div class="kpi-n">1</div><div class="kpi-l">Offers</div></div>
+          </div>
+
+          <div class="dash-body">
+
+            <!-- Framework criteria -->
+            <div>
+              <div class="section-lbl">Scoring Framework — Fit Score (1–100)</div>
+              <div class="fw-grid">
+
+                <div class="fw-card">
+                  <div class="fw-card-top">
+                    <span class="fw-card-name"><i class="ti ti-target"></i>Role Alignment</span>
+                    <span class="fw-weight">40%</span>
+                  </div>
+                  <div class="fw-desc">How well the role maps to core PM skills and my experience level.</div>
+                  <ul class="fw-bullets">
+                    <li>PM vs. APM vs. Senior PM fit</li>
+                    <li>Domain match (B2B SaaS, PLG, fintech)</li>
+                    <li>Scope: 0→1, growth, or platform</li>
+                  </ul>
+                </div>
+
+                <div class="fw-card">
+                  <div class="fw-card-top">
+                    <span class="fw-card-name"><i class="ti ti-building-skyscraper"></i>Company Stage</span>
+                    <span class="fw-weight">25%</span>
+                  </div>
+                  <div class="fw-desc">Company maturity and how it shapes the PM opportunity.</div>
+                  <ul class="fw-bullets">
+                    <li>Funding: Seed → Series B preferred</li>
+                    <li>Product-led vs. sales-led motion</li>
+                    <li>Engineering culture & PM autonomy</li>
+                  </ul>
+                </div>
+
+                <div class="fw-card">
+                  <div class="fw-card-top">
+                    <span class="fw-card-name"><i class="ti ti-trending-up"></i>Growth Potential</span>
+                    <span class="fw-weight">20%</span>
+                  </div>
+                  <div class="fw-desc">What I'll learn and how fast the role can accelerate my trajectory.</div>
+                  <ul class="fw-bullets">
+                    <li>Breadth of ownership (strategy + execution)</li>
+                    <li>Mentorship & PM team quality</li>
+                    <li>Velocity — how fast does it ship?</li>
+                  </ul>
+                </div>
+
+                <div class="fw-card">
+                  <div class="fw-card-top">
+                    <span class="fw-card-name"><i class="ti ti-map-pin"></i>Logistics</span>
+                    <span class="fw-weight">15%</span>
+                  </div>
+                  <div class="fw-desc">Practical fit — location, comp band, and working model.</div>
+                  <ul class="fw-bullets">
+                    <li>Remote / hybrid / on-site</li>
+                    <li>Compensation range alignment</li>
+                    <li>Toronto-based or time-zone compatible</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Score breakdown example -->
+            <div>
+              <div class="section-lbl">Example Breakdown — Linear (Fit Score: 95)</div>
+              <div class="sb-wrap">
+                <div class="sb-head">
+                  <div>
+                    <div class="sb-co">Linear</div>
+                    <div class="sb-co-role">PM — Developer Tools · Final Round</div>
+                  </div>
+                  <div>
+                    <div class="sb-score-big">95</div>
+                    <div class="sb-score-lbl">fit score</div>
+                  </div>
+                </div>
+
+                <div class="sb-row">
+                  <div class="sb-label">Role Alignment (40%)</div>
+                  <div class="sb-bar-bg"><div class="sb-bar role" style="width:95%"></div></div>
+                  <div class="sb-val">38 / 40</div>
+                </div>
+                <div class="sb-row">
+                  <div class="sb-label">Company Stage (25%)</div>
+                  <div class="sb-bar-bg"><div class="sb-bar stage" style="width:92%"></div></div>
+                  <div class="sb-val">23 / 25</div>
+                </div>
+                <div class="sb-row">
+                  <div class="sb-label">Growth Potential (20%)</div>
+                  <div class="sb-bar-bg"><div class="sb-bar growth" style="width:90%"></div></div>
+                  <div class="sb-val">18 / 20</div>
+                </div>
+                <div class="sb-row" style="margin-bottom:0">
+                  <div class="sb-label">Logistics (15%)</div>
+                  <div class="sb-bar-bg"><div class="sb-bar logistics" style="width:100%"></div></div>
+                  <div class="sb-val">15 / 15</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage snapshot -->
+            <div>
+              <div class="section-lbl">Stage Snapshot — Where to Focus This Week</div>
+              <div class="snap-grid">
+                <div class="snap-card hot">
+                  <div class="snap-num">1</div>
+                  <div class="snap-stage">Final Round</div>
+                  <div class="snap-tag" style="color:#86efac"><div class="snap-dot" style="background:#86efac"></div>Prep now</div>
+                </div>
+                <div class="snap-card urgent">
+                  <div class="snap-num">4</div>
+                  <div class="snap-stage">Interviews</div>
+                  <div class="snap-tag" style="color:#fde047"><div class="snap-dot" style="background:#fde047"></div>Active</div>
+                </div>
+                <div class="snap-card">
+                  <div class="snap-num">5</div>
+                  <div class="snap-stage">Phone Screen</div>
+                  <div class="snap-tag" style="color:#94a3b8"><div class="snap-dot" style="background:#94a3b8"></div>Follow up</div>
+                </div>
+                <div class="snap-card">
+                  <div class="snap-num">18</div>
+                  <div class="snap-stage">Applied</div>
+                  <div class="snap-tag" style="color:#475569"><div class="snap-dot" style="background:#475569"></div>Monitor</div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /dash-body -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.screen-container').forEach(s => s.classList.remove('visible'));
+  document.getElementById('sc-' + id).classList.add('visible');
+  document.querySelectorAll('.stab').forEach(b => {
+    const t = b.textContent.trim().toLowerCase();
+    b.classList.toggle('sel',
+      (id === 'pipeline'  && t.startsWith('pipeline')) ||
+      (id === 'import'    && t.startsWith('job')) ||
+      (id === 'detail'    && t.startsWith('app')) ||
+      (id === 'dashboard' && t.startsWith('how'))
+    );
+  });
+}
+</script>
+</body>
+</html>
