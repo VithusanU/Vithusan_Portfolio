@@ -147,27 +147,30 @@ const about: About = {
       {
         company: "Atripco Delivery Service",
         timeframe: "Jul 2019 – Feb 2023",
-        role: "Operations Supervisor",
+        role: "Operations Coordinator",
         achievements: [
           <>
-            Identified manual scheduling as the highest-friction point in team operations —
-            audited two weeks of data to quantify the problem, designed a data-driven scheduling
-            system from scratch, piloted it across 3 routes, then rolled it out to the full team.
-            Measured <strong>40% reduction in processing time</strong> and{" "}
-            <strong>15% improvement in delivery times</strong>.
+            Redesigned dispatch & routing workflow — mapped pain points, coordinated data-driven
+            scheduling overhaul; cut processing time <strong>40%</strong>, improved on-time
+            delivery <strong>15%</strong>.
           </>,
           <>
-            Recognized that performance data existed across multiple systems with no single view.
-            Built weekly reporting that consolidated KPIs, scheduling, and workflow data into one
-            place — giving the team visibility to catch bottlenecks before they compounded. Drove a{" "}
-            <strong>20% improvement in operational efficiency</strong> and reduced scheduling
-            conflicts by <strong>30%</strong>.
+            Built <strong>KPI dashboards</strong> and ran structured retrospectives across a{" "}
+            <strong>12-person team</strong> — drove <strong>20% efficiency gain</strong> over 6
+            months.
           </>,
           <>
-            Standardized the customer response process after identifying inconsistent handling as
-            the root cause of repeat contacts. Designed response frameworks for the 10 most
-            common issues, trained the team, and tracked outcomes — reaching a{" "}
-            <strong>95% first-contact resolution rate</strong> across 50+ daily touchpoints.
+            Designed performance-tracking system with iterative operator feedback loops —
+            eliminated scheduling conflicts <strong>30%</strong>, reduced routing errors{" "}
+            <strong>~25%</strong>.
+          </>,
+          <>
+            Bridged operator feedback to process decisions across cross-functional stakeholders
+            — improved compliance & service quality <strong>25%</strong>.
+          </>,
+          <>
+            Built escalation playbooks & triage SOPs across <strong>50+ daily
+            interactions</strong> — achieved <strong>95% first-contact resolution</strong>.
           </>,
         ],
         images: [],
@@ -178,23 +181,12 @@ const about: About = {
         role: "Lead Hand",
         achievements: [
           <>
-            Identified that inconsistent onboarding was extending new hire ramp-up time and
-            causing avoidable first-30-day errors. Designed a structured program from scratch —
-            role-specific documentation, hands-on workflow walkthroughs, and a 30-day checkpoint
-            — and measured a <strong>30% reduction in time-to-productivity</strong> across 12+
-            new hires.
+            Redesigned onboarding SOPs & mentorship loops — cut ramp time{" "}
+            <strong>30%</strong>, improved team readiness across shifts.
           </>,
           <>
-            Recognized undocumented workflows as a recurring source of inconsistency across
-            shifts. Built and maintained process documentation for all production workflows,
-            creating a shared operational baseline that reduced errors by{" "}
-            <strong>15%</strong> and became the foundation for future onboarding.
-          </>,
-          <>
-            Led daily operations for a 12-person crew through a period of process change — using
-            direct feedback loops and structured check-ins to surface and resolve blockers before
-            they compounded. Contributed to a <strong>20% improvement</strong> in team efficiency
-            over the following quarter.
+            Led execution for <strong>12 associates</strong>, surfaced bottlenecks — drove{" "}
+            <strong>20% shift efficiency increase</strong>.
           </>,
         ],
         images: [],
