@@ -217,75 +217,97 @@ const about: About = {
   },
  technical: {
   display: true,
-  title: "Product & Technical Skills",
+  title: "Skills",
   skills: [
     {
       title: "Product Management",
       description: (
-        <>End-to-end product ownership from discovery to delivery, with a strong focus on user value and execution.</>
+        <>End-to-end product ownership from discovery to delivery — defining problems, prioritizing ruthlessly, and shipping with measurable impact.</>
       ),
       tags: [
-        { name: "Product Discovery", icon: "search" },
-        { name: "MVP Scoping", icon: "layers" },
-        { name: "User Stories", icon: "story" },
-        { name: "Roadmapping", icon: "roadmap" },
-        { name: "Agile / Scrum", icon: "agile" },
-        { name: "Stakeholder Alignment", icon: "users" },
+        { name: "PRD Writing" },
+        { name: "Roadmapping" },
+        { name: "User Story Mapping" },
+        { name: "Feature Prioritization (RICE / ICE / MoSCoW)" },
+        { name: "OKR & KPI Definition" },
+        { name: "A/B Testing" },
+        { name: "Customer Discovery" },
+        { name: "MVP Scoping" },
+        { name: "Sprint Planning" },
+        { name: "Agile / Scrum" },
+        { name: "Stakeholder Alignment" },
       ],
       images: [],
     },
     {
-      title: "Design & UX",
+      title: "Operations & Leadership",
       description: (
-        <>Translating product requirements into clear UX flows, wireframes, and high-fidelity prototypes.</>
+        <>Running teams, designing processes, and building systems that scale — with a track record of measurable efficiency gains across cross-functional environments.</>
       ),
       tags: [
-        { name: "Figma", icon: "figma" },
-        { name: "Once UI", icon: "design" },
-        { name: "UX Flows", icon: "flow" },
-        { name: "Prototyping", icon: "prototype" },
+        { name: "Process Mapping & Redesign" },
+        { name: "SOP Development" },
+        { name: "KPI Dashboards" },
+        { name: "Workflow Optimization" },
+        { name: "Team Leadership" },
+        { name: "Performance Tracking" },
+        { name: "Cross-functional Coordination" },
+        { name: "Escalation Management" },
+        { name: "Onboarding & Training" },
+        { name: "Scheduling & Dispatch" },
       ],
       images: [],
     },
     {
-      title: "Frontend Engineering (Execution)",
+      title: "Analytics & Tools",
       description: (
-        <>Implementing product features and interfaces to validate ideas and ship production-ready MVPs.</>
+        <>Turning raw data into decisions — using the right tools to track behaviour, measure impact, and keep teams aligned.</>
       ),
       tags: [
-        { name: "JavaScript", icon: "javascript" },
-        { name: "HTML", icon: "html" },
-        { name: "CSS", icon: "css" },
-        { name: "React", icon: "react" },
+        { name: "PostHog" },
+        { name: "SQL" },
+        { name: "Excel (Advanced)" },
+        { name: "Dashboard Design" },
+        { name: "Jira" },
+        { name: "Figma (Basic)" },
+        { name: "Process Mapping" },
+        { name: "Git / GitHub" },
+      ],
+      images: [],
+    },
+    {
+      title: "Finance & Business",
+      description: (
+        <>BCom Finance background applied to product and operations — market sizing, business cases, and decision frameworks grounded in commercial reality.</>
+      ),
+      tags: [
+        { name: "Financial Analysis" },
+        { name: "Market Sizing" },
+        { name: "Business Modeling" },
+        { name: "Decision Analysis" },
+        { name: "Management Science" },
+        { name: "Budget & Cost Management" },
+        { name: "Revenue Impact Analysis" },
+        { name: "Risk Assessment" },
+      ],
+      images: [],
+    },
+    {
+      title: "Technical",
+      description: (
+        <>Full-stack fluency used to validate ideas fast, build production MVPs, and work closely with engineering without losing the thread.</>
+      ),
+      tags: [
         { name: "Next.js", icon: "nextjs" },
-      ],
-      images: [],
-    },
-    {
-      title: "Backend, Data & Auth",
-      description: (
-        <>Supporting product functionality with APIs, authentication, and data persistence.</>
-      ),
-      tags: [
-        { name: "Node.js", icon: "nodejs" },
-        { name: "Express.js", icon: "express" },
+        { name: "React.js" },
+        { name: "TypeScript" },
+        { name: "JavaScript", icon: "javascript" },
+        { name: "Node.js" },
+        { name: "Python" },
         { name: "Supabase", icon: "supabase" },
-        { name: "PostgreSQL", icon: "postgres" },
-        { name: "REST APIs", icon: "api" },
-      ],
-      images: [],
-    },
-    {
-      title: "Testing & Delivery",
-      description: (
-        <>Validating product behavior through testing, iteration, and deployment.</>
-      ),
-      tags: [
-        { name: "Chai", icon: "test" },
-        { name: "JSDOM", icon: "test" },
-        { name: "Manual QA", icon: "check" },
-        { name: "Vercel", icon: "vercel" },
-        { name: "GitHub", icon: "github" },
+        { name: "MySQL" },
+        { name: "REST APIs" },
+        { name: "HTML / CSS" },
       ],
       images: [],
     },
