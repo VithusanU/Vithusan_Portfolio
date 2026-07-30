@@ -1,0 +1,97 @@
+---
+title: "Ruby Pizza N' Wings — Client Website, BA & Product Documentation"
+publishedAt: "2024-07-01"
+summary: "A real client engagement: built a responsive website for a Toronto pizza restaurant, then ran the business analysis and product ownership practice around it — BRD, functional requirements, prioritized backlog, and a release roadmap."
+images:
+  - "/images/projects/ruby-pizza/home.png"
+  - "/images/projects/ruby-pizza/menu.png"
+team:
+  - name: "Vithusan Uruthirakumaran"
+    role: "Web Developer, Business Analyst & Product Owner"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/vithusan-uruthirakumaran-00b3b91b9/"
+link: "https://github.com/VithusanU/rubyPizzaNWings"
+---
+
+## Overview
+
+Ruby Pizza N' Wings is a family-run pizza and wings restaurant at 162 Main St
+in Toronto's Upper Beaches. They asked me for a website — what they actually
+needed was a digital presence they owned. This project covers both sides of
+that: the shipped three-page site, and the business analysis and product
+ownership work that shaped it.
+
+[View on GitHub →](https://github.com/VithusanU/rubyPizzaNWings)
+
+**Timeline:** Site started at the restaurant's request in July 2023 →
+business analysis engagement through 2024 → completed build-out and formal
+documentation in July 2026.
+
+## The Client's Problem
+
+The restaurant's entire digital presence was a third-party Uber Eats listing:
+
+- **Commission on every order** — no channel promoting direct phone orders or
+  free pickup
+- **No brand control** — the listing couldn't show the storefront, the story,
+  or the branded promo artwork the owner had already paid for
+- **A hidden differentiator** — butter chicken pizza, shawarma plates, and
+  souvlaki set the menu apart from every other pizza shop on the strip, and
+  nothing surfaced it
+
+## What I Delivered
+
+### The website
+
+A responsive, no-build static site (HTML/CSS/vanilla JS) that any host can serve:
+
+- **Home** — hero over the storefront photo, address/hours/click-to-call info
+  strip, fan favourites, and family deal cards using the client's own promo artwork
+- **Menu** — the full 13-category menu with every item priced, sourced from the
+  live Uber Eats listing, with category jump navigation and "most liked" badges
+- **About Us** — the restaurant's story, positioned around its international menu
+- Every page keeps two ordering paths one tap away: phone (`tel:` links) and
+  the Uber Eats store
+
+### The BA/PO documentation
+
+The part most small-business sites skip. Four working documents live in the
+repo's [`docs/`](https://github.com/VithusanU/rubyPizzaNWings/tree/main/docs) folder:
+
+- **[Business Requirements Document](https://github.com/VithusanU/rubyPizzaNWings/blob/main/docs/01-business-requirements.md)**
+  — problem statement, five measurable business objectives, stakeholder
+  matrix, scope in/out, assumptions, constraints, and a risk register
+- **[Functional Requirements Specification](https://github.com/VithusanU/rubyPizzaNWings/blob/main/docs/02-functional-requirements.md)**
+  — 21 numbered functional requirements and 7 NFRs, each traceable to what
+  shipped, plus open items for the owner (like price parity between in-store
+  and delivery-platform menus)
+- **[User Stories & Product Backlog](https://github.com/VithusanU/rubyPizzaNWings/blob/main/docs/03-user-stories-backlog.md)**
+  — three customer personas, five epics tied to business objectives, delivered
+  stories with Given/When/Then acceptance criteria, and a MoSCoW-prioritized
+  future backlog
+- **[Release Plan & Roadmap](https://github.com/VithusanU/rubyPizzaNWings/blob/main/docs/04-release-plan.md)**
+  — v1.0 shipped with honest known limitations; v1.1 (hosting, SEO, analytics)
+  and v1.2 (conversion) planned; v2.0 on-site ordering explicitly gated on
+  traffic data rather than speculation
+
+## Decisions Worth Noting
+
+- **Ship static, defer the backend.** No budget, one maintainer, content that
+  changes rarely — a static site the owner can host anywhere beat a CMS the
+  owner would never log into.
+- **Treat Uber Eats as the source of truth.** The menu was populated from the
+  live listing and date-stamped, turning "is this menu current?" from a
+  guess into a checkable fact.
+- **Gate the expensive ideas on data.** On-site ordering (the feature that
+  kills commissions) sits in v2.0 behind an explicit analytics threshold —
+  the roadmap says what evidence would justify building it.
+- **Reuse the client's real assets.** The branded chalkboard promo cards
+  became the site's design system: same colours, same artwork, print and web
+  finally matching.
+
+## Tech Stack
+
+- **Frontend:** HTML5, CSS3 (flexbox/grid, mobile-first), vanilla JavaScript
+- **Design source:** client's branded promo-card artwork
+- **Data source:** live Uber Eats store listing (date-stamped retrieval)
+- **Docs:** Markdown BRD / FRS / backlog / release plan in-repo

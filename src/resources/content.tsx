@@ -145,6 +145,29 @@ const about: About = {
         images: [],
       },
       {
+        company: "Ruby Pizza N' Wings",
+        timeframe: "2023 – 2024",
+        role: "Freelance Web Developer & Business Analyst",
+        achievements: [
+          <>
+            Delivered a responsive website for a Toronto restaurant whose only digital presence
+            was a commissioned Uber Eats listing — storefront branding, a full 13-category priced
+            menu, and click-to-call ordering paths on every page.
+          </>,
+          <>
+            Ran the business analysis end to end: problem statement, stakeholder analysis,
+            scope definition, risk register, and five measurable business objectives captured in
+            a formal BRD and functional requirements spec.
+          </>,
+          <>
+            Owned the product side: customer personas, a MoSCoW-prioritized backlog with
+            Given/When/Then acceptance criteria, and a release roadmap that gates on-site
+            ordering on real traffic data instead of speculation.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "Atripco Delivery Service",
         timeframe: "Jul 2019 – Feb 2023",
         role: "Operations Coordinator",
