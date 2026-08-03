@@ -1,8 +1,13 @@
 ---
 title: "On a Vibe — QR Ordering for a Mobile Beverage Cart"
 publishedAt: "2026-08-01"
-summary: "A freelance BA/PO engagement for a Toronto coffee & cocktail cart: gathered requirements from the owner, mapped the current-state event workflow, and scoped and shipped a QR ordering system with 3D drink previews, a live bar screen, and an owner-editable menu."
-images: []
+summary: "A freelance BA/PO engagement for a Toronto coffee & cocktail cart. The brief was a QR menu; discovery found that the person paying and the person using are never the same person — and nearly every decision in the product falls out of that gap."
+images:
+  - "/images/projects/on-a-vibe/hero.png"
+  - "/images/projects/on-a-vibe/guest-drink.png"
+  - "/images/projects/on-a-vibe/guest-decide.png"
+  - "/images/projects/on-a-vibe/guest-allergens.png"
+  - "/images/projects/on-a-vibe/qr-sign.png"
 team:
   - name: "Vithusan Uruthirakumaran"
     role: "Business Analyst, Product Owner & Developer"
@@ -13,79 +18,122 @@ link: "https://on-a-vibe-cart.vercel.app"
 
 ## Overview
 
-On a Vibe is a Toronto mobile coffee and cocktail cart that gets booked for
-weddings, corporate events, and parties. They wanted guests to be able to order
-without crowding the cart. What they actually needed — which took a round of
-discovery to establish — was a way for the owner to run the menu herself, on the
-day, without calling a developer.
+On a Vibe is a Toronto mobile coffee and cocktail cart booked for weddings,
+corporate events, and parties. A host pays for the cart; their guests drink for
+free.
 
-The engagement ran May – August 2026 in a combined BA / product owner and build
-capacity: requirements gathering, current-state process mapping, wireframes and
-mockups, a prioritized roadmap, and then the build.
+The engagement ran May – August 2026 as a combined BA / product owner and build
+role: requirements gathering, a written concept and PRD, a business case with a
+prioritized investment order, and then the build. What shipped is a live
+three-surface product — guest ordering, a bartender board, and an owner console.
 
-[Live guest ordering →](https://on-a-vibe-cart.vercel.app) &nbsp;|&nbsp; [Bar screen →](https://on-a-vibe-cart.vercel.app/bar)
+[Live guest ordering →](https://on-a-vibe-cart.vercel.app) &nbsp;|&nbsp; [Printable QR sign →](https://on-a-vibe-cart.vercel.app/qr)
 
-*Source is a private client repository.*
+*Source is a private client repository. Staff screens are behind a login.*
 
-## The Ask vs. The Problem
+## The Insight That Shaped Everything
 
-The stated ask was "a QR code so people can order from their phone."
-
-Mapping the current-state event workflow with the owner surfaced something
-different. Three distinct problems were bundled inside that one sentence:
-
-1. **Guests didn't know what they were ordering.** The signature items are dirty
-   sodas — layered, unfamiliar drinks. A name and a price on a chalkboard sells
-   nothing. Guests default to "just a coffee" because it's the only thing they
-   can picture.
-2. **The bar had no queue.** Orders were shouted, remembered, and occasionally
-   lost. There was no shared view of what was made and what wasn't.
-3. **The menu changed per event** — different drinks, different prices, sometimes
-   an item running out mid-service. Every change was a request to whoever built
-   the thing.
-
-Problem 3 was the one the owner hadn't raised and the one that would have killed
-the product. A QR menu that requires a developer to change is worse than a
-chalkboard, because a chalkboard can be edited with a cloth.
-
-## Requirements That Shaped the Build
-
-Discovery with the owner produced constraints that drove nearly every technical
+The brief was "a QR code so people can order from their phone." Discovery
+reframed it around a gap that turned out to drive nearly every subsequent
 decision:
 
-| Requirement | Where it came from | What it forced |
+|  | Guest | Host |
 |---|---|---|
-| Guests must not sign in | A login between a thirsty guest and a drink is a dead product | No auth on ordering; validation by data shape, not identity |
-| Bar staff must not sign in | Staff rotate per event; nobody administers accounts | Bar screen is a URL, not an account |
-| Owner edits the menu, unaided | Prices and availability change per event | Menu lives in the database, edited from an admin screen — no redeploy |
-| Must work on event wifi | Venue wifi is bad and the cart is often outdoors | Light initial page load; 3D loaded only on demand; offline fallback menu |
-| Must cost nothing to run | Single-owner small business | Free-tier infrastructure, no server to maintain |
-| Guests must *see* the drink | The core sales problem | 3D product viewability |
+| Pays | Never | Books and pays for the cart |
+| Wants | A good drink, no awkward wait | Their event to feel considered |
+| Uses | The QR page, for about four minutes | The recap, once, afterwards |
 
-## Scope: What Shipped and What Didn't
+**The host is the customer. The guest is the experience being sold to them.**
 
-Priority went to the ordering loop end-to-end, because a half-built loop has no
-value — a guest who can order but whose order goes nowhere is worse off than one
-who walked to the cart.
+That single distinction settled arguments that would otherwise have been matters
+of taste. The clearest one: **no price appears anywhere in the guest app** — not
+greyed out, not struck through, not in a total. A guest who sees a price starts
+doing arithmetic about a gift, which is the opposite of the feeling the host paid
+for. It also means the app has no checkout, no cart total, and no payment
+surface at all.
 
-**In scope for v1:** QR → guest menu → 3D drink preview → cart → submit; live bar
-board; owner menu editor.
+## What the Product Is Actually For
 
-**Deliberately deferred:** in-app payment (the cart already takes tap at point of
-service, so payment added regulatory and support burden without removing a step
-guests complained about), guest accounts, loyalty, and multi-cart support. Each
-was written up with the condition that would justify building it — payment, for
-instance, gets revisited when the cart runs an event where guests are *not*
-physically at the cart.
+Written down as three jobs, in priority order, so that scope arguments had
+something to resolve against:
+
+**1. Give people something to talk about.** The cart sits in a room where people
+are standing around; the drinks are the excuse to start a conversation. Hence the
+spinnable 3D drink, the per-drink colour and typeface, and the live "what
+everyone's drinking" list. This is why the ordering screen is one big drink
+rather than a menu list — *a list is something you read alone.*
+
+**2. Get an undecided person out of the queue.** The slowest part of any drinks
+queue isn't pouring; it's a person at the front who doesn't know what they want,
+being watched by people who do. The app moves that decision onto their phone
+while they're still walking over. For the genuinely stuck there's **Can't
+decide** — two drinks, pick one, a few rounds, done. It had to feel like a game
+and finish in seconds; if it ever felt like a form it would have failed, because
+the stress it removes is the entire reason it exists.
+
+![Can't decide — two drinks side by side, pick one, three rounds](/images/projects/on-a-vibe/guest-decide.png)
+
+**3. Never slow the bartender down.** Everything on the bar screen is actionable,
+sized to be read over a grinder at arm's length, with targets big enough to hit
+with the side of a hand. Every forward tap is reversible — a mis-tap on "picked
+up" used to drop a drink off the board with the guest still standing there. And
+the app is never mandatory: the bartender can add a walk-up order in three taps,
+so nobody is ever told to scan a QR code to get a coffee.
+
+## Requirements With Real Consequences
+
+A few requirements had teeth, and they're the ones worth showing:
+
+**Allergens are legally weighted, so "not declared" and "no allergens" must never
+collapse into each other.** An empty list is the owner stating there are none;
+an absent field is nobody having answered yet. An undeclared drink tells guests
+to ask at the bar rather than implying it's safe. The allergen sheet is also the
+one screen that ignores the drink's theme and stays on a neutral card — it's read
+to make a decision about someone's health, not to be charming.
+
+![The allergen sheet — an undeclared drink says so rather than implying it is safe](/images/projects/on-a-vibe/guest-allergens.png)
+
+**Nothing that identifies a guest may be publicly readable.** A Firebase project
+id ships inside every client bundle, so anything a guest's phone can read is
+effectively readable by the whole internet. Database rules can allow or deny a
+whole document but cannot hide a field — so each order is written as two
+documents in one atomic batch: a staff copy holding the name and note, readable
+only by a signed-in staff account, and a public anonymous mirror carrying status,
+time, drink and a pickup code. That's what lets a guest's phone show their place
+in the queue without publishing the room's guest list.
+
+**No keyboard between a guest and a drink.** The order sends immediately on a
+press-and-hold gesture; the name is asked afterwards, while they wait, and can be
+declined outright, because every order already carries a three-character pickup
+code. The name is remembered on the device, so it's only ever asked once.
+
+**An event day starts at 04:00, not midnight.** A party running to 1am used to
+lose its queue and its numbers mid-service.
+
+## Deliberate Omissions
+
+Each was written down with the reason, so the decision stays revisitable by
+someone else without me in the room:
+
+- **No payments.** There's no checkout, tipping, or card reader. Adding one would
+  change what the cart *is* at someone's wedding.
+- **No guest accounts.** A QR code pointing at a login screen is a QR code nobody
+  scans. A guest's order lives in their own browser storage.
+- **No time estimates.** Queue position only ever counts down. "About 2 minutes"
+  can be contradicted by a slow pour, and a stalled countdown makes the whole
+  cart look broken.
+- **No push notifications.** A page opened from a QR code can't notify anyone on
+  iOS without being installed to the home screen first, and nobody installs an app
+  for a free coffee. The tab chimes and vibrates instead.
 
 ## The 3D Decision
 
-"3D product viewability" is easy to say and expensive to do badly. The obvious
-approach — commission a 3D model per drink — fails the menu-autonomy requirement
-immediately: a new seasonal drink would mean a new art request.
+"3D product viewability" is easy to say and expensive to do badly. Commissioning
+a model per drink fails the menu-autonomy requirement immediately — a new
+seasonal drink becomes an art request.
 
-Instead, each drink carries a **model spec** that the renderer turns into
-geometry at runtime:
+Instead each drink carries a **model spec** that the renderer turns into geometry
+at runtime:
 
 ```js
 model: {
@@ -98,70 +146,83 @@ model: {
 }
 ```
 
-A new drink is a form entry, not an asset pipeline. The owner picks a glass,
-sets the liquid layers, toggles ice and foam, chooses a garnish — and guests see
-it spin. There are no 3D files in the project at all.
+![The guest ordering screen — one drink filling the screen, spinnable in 3D, no price anywhere](/images/projects/on-a-vibe/guest-drink.png)
 
-The escape hatch is kept open: any drink can point at a hosted `.glb` or a video
-instead, both editable from the admin screen. That's the upgrade path if the
-brand ever invests in real product photography or modelling.
+A new drink is a form entry, not an asset pipeline. There are no 3D files in the
+project at all. The owner can author a drink from a photo or a description and
+tune it against a live preview that renders identically to the guest's, and the
+model reacts to customisation — choosing oat milk visibly lightens the cup.
 
-## Solution
+## The Business Case
 
-**Guest** — scans the QR at the cart, lands on the menu, taps a drink to open a
-detail view with the spinning 3D model and the ingredient list, builds a cart,
-enters a first name, submits.
+The commercial argument is what justified continued investment, and it isn't the
+ordering flow. Every competing cart sells a cart, a bartender, and a few hours,
+so bookings are won on price or on a photo. This app adds a fourth thing that
+costs nothing per event: a queue that manages itself, a bartender who isn't the
+bottleneck, and **a written recap of how the guests reacted**.
 
-**Bar** — a live board with New / Preparing / Ready columns and the QR code
-displayed for guests to scan. Orders advance with one tap through
-`new → preparing → ready → served`. The board queries only the current day, so it
-never fills with history.
+The recap is the deliverable. Most carts leave behind an invoice; leaving behind
+*"148 drinks, busiest at 20:30, the Biscoff Latte was the favourite, 31% of
+guests came back for a second"* changes the follow-up email from a request into a
+report. The recap carries no revenue figures — guests never pay, so sales metrics
+would be theatre.
 
-**Owner** — signs in to edit the menu: prices, availability, ingredients, blurbs,
-and the 3D look of each drink. Saving pushes to every guest phone instantly.
+The test was written to be falsifiable: **the app has to win or retain roughly
+one booking a year to have been worth building**, because it costs nothing to
+run. So the recap is the part worth measuring, and the instruction to the owner
+is to ask every host whether they read it.
 
-## Tech Stack
+### The one cost cliff, quantified
 
-- **Frontend:** Vite + React 19, Tailwind CSS v4
-- **Realtime & data:** Firebase Firestore (free Spark plan)
-- **Auth:** Firebase Auth — owner only, on the admin screen
-- **3D:** three.js / react-three-fiber, lazy-loaded so the QR-scanned page stays light
-- **Deployment:** Vercel
+Every guest phone holds a live subscription to the event queue, and the database
+bills per document delivered — so cost scales with **concurrent phones × order
+updates**, not with guests. For a 120-guest, 150-drink, 3-hour event:
 
-Brand colour is the slate blue sampled from the client's own site rather than a
-palette invented for the project — a small thing that matters when the app sits
-next to their physical branding at an event.
+| Guests keep the tab open for | Avg. concurrent | Reads | Free tier (50k/day) |
+|---|---|---|---|
+| ~15 minutes | 10 | 15,000 | Fine |
+| ~45 minutes | 30 | 27,000 | Fine |
+| The whole event | 120 | **81,000** | **Exceeded** |
 
-## Security Without Logins
+The status screen tells guests "keep this open — it updates on its own," so the
+third row is the *designed* behaviour, not a worst case. In money the overage is
+pennies. The danger is the plan, not the bill: on the free tier, exceeding the
+quota doesn't cost money, it stops the database working — mid-event, in front of
+the host. The recommendation is therefore to move to pay-as-you-go with a low
+budget alert *before* the next real event. Cheap insurance against the only
+failure a paying customer would ever see.
 
-The no-login requirement for guests and bar staff meant access control couldn't
-lean on identity, so the database rules validate *shape and transition* instead:
+![The printable QR sign — the one asset needed before an event, so it sits on a public route](/images/projects/on-a-vibe/qr-sign.png)
 
-- Anyone may create an order — but only with a valid guest name, a non-empty
-  item list within bounds, a total within a sane range, and a status of `new`.
-- The bar screen may update an order — but only the `status` field, and only to
-  one of the four valid values.
-- Nobody may delete an order.
-- The menu is world-readable and owner-writable, gated on an authenticated email.
+## Prioritized Next Investments
 
-This is the right trade for a single small-business cart handling drink orders,
-and it's documented as such in the repository — it is explicitly not a pattern to
-carry into anything holding sensitive data. Naming the limits of a decision is
-part of handing the decision over.
+Ordered by consequence, not by effort:
+
+1. **Move off the free plan.** Insurance against the one visible failure.
+2. **Verify allergen data against real recipes.** It's currently inferred from
+   ingredient text — a legal exposure, not a feature.
+3. **Export the recap as a forwardable file.** It's the commercial asset, and
+   right now it only prints from a browser. A file the host can forward is a file
+   that reaches whoever books next year.
+4. **Let a guest cancel their own order.** Small, and it removes the one moment
+   the app makes someone walk up and apologise.
+
+Everything after that is polish. The 3D drinks are already the part people
+remember; more of them is not what wins the next booking.
 
 ## Learnings
 
-**The stated requirement was a feature; the real requirement was autonomy.** The
-owner asked for a QR code. What made the product survive past its first event was
-the admin screen she didn't ask for — because it removed me from the critical path
-of her running her own business. The most valuable thing discovery produced was a
-requirement the client hadn't articulated.
+**The stated requirement was a feature; the real requirement was a relationship.**
+The client asked for a QR code. The thing most likely to pay for the work is the
+recap that lands in the host's inbox afterwards — a surface nobody asked for,
+which only became obvious once the "who pays vs. who uses" split was written down.
 
-**Prototyping is a discovery tool, not a head start.** An early clickable version
-was built to run entirely on a single device, so it could be demoed and reacted
-to before any infrastructure existed. Watching someone use it surfaced the
-menu-editing problem far faster than another round of questions would have.
+**Writing down what the product is *for*, in priority order, ends scope
+arguments.** Three ranked jobs meant that "should this be a menu list?" had an
+answer rather than an opinion.
 
-**Deferring well is a deliverable.** The value of writing down *why* payment was
-cut — and what would have to be true to build it — is that the decision stays
-revisitable by someone else, months later, without me in the room.
+**Being straight about the gaps is what makes a business case usable.** Naming
+that the app doesn't take money, doesn't reduce headcount, and doesn't work
+without the cart is what makes the parts it *does* do believable — and it's what
+turns "should we keep investing?" into a question with four numbers attached
+instead of a feeling.
