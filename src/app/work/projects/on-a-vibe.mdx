@@ -1,0 +1,167 @@
+---
+title: "On a Vibe — QR Ordering for a Mobile Beverage Cart"
+publishedAt: "2026-08-01"
+summary: "A freelance BA/PO engagement for a Toronto coffee & cocktail cart: gathered requirements from the owner, mapped the current-state event workflow, and scoped and shipped a QR ordering system with 3D drink previews, a live bar screen, and an owner-editable menu."
+images: []
+team:
+  - name: "Vithusan Uruthirakumaran"
+    role: "Business Analyst, Product Owner & Developer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/vithusan-uruthirakumaran-00b3b91b9/"
+link: "https://on-a-vibe-cart.vercel.app"
+---
+
+## Overview
+
+On a Vibe is a Toronto mobile coffee and cocktail cart that gets booked for
+weddings, corporate events, and parties. They wanted guests to be able to order
+without crowding the cart. What they actually needed — which took a round of
+discovery to establish — was a way for the owner to run the menu herself, on the
+day, without calling a developer.
+
+The engagement ran May – August 2026 in a combined BA / product owner and build
+capacity: requirements gathering, current-state process mapping, wireframes and
+mockups, a prioritized roadmap, and then the build.
+
+[Live guest ordering →](https://on-a-vibe-cart.vercel.app) &nbsp;|&nbsp; [Bar screen →](https://on-a-vibe-cart.vercel.app/bar)
+
+*Source is a private client repository.*
+
+## The Ask vs. The Problem
+
+The stated ask was "a QR code so people can order from their phone."
+
+Mapping the current-state event workflow with the owner surfaced something
+different. Three distinct problems were bundled inside that one sentence:
+
+1. **Guests didn't know what they were ordering.** The signature items are dirty
+   sodas — layered, unfamiliar drinks. A name and a price on a chalkboard sells
+   nothing. Guests default to "just a coffee" because it's the only thing they
+   can picture.
+2. **The bar had no queue.** Orders were shouted, remembered, and occasionally
+   lost. There was no shared view of what was made and what wasn't.
+3. **The menu changed per event** — different drinks, different prices, sometimes
+   an item running out mid-service. Every change was a request to whoever built
+   the thing.
+
+Problem 3 was the one the owner hadn't raised and the one that would have killed
+the product. A QR menu that requires a developer to change is worse than a
+chalkboard, because a chalkboard can be edited with a cloth.
+
+## Requirements That Shaped the Build
+
+Discovery with the owner produced constraints that drove nearly every technical
+decision:
+
+| Requirement | Where it came from | What it forced |
+|---|---|---|
+| Guests must not sign in | A login between a thirsty guest and a drink is a dead product | No auth on ordering; validation by data shape, not identity |
+| Bar staff must not sign in | Staff rotate per event; nobody administers accounts | Bar screen is a URL, not an account |
+| Owner edits the menu, unaided | Prices and availability change per event | Menu lives in the database, edited from an admin screen — no redeploy |
+| Must work on event wifi | Venue wifi is bad and the cart is often outdoors | Light initial page load; 3D loaded only on demand; offline fallback menu |
+| Must cost nothing to run | Single-owner small business | Free-tier infrastructure, no server to maintain |
+| Guests must *see* the drink | The core sales problem | 3D product viewability |
+
+## Scope: What Shipped and What Didn't
+
+Priority went to the ordering loop end-to-end, because a half-built loop has no
+value — a guest who can order but whose order goes nowhere is worse off than one
+who walked to the cart.
+
+**In scope for v1:** QR → guest menu → 3D drink preview → cart → submit; live bar
+board; owner menu editor.
+
+**Deliberately deferred:** in-app payment (the cart already takes tap at point of
+service, so payment added regulatory and support burden without removing a step
+guests complained about), guest accounts, loyalty, and multi-cart support. Each
+was written up with the condition that would justify building it — payment, for
+instance, gets revisited when the cart runs an event where guests are *not*
+physically at the cart.
+
+## The 3D Decision
+
+"3D product viewability" is easy to say and expensive to do badly. The obvious
+approach — commission a 3D model per drink — fails the menu-autonomy requirement
+immediately: a new seasonal drink would mean a new art request.
+
+Instead, each drink carries a **model spec** that the renderer turns into
+geometry at runtime:
+
+```js
+model: {
+  glass: 'tall',                                  // tall | tumbler | mug | coupe
+  layers: [{ color: '#7c1024', stop: 0.45 }],     // bottom-up, stop = fill fraction
+  foam: true,
+  ice: true,
+  garnish: 'cherry',                              // none | cherry | lime | strawberry | mint
+  straw: '#e8e2d6',
+}
+```
+
+A new drink is a form entry, not an asset pipeline. The owner picks a glass,
+sets the liquid layers, toggles ice and foam, chooses a garnish — and guests see
+it spin. There are no 3D files in the project at all.
+
+The escape hatch is kept open: any drink can point at a hosted `.glb` or a video
+instead, both editable from the admin screen. That's the upgrade path if the
+brand ever invests in real product photography or modelling.
+
+## Solution
+
+**Guest** — scans the QR at the cart, lands on the menu, taps a drink to open a
+detail view with the spinning 3D model and the ingredient list, builds a cart,
+enters a first name, submits.
+
+**Bar** — a live board with New / Preparing / Ready columns and the QR code
+displayed for guests to scan. Orders advance with one tap through
+`new → preparing → ready → served`. The board queries only the current day, so it
+never fills with history.
+
+**Owner** — signs in to edit the menu: prices, availability, ingredients, blurbs,
+and the 3D look of each drink. Saving pushes to every guest phone instantly.
+
+## Tech Stack
+
+- **Frontend:** Vite + React 19, Tailwind CSS v4
+- **Realtime & data:** Firebase Firestore (free Spark plan)
+- **Auth:** Firebase Auth — owner only, on the admin screen
+- **3D:** three.js / react-three-fiber, lazy-loaded so the QR-scanned page stays light
+- **Deployment:** Vercel
+
+Brand colour is the slate blue sampled from the client's own site rather than a
+palette invented for the project — a small thing that matters when the app sits
+next to their physical branding at an event.
+
+## Security Without Logins
+
+The no-login requirement for guests and bar staff meant access control couldn't
+lean on identity, so the database rules validate *shape and transition* instead:
+
+- Anyone may create an order — but only with a valid guest name, a non-empty
+  item list within bounds, a total within a sane range, and a status of `new`.
+- The bar screen may update an order — but only the `status` field, and only to
+  one of the four valid values.
+- Nobody may delete an order.
+- The menu is world-readable and owner-writable, gated on an authenticated email.
+
+This is the right trade for a single small-business cart handling drink orders,
+and it's documented as such in the repository — it is explicitly not a pattern to
+carry into anything holding sensitive data. Naming the limits of a decision is
+part of handing the decision over.
+
+## Learnings
+
+**The stated requirement was a feature; the real requirement was autonomy.** The
+owner asked for a QR code. What made the product survive past its first event was
+the admin screen she didn't ask for — because it removed me from the critical path
+of her running her own business. The most valuable thing discovery produced was a
+requirement the client hadn't articulated.
+
+**Prototyping is a discovery tool, not a head start.** An early clickable version
+was built to run entirely on a single device, so it could be demoed and reacted
+to before any infrastructure existed. Watching someone use it surfaced the
+menu-editing problem far faster than another round of questions would have.
+
+**Deferring well is a deliverable.** The value of writing down *why* payment was
+cut — and what would have to be true to build it — is that the decision stays
+revisitable by someone else, months later, without me in the room.

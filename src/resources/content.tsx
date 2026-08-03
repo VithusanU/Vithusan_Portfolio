@@ -6,7 +6,7 @@ const person: Person = {
   firstName: "Vithusan",
   lastName: "Uruthirakumaran",
   name: `Vithusan Uruthirakumaran`,
-  role: "Product Manager",
+  role: "Product Owner (CSPO) · Business Analysis · Agile Delivery",
   avatar: "/images/avatar.png",
   email: "vithusan.business@gmail.com",
   location: "America/Toronto", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -45,7 +45,7 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  description: `Portfolio website showcasing product ownership, business analysis, and agile delivery work by ${person.name}`,
 headline: (
   <>
     {person.name}
@@ -54,7 +54,7 @@ headline: (
       onBackground="neutral-weak"
       style={{ display: "block", marginTop: "14px", letterSpacing: "0.12em" }}
     >
-      Product Manager · Builder · Ex-Ops
+      Product Owner (CSPO) · Business Analysis · Agile Delivery
     </Text>
   </>
 ),
@@ -75,8 +75,8 @@ headline: (
   },
   subline: (
     <>
-      Focused on turning ambiguous problems into{" "}
-      <strong>shipped solutions</strong> — blending product thinking
+      Turning ambiguous problems into documented requirements and{" "}
+      <strong>shipped solutions</strong> — blending product ownership
       with hands-on engineering.
     </>
   ),
@@ -87,7 +87,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name} — Certified Scrum Product Owner and business analyst based in Toronto, ON`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -104,13 +104,15 @@ const about: About = {
   title: "Introduction",
   description: (
     <>
-      Vithusan is a product manager and builder with a background in operations leadership and
-      full-stack software development. He brings a rare combination of strategic product thinking
-      and hands-on technical execution — capable of going from problem definition to shipped product.
+      Vithusan is a Certified Scrum Product Owner and business analyst who works the full arc of a
+      product — requirements gathering, process mapping, and BRD/FRD documentation on one end;
+      backlog ownership, sprint planning, and release delivery on the other. A Full-Stack Computer
+      Science certificate and a BCom mean he can write the spec and then build against it.
       <br /><br />
-      With experience spanning product strategy, frontend and backend engineering, and data-driven
-      operations, he bridges the gap between user needs and technical reality — and has the receipts
-      to prove it.
+      That range came from five years of operations analysis at a Toronto delivery company —
+      shadowing drivers, mapping current-state workflows, and turning what he found into functional
+      specs — and from shipping his own products since 2024, where he owns the backlog end-to-end
+      and measures whether the decisions actually worked.
     </>
   ),
 },
@@ -119,97 +121,82 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Self-Directed",
-        timeframe: "2023 – Present",
-        role: "Product Builder & Full-Stack Developer",
+        company: "Independent Product Builder — Self-Directed",
+        timeframe: "Jan 2024 – Present",
+        role: "Founder & Product Manager · Toronto, ON",
         achievements: [
           <>
-            Designed and shipped <strong>drivn</strong> — a productivity PWA with a Next Best Action
-            engine, habit tracking, focus sessions, push notifications, and a real-time admin
-            dashboard. Acquired 10 users within the first week with no marketing spend.
+            <strong>drivn</strong> — AI productivity PWA ·{" "}
+            <a href="https://getdrivn.app">getdrivn.app</a> · 2025 – Present. Owned the product
+            backlog end-to-end — authoring full PRDs (problem statement, personas, P0/P1/P2 scope,
+            risks, launch plan) in Confluence — shipping from zero to <strong>40 daily active
+            users</strong> with zero paid acquisition, reaching <strong>72% activation</strong>,{" "}
+            <strong>83% day-7 retention</strong>, and a <strong>62% task-completion rate</strong>.
+            Directed backlog prioritization and sprint planning across 4 shipped versions in Jira,
+            including a Next Best Action engine that surfaces personalized daily recommendations,
+            and instrumented behavioural analytics (PostHog, SQL) to define KPIs and drive
+            data-informed prioritization. Built in Next.js 14, TypeScript, and Supabase.
           </>,
           <>
-            Completed an intensive full-stack software development certification at the University of
-            Toronto, covering the MERN stack, REST APIs, authentication, and database design.
+            <strong>PM Career Ops</strong> — Job Application OS ·{" "}
+            <a href="https://pm-career-ops.vercel.app">pm-career-ops.vercel.app</a> · 2026 –
+            Present. Built an AI-powered data extraction and field-mapping pipeline (URL → company,
+            role, ATS keywords) using JSON-LD parsing, purpose-built for a targeted job-search
+            market, and designed an <strong>8-stage pipeline tracker</strong> with fit scoring to
+            help candidates track and prioritize applications end-to-end.
           </>,
           <>
-            Built 4+ production web applications applying product thinking at each stage — from
-            writing user stories before coding to measuring completion rates post-launch.
+            <strong>On a Vibe</strong> — Product/BA advisory & build for a Toronto mobile beverage
+            cart (freelance) · <a href="/work/on-a-vibe">case study</a> · May 2026 – Aug 2026.
+            Advised on product direction in a BA/PO capacity — documenting requirements, producing
+            wireframes and mockups, and building a prioritized feature roadmap for future platform
+            expansion. Gathered requirements directly from stakeholders and scoped/built a QR-code
+            ordering system with 3D product viewability, translating stakeholder input into feature
+            specs.
           </>,
           <>
-            Completed product management and agile coursework (Coursera), reinforcing frameworks for
-            discovery, prioritization, and delivery. Pursuing BCom Finance at York University
-            (3.45 GPA) with concentration in management science and decision analysis.
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "Ruby Pizza N' Wings",
-        timeframe: "2023 – 2024",
-        role: "Freelance Web Developer & Business Analyst",
-        achievements: [
-          <>
-            Delivered a responsive website for a Toronto restaurant whose only digital presence
-            was a commissioned Uber Eats listing — storefront branding, a full 13-category priced
-            menu, and click-to-call ordering paths on every page.
+            <strong>Ruby Pizza N' Wings</strong> — freelance website build · Jan 2024. Translated
+            the owner's requirements and design preferences into site structure and layout, backed
+            by a formal BRD, functional requirements spec, MoSCoW-prioritized backlog with
+            Given/When/Then acceptance criteria, and a release roadmap.
           </>,
           <>
-            Ran the business analysis end to end: problem statement, stakeholder analysis,
-            scope definition, risk register, and five measurable business objectives captured in
-            a formal BRD and functional requirements spec.
-          </>,
-          <>
-            Owned the product side: customer personas, a MoSCoW-prioritized backlog with
-            Given/When/Then acceptance criteria, and a release roadmap that gates on-site
-            ordering on real traffic data instead of speculation.
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "Atripco Delivery Service",
-        timeframe: "Jul 2019 – Feb 2023",
-        role: "Operations Coordinator",
-        achievements: [
-          <>
-            Redesigned dispatch & routing workflow — mapped pain points, coordinated data-driven
-            scheduling overhaul; cut processing time <strong>40%</strong>, improved on-time
-            delivery <strong>15%</strong>.
-          </>,
-          <>
-            Built <strong>KPI dashboards</strong> and ran structured retrospectives across a{" "}
-            <strong>12-person team</strong> — drove <strong>20% efficiency gain</strong> over 6
-            months.
-          </>,
-          <>
-            Designed performance-tracking system with iterative operator feedback loops —
-            eliminated scheduling conflicts <strong>30%</strong>, reduced routing errors{" "}
-            <strong>~25%</strong>.
-          </>,
-          <>
-            Bridged operator feedback to process decisions across cross-functional stakeholders
-            — improved compliance & service quality <strong>25%</strong>.
-          </>,
-          <>
-            Built escalation playbooks & triage SOPs across <strong>50+ daily
-            interactions</strong> — achieved <strong>95% first-contact resolution</strong>.
+            Follows Full-Stack Computer Science certificate completion and PM coursework
+            (2023 – 2024). Full case studies live on the{" "}
+            <a href="/work">work</a> page.
           </>,
         ],
         images: [],
       },
       {
         company: "Atripco Delivery Service",
-        timeframe: "Jun 2018 – Jul 2019",
-        role: "Lead Hand",
+        timeframe: "Jun 2018 – Feb 2023",
+        role: "Business Analyst · Toronto, ON",
         achievements: [
           <>
-            Redesigned onboarding SOPs & mentorship loops — cut ramp time{" "}
-            <strong>30%</strong>, improved team readiness across shifts.
+            Shadowed drivers and ran interviews to surface pain points across the full pipeline —
+            warehouse arrival, sorting, scanning, driver handoff, and EOD delivery completion — then
+            partnered with the scrum master and developers to translate those findings into UX and
+            functional specs for the driver portal, delivering clearer metrics/order visibility,
+            print capability, and built-in routing.
           </>,
           <>
-            Led execution for <strong>12 associates</strong>, surfaced bottlenecks — drove{" "}
-            <strong>20% shift efficiency increase</strong>.
+            Mapped current-state dispatch and routing workflows, identified inefficiency gaps
+            through data analysis, and redesigned the process — cutting processing time{" "}
+            <strong>40%</strong> and improving on-time delivery <strong>15%</strong>.
+          </>,
+          <>
+            Facilitated structured retrospectives across a <strong>12-person team</strong> and
+            partnered with ops leadership to define KPI and performance-tracking requirements,
+            translating operational needs into documented specs — cutting scheduling conflicts{" "}
+            <strong>30%</strong>, reducing routing errors <strong>~25%</strong>, and driving a{" "}
+            <strong>20% efficiency gain</strong> over 6 months.
+          </>,
+          <>
+            Built escalation playbooks and triage SOPs across <strong>50+ daily interactions</strong>{" "}
+            (<strong>95% first-contact resolution</strong>); redesigned onboarding SOPs, cutting
+            ramp time <strong>30%</strong> and driving a <strong>20% shift-efficiency
+            increase</strong>.
           </>,
         ],
         images: [],
@@ -218,24 +205,47 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Toronto",
-      description: <>Completed a Software Development bootcamp with a focus on full-stack web development.</>,
-      },
-      {
         name: "York University",
-      description: <>Bachelor of Commerce (BCom) with a concentration in business and finance.</>,
+        description: (
+          <>Bachelor of Commerce — GPA 3.5. Graduated June 2026.</>
+        ),
       },
       {
-        name: "Coursera",
-      description: <>Completed coursework in product management, agile methodologies, and software development fundamentals.</>,
+        name: "University of Toronto, SCS",
+        description: (
+          <>Full-Stack Computer Science Certificate — Grade: A. April – October 2023.</>
+        ),
       },
       {
-        name: "CodeAcademy",
-      description: <>Completed hands-on courses in full-stack development, JavaScript, and modern web technologies.</>,
-      }
+        name: "Professional Development",
+        description: (
+          <>
+            Product management coursework, applied coding practice, and portfolio development
+            alongside continued BCom coursework. 2023 – 2025.
+          </>
+        ),
+      },
+    ],
+  },
+  certifications: {
+    display: true,
+    title: "Certifications",
+    items: [
+      {
+        name: "Certified Scrum Product Owner (CSPO)",
+        description: <>Scrum Alliance — completed July 2026.</>,
+      },
+      {
+        name: "IBM Product Manager Professional Certificate",
+        description: <>Completed 2026.</>,
+      },
+      {
+        name: "IBM AI Product Manager Professional Certificate",
+        description: <>In progress — 2025 to present.</>,
+      },
     ],
   },
  technical: {
@@ -243,21 +253,49 @@ const about: About = {
   title: "Skills",
   skills: [
     {
-      title: "Product Management",
+      title: "Business Analysis",
+      description: (
+        <>Getting to the real requirement — talking to the people doing the work, mapping how it actually happens today, and writing it down so a team can build against it.</>
+      ),
+      tags: [
+        { name: "Requirements Gathering" },
+        { name: "BRD / FRD Documentation" },
+        { name: "Process Mapping (Current / Future-State)" },
+        { name: "Gap Analysis" },
+        { name: "Stakeholder Facilitation & Workshops" },
+        { name: "Data-Informed Decision-Making" },
+      ],
+      images: [],
+    },
+    {
+      title: "Product",
       description: (
         <>End-to-end product ownership from discovery to delivery — defining problems, prioritizing ruthlessly, and shipping with measurable impact.</>
       ),
       tags: [
         { name: "PRD Writing" },
-        { name: "Roadmapping" },
         { name: "User Story Mapping" },
-        { name: "Feature Prioritization (RICE / ICE / MoSCoW)" },
-        { name: "OKR & KPI Definition" },
-        { name: "A/B Testing" },
+        { name: "Acceptance Criteria" },
+        { name: "Wireframing / Prototyping" },
+        { name: "Prioritization (RICE / ICE / MoSCoW)" },
         { name: "Customer Discovery" },
         { name: "MVP Scoping" },
-        { name: "Sprint Planning" },
+        { name: "OKR & KPI Definition" },
+      ],
+      images: [],
+    },
+    {
+      title: "Agile Delivery",
+      description: (
+        <>Certified Scrum Product Owner — running the backlog, the ceremonies, and the release plan that turns a spec into shipped software.</>
+      ),
+      tags: [
         { name: "Agile / Scrum" },
+        { name: "Sprint Planning" },
+        { name: "Backlog Grooming" },
+        { name: "Kanban Boards" },
+        { name: "Release Planning" },
+        { name: "Roadmapping" },
         { name: "Stakeholder Alignment" },
       ],
       images: [],
@@ -282,18 +320,21 @@ const about: About = {
       images: [],
     },
     {
-      title: "Analytics & Tools",
+      title: "Tools & Analytics",
       description: (
         <>Turning raw data into decisions — using the right tools to track behaviour, measure impact, and keep teams aligned.</>
       ),
       tags: [
+        { name: "Jira" },
+        { name: "Confluence" },
+        { name: "Miro" },
+        { name: "Figma" },
         { name: "PostHog" },
         { name: "SQL" },
         { name: "Excel (Advanced)" },
         { name: "Dashboard Design" },
-        { name: "Jira" },
-        { name: "Figma (Basic)" },
-        { name: "Process Mapping" },
+        { name: "Claude" },
+        { name: "GitHub Copilot" },
         { name: "Git / GitHub" },
       ],
       images: [],
@@ -301,7 +342,7 @@ const about: About = {
     {
       title: "Finance & Business",
       description: (
-        <>BCom Finance background applied to product and operations — market sizing, business cases, and decision frameworks grounded in commercial reality.</>
+        <>BCom background applied to product and operations — market sizing, business cases, and decision frameworks grounded in commercial reality.</>
       ),
       tags: [
         { name: "Financial Analysis" },

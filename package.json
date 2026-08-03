@@ -21,6 +21,7 @@
     "next-mdx-remote": "^6.0.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "remark-gfm": "^4.0.1",
     "transliteration": "^2.6.0",
     "tzdata": "^1.0.49"
   },

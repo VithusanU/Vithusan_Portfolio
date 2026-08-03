@@ -1,4 +1,5 @@
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import React, { ReactNode } from "react";
 import { slugify as transliterate } from "transliteration";
 
@@ -170,6 +171,14 @@ function createHR() {
   );
 }
 
+function createTable(props: any) {
+  return (
+    <div className="mdx-table-wrapper">
+      <table {...props} />
+    </div>
+  );
+}
+
 const components = {
   p: createParagraph as any,
   h1: createHeading("h1") as any,
@@ -186,6 +195,7 @@ const components = {
   ul: createList as any,
   li: createListItem as any,
   hr: createHR as any,
+  table: createTable as any,
   Heading,
   Text,
   CodeBlock,
@@ -209,5 +219,17 @@ type CustomMDXProps = MDXRemoteProps & {
 };
 
 export function CustomMDX(props: CustomMDXProps) {
-  return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />;
+  return (
+    <MDXRemote
+      {...props}
+      components={{ ...components, ...(props.components || {}) }}
+      options={{
+        ...props.options,
+        mdxOptions: {
+          ...props.options?.mdxOptions,
+          remarkPlugins: [remarkGfm, ...(props.options?.mdxOptions?.remarkPlugins || [])],
+        },
+      }}
+    />
+  );
 }

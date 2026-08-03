@@ -12,7 +12,7 @@ export async function generateMetadata() {
   });
 }
 
-const RECENT_SLUGS  = ["drivn", "pm-career-ops"];
+const RECENT_SLUGS  = ["on-a-vibe", "drivn", "pm-career-ops", "ruby-pizza-n-wings"];
 const EARLIER_SLUGS = ["hangman-app", "book-search-engine", "ecommerce-backend"];
 
 export default function Work() {
@@ -56,7 +56,8 @@ export default function Work() {
         variant="body-default-m"
         marginBottom="xl"
       >
-        Learning projects from the development bootcamp — included for technical breadth.
+        Learning projects from the Full-Stack Computer Science certificate (University of Toronto,
+        SCS) — included for technical breadth.
       </Text>
       <Projects exclude={RECENT_SLUGS} />
     </Column>
