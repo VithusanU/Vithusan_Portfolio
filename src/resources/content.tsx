@@ -16,7 +16,7 @@ const person: Person = {
 const newsletter: Newsletter = {
   display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>Thoughts on product, building in public, and the PM journey — coming soon.</>,
+  description: <>Thoughts on product, delivery, and building in public — coming soon.</>,
 };
 
 const social: Social = [
@@ -109,10 +109,11 @@ const about: About = {
       backlog ownership, sprint planning, and milestone and risk tracking on the other. A Full-Stack
       Computer Science certificate and a BCom mean he can write the spec and then build against it.
       <br /><br />
-      That range came from years as a business analyst at a Toronto delivery company — shadowing
-      drivers, mapping current-state process flows, and partnering with the scrum master and dev
-      team through system and solution design — and from owning his own products since 2023, where
-      he runs delivery end-to-end and measures whether the decisions actually worked.
+      That range came from five years at a Toronto delivery company, where he was promoted off the
+      line into a business analyst role — shadowing drivers, mapping current-state process flows,
+      and partnering with the scrum master and dev team through system and solution design — and
+      from owning his own products since 2023, where he runs delivery end-to-end and measures
+      whether the decisions actually worked.
     </>
   ),
 },
@@ -192,6 +193,23 @@ const about: About = {
             Influenced cross-functional direction without direct authority — coordinating delivery
             planning, resource allocation, and business case development with ops leadership to
             drive process improvements and budget optimization.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Atripco Delivery Service",
+        timeframe: "Jun 2018 – Jul 2019",
+        role: "Lead Hand · Toronto, ON",
+        achievements: [
+          <>
+            Promoted into the role from the line, then led a team through daily sorting and dispatch
+            — identifying bottlenecks on the floor and improving throughput shift over shift.
+          </>,
+          <>
+            Worked directly with drivers and dispatchers to surface what was actually slowing the
+            operation down, and carried it up to operations and logistics leadership as written
+            reports — the reporting habit that became the business analyst role.
           </>,
         ],
         images: [],
@@ -384,8 +402,8 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "On product, building, and the ops-to-PM journey",
-  description: `Thoughts on PM craft, building in public, and the long game of career transition`,
+  title: "On product, delivery, and building in public",
+  description: `Thoughts on business analysis, product ownership, and the long game of career transition`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };

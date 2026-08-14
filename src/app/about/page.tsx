@@ -27,6 +27,11 @@ export async function generateMetadata() {
   });
 }
 
+// Two stints at the same employer share a company name, so anchor on
+// company + job title to keep ids unique and the labels readable.
+const experienceAnchor = (experience: { company: string; role: string }) =>
+  `${experience.company} — ${experience.role.split(" · ")[0]}`;
+
 export default function About() {
   const structure = [
     {
@@ -37,7 +42,7 @@ export default function About() {
     {
       title: about.work.title,
       display: about.work.display,
-      items: about.work.experiences.map((experience) => experience.company),
+      items: about.work.experiences.map(experienceAnchor),
     },
     {
       title: about.studies.title,
@@ -216,7 +221,7 @@ export default function About() {
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-l">
+                      <Text id={experienceAnchor(experience)} variant="heading-strong-l">
                         {experience.company}
                       </Text>
                       <Text variant="heading-default-xs" onBackground="neutral-weak">
