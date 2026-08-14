@@ -109,11 +109,10 @@ const about: About = {
       backlog ownership, sprint planning, and milestone and risk tracking on the other. A Full-Stack
       Computer Science certificate and a BCom mean he can write the spec and then build against it.
       <br /><br />
-      That range came from three and a half years as a business analyst at a Toronto delivery
-      company — shadowing drivers, mapping current-state process flows, and partnering with the
-      scrum master and dev team through system and solution design — and from owning his own
-      products since 2023, where he runs delivery end-to-end and measures whether the decisions
-      actually worked.
+      That range came from years as a business analyst at a Toronto delivery company — shadowing
+      drivers, mapping current-state process flows, and partnering with the scrum master and dev
+      team through system and solution design — and from owning his own products since 2023, where
+      he runs delivery end-to-end and measures whether the decisions actually worked.
     </>
   ),
 },
