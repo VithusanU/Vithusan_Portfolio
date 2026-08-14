@@ -18,7 +18,10 @@ type Metadata = {
   images: string[];
   tag?: string;
   team: Team[];
+  /** Live, deployed app */
   link?: string;
+  /** Public source repository, when there is one */
+  github?: string;
 };
 
 import { notFound } from "next/navigation";
@@ -49,6 +52,7 @@ function readMDXFile(filePath: string) {
     tag: data.tag || [],
     team: data.team || [],
     link: data.link || "",
+    github: data.github || "",
   };
 
   return { metadata, content };

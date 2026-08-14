@@ -6,7 +6,7 @@ const person: Person = {
   firstName: "Vithusan",
   lastName: "Uruthirakumaran",
   name: `Vithusan Uruthirakumaran`,
-  role: "Product Owner (CSPO) · Business Analysis · Agile Delivery",
+  role: "Business Analyst & Product Owner · Delivery Engineering",
   avatar: "/images/avatar.png",
   email: "vithusan.business@gmail.com",
   location: "America/Toronto", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -54,7 +54,7 @@ headline: (
       onBackground="neutral-weak"
       style={{ display: "block", marginTop: "14px", letterSpacing: "0.12em" }}
     >
-      Product Owner (CSPO) · Business Analysis · Agile Delivery
+      Business Analyst & Product Owner · Delivery Engineering
     </Text>
   </>
 ),
@@ -87,7 +87,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name} — Certified Scrum Product Owner and business analyst based in Toronto, ON`,
+  description: `Meet ${person.name} — business analyst and Certified Scrum Product Owner based in Toronto, ON`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -104,15 +104,16 @@ const about: About = {
   title: "Introduction",
   description: (
     <>
-      Vithusan is a Certified Scrum Product Owner and business analyst who works the full arc of a
-      product — requirements gathering, process mapping, and BRD/FRD documentation on one end;
-      backlog ownership, sprint planning, and release delivery on the other. A Full-Stack Computer
-      Science certificate and a BCom mean he can write the spec and then build against it.
+      Vithusan is a business analyst and Certified Scrum Product Owner who works the full arc of
+      delivery — stakeholder discovery, requirements elicitation, and process mapping on one end;
+      backlog ownership, sprint planning, and milestone and risk tracking on the other. A Full-Stack
+      Computer Science certificate and a BCom mean he can write the spec and then build against it.
       <br /><br />
-      That range came from five years of operations analysis at a Toronto delivery company —
-      shadowing drivers, mapping current-state workflows, and turning what he found into functional
-      specs — and from shipping his own products since 2024, where he owns the backlog end-to-end
-      and measures whether the decisions actually worked.
+      That range came from three and a half years as a business analyst at a Toronto delivery
+      company — shadowing drivers, mapping current-state process flows, and partnering with the
+      scrum master and dev team through system and solution design — and from owning his own
+      products since 2023, where he runs delivery end-to-end and measures whether the decisions
+      actually worked.
     </>
   ),
 },
@@ -121,82 +122,77 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Independent Product Builder — Self-Directed",
-        timeframe: "Jan 2024 – Present",
-        role: "Founder & Product Manager · Toronto, ON",
+        company: "Independent Product Consulting",
+        timeframe: "Oct 2023 – Present",
+        role: "Product Owner · Toronto, ON",
         achievements: [
           <>
-            <strong>drivn</strong> — AI productivity PWA ·{" "}
-            <a href="https://getdrivn.app">getdrivn.app</a> · 2025 – Present. Owned the product
-            backlog end-to-end — authoring full PRDs (problem statement, personas, P0/P1/P2 scope,
-            risks, launch plan) in Confluence — shipping from zero to <strong>40 daily active
-            users</strong> with zero paid acquisition, reaching <strong>72% activation</strong>,{" "}
-            <strong>83% day-7 retention</strong>, and a <strong>62% task-completion rate</strong>.
-            Directed backlog prioritization and sprint planning across 4 shipped versions in Jira,
-            including a Next Best Action engine that surfaces personalized daily recommendations,
-            and instrumented behavioural analytics (PostHog, SQL) to define KPIs and drive
-            data-informed prioritization. Built in Next.js 14, TypeScript, and Supabase.
+            <strong>On a Vibe</strong> — Product Owner ·{" "}
+            <a href="/work/on-a-vibe">case study</a> · Dec 2025 – Present. Own end-to-end delivery
+            direction for a Toronto mobile beverage cart — leading stakeholder discovery,
+            requirements gathering, backlog prioritization, and feature definition as the business
+            scales. Led discovery with the business owner to define scope and success criteria for a
+            QR-code ordering system with <strong>3D product viewability</strong>, translating
+            operator needs into a structured feature set with acceptance criteria.
           </>,
           <>
-            <strong>PM Career Ops</strong> — Job Application OS ·{" "}
-            <a href="https://pm-career-ops.vercel.app">pm-career-ops.vercel.app</a> · 2026 –
-            Present. Built an AI-powered data extraction and field-mapping pipeline (URL → company,
-            role, ATS keywords) using JSON-LD parsing, purpose-built for a targeted job-search
-            market, and designed an <strong>8-stage pipeline tracker</strong> with fit scoring to
-            help candidates track and prioritize applications end-to-end.
+            <strong>drivn</strong> — Founder & Product Owner ·{" "}
+            <a href="https://getdrivn.app">getdrivn.app</a> · Jan 2025 – Present. Owned the full
+            delivery lifecycle for a customer-facing productivity platform — authoring epics, user
+            stories, acceptance criteria, and PRDs, and directing sprint planning across 4 shipped
+            versions — reaching <strong>40 DAUs</strong>, <strong>72% activation</strong>,{" "}
+            <strong>83% day-7 retention</strong>, and a <strong>62% task-completion rate</strong>{" "}
+            with zero paid acquisition. Instrumented web analytics (PostHog, SQL) to define KPIs and
+            drive data-informed prioritization; built in Next.js 14, TypeScript, and Supabase.
           </>,
           <>
-            <strong>On a Vibe</strong> — Product/BA advisory & build for a Toronto mobile beverage
-            cart (freelance) · <a href="/work/on-a-vibe">case study</a> · May 2026 – Aug 2026.
-            Advised on product direction in a BA/PO capacity — documenting requirements, producing
-            wireframes and mockups, and building a prioritized feature roadmap for future platform
-            expansion. Gathered requirements directly from stakeholders and scoped/built a QR-code
-            ordering system with 3D product viewability, translating stakeholder input into feature
-            specs.
+            <strong>PM Career Ops</strong> — Founder & Product Owner ·{" "}
+            <a href="https://pm-career-ops.vercel.app">pm-career-ops.vercel.app</a> · Jul 2025 –
+            Feb 2026. Led the full delivery lifecycle for an AI-powered job application tracker —
+            owning vision, delivery planning, roadmap, milestones, dependency mapping, and risk
+            tracking, and producing UAT plans and post-launch assessments to validate and iterate.
+            Architected and shipped an AI-assisted data extraction pipeline (URL → company, role,
+            ATS keywords) and an <strong>8-stage pipeline tracker</strong> with fit scoring.
           </>,
           <>
-            <strong>Ruby Pizza N' Wings</strong> — freelance website build · Jan 2024. Translated
-            the owner's requirements and design preferences into site structure and layout, backed
-            by a formal BRD, functional requirements spec, MoSCoW-prioritized backlog with
-            Given/When/Then acceptance criteria, and a release roadmap.
+            <strong>Ruby Pizza N' Wings</strong> — Freelance Web Developer · Oct 2023 – Jan 2024.
+            Built and launched a public-facing website, translating owner requirements and design
+            preferences into site structure and layout.
           </>,
           <>
-            Follows Full-Stack Computer Science certificate completion and PM coursework
-            (2023 – 2024). Full case studies live on the{" "}
-            <a href="/work">work</a> page.
+            Full case studies live on the <a href="/work">work</a> page.
           </>,
         ],
         images: [],
       },
       {
         company: "Atripco Delivery Service",
-        timeframe: "Jun 2018 – Feb 2023",
+        timeframe: "Jul 2019 – Feb 2023",
         role: "Business Analyst · Toronto, ON",
         achievements: [
           <>
-            Shadowed drivers and ran interviews to surface pain points across the full pipeline —
-            warehouse arrival, sorting, scanning, driver handoff, and EOD delivery completion — then
-            partnered with the scrum master and developers to translate those findings into UX and
-            functional specs for the driver portal, delivering clearer metrics/order visibility,
-            print capability, and built-in routing.
+            Conducted stakeholder discovery — shadowed drivers, ran structured interviews, and
+            mapped pain points across the full tracking pipeline — then translated findings into
+            BRDs and process flows. Partnered with the scrum master and dev team through system and
+            solution design discussions, surfacing trade-offs and documenting decisions, to redesign
+            the internal enterprise driver portal, improving tracking visibility, notifications, and
+            routing.
           </>,
           <>
-            Mapped current-state dispatch and routing workflows, identified inefficiency gaps
-            through data analysis, and redesigned the process — cutting processing time{" "}
-            <strong>40%</strong> and improving on-time delivery <strong>15%</strong>.
+            Mapped current-state transportation, dispatch, and routing process flows, identified
+            inefficiency gaps through data analysis, and redesigned the process — cutting processing
+            time <strong>40%</strong> and improving on-time delivery <strong>15%</strong>.
           </>,
           <>
             Facilitated structured retrospectives across a <strong>12-person team</strong> and
-            partnered with ops leadership to define KPI and performance-tracking requirements,
-            translating operational needs into documented specs — cutting scheduling conflicts{" "}
-            <strong>30%</strong>, reducing routing errors <strong>~25%</strong>, and driving a{" "}
-            <strong>20% efficiency gain</strong> over 6 months.
+            partnered with ops leadership to define KPI and performance-monitoring requirements —
+            cutting scheduling conflicts <strong>30%</strong> and reducing routing errors{" "}
+            <strong>~25%</strong>.
           </>,
           <>
-            Built escalation playbooks and triage SOPs across <strong>50+ daily interactions</strong>{" "}
-            (<strong>95% first-contact resolution</strong>); redesigned onboarding SOPs, cutting
-            ramp time <strong>30%</strong> and driving a <strong>20% shift-efficiency
-            increase</strong>.
+            Influenced cross-functional direction without direct authority — coordinating delivery
+            planning, resource allocation, and business case development with ops leadership to
+            drive process improvements and budget optimization.
           </>,
         ],
         images: [],
@@ -215,16 +211,15 @@ const about: About = {
       },
       {
         name: "University of Toronto, SCS",
-        description: (
-          <>Full-Stack Computer Science Certificate — Grade: A. April – October 2023.</>
-        ),
+        description: <>Full-Stack Computer Science Certificate — Apr 2023 – Oct 2023.</>,
       },
       {
         name: "Professional Development",
         description: (
           <>
-            Product management coursework, applied coding practice, and portfolio development
-            alongside continued BCom coursework. 2023 – 2025.
+            Product lifecycle management, requirements elicitation, market research, go-to-market
+            planning, launch plans, and beta test plans; technical upskilling and portfolio work.
+            2023 – 2025.
           </>
         ),
       },
@@ -244,7 +239,11 @@ const about: About = {
       },
       {
         name: "IBM AI Product Manager Professional Certificate",
-        description: <>In progress — 2025 to present.</>,
+        description: <>In progress.</>,
+      },
+      {
+        name: "Professional Scrum Product Owner I (PSPO I)",
+        description: <>Scrum.org — currently pursuing.</>,
       },
     ],
   },
@@ -253,50 +252,53 @@ const about: About = {
   title: "Skills",
   skills: [
     {
-      title: "Business Analysis",
+      title: "Delivery & Product Ownership",
       description: (
-        <>Getting to the real requirement — talking to the people doing the work, mapping how it actually happens today, and writing it down so a team can build against it.</>
+        <>Owning the path from a defined problem to a shipped release — the backlog, the plan, the milestones, and the risks that decide whether a date holds.</>
       ),
       tags: [
-        { name: "Requirements Gathering" },
-        { name: "BRD / FRD Documentation" },
-        { name: "Process Mapping (Current / Future-State)" },
-        { name: "Gap Analysis" },
-        { name: "Stakeholder Facilitation & Workshops" },
-        { name: "Data-Informed Decision-Making" },
-      ],
-      images: [],
-    },
-    {
-      title: "Product",
-      description: (
-        <>End-to-end product ownership from discovery to delivery — defining problems, prioritizing ruthlessly, and shipping with measurable impact.</>
-      ),
-      tags: [
-        { name: "PRD Writing" },
-        { name: "User Story Mapping" },
-        { name: "Acceptance Criteria" },
-        { name: "Wireframing / Prototyping" },
-        { name: "Prioritization (RICE / ICE / MoSCoW)" },
-        { name: "Customer Discovery" },
-        { name: "MVP Scoping" },
-        { name: "OKR & KPI Definition" },
+        { name: "Backlog Management" },
+        { name: "Delivery Planning" },
+        { name: "Epics / User Stories / Acceptance Criteria" },
+        { name: "BRD & PRD Writing" },
+        { name: "Prioritization (RICE / MoSCoW)" },
+        { name: "Roadmapping" },
+        { name: "Sprint Planning" },
+        { name: "Milestone & Risk Tracking" },
+        { name: "UAT Planning" },
       ],
       images: [],
     },
     {
       title: "Agile Delivery",
       description: (
-        <>Certified Scrum Product Owner — running the backlog, the ceremonies, and the release plan that turns a spec into shipped software.</>
+        <>Certified Scrum Product Owner — running the ceremonies and the working relationships that turn a spec into shipped software.</>
       ),
       tags: [
-        { name: "Agile / Scrum" },
-        { name: "Sprint Planning" },
-        { name: "Backlog Grooming" },
-        { name: "Kanban Boards" },
-        { name: "Release Planning" },
-        { name: "Roadmapping" },
-        { name: "Stakeholder Alignment" },
+        { name: "Scrum" },
+        { name: "Kanban" },
+        { name: "Sprint Ceremonies" },
+        { name: "Retrospectives" },
+        { name: "Facilitation" },
+        { name: "Stakeholder Management" },
+        { name: "Cross-functional Collaboration" },
+        { name: "Influence Without Direct Authority" },
+      ],
+      images: [],
+    },
+    {
+      title: "Business Analysis",
+      description: (
+        <>Getting to the real requirement — talking to the people doing the work, mapping how it actually happens today, and writing it down so a team can build against it.</>
+      ),
+      tags: [
+        { name: "Requirements Elicitation" },
+        { name: "Stakeholder Discovery" },
+        { name: "Process Mapping" },
+        { name: "Process Flows" },
+        { name: "Solution Design Input" },
+        { name: "Data-Informed Decision-Making" },
+        { name: "Competitive Analysis" },
       ],
       images: [],
     },
@@ -320,22 +322,22 @@ const about: About = {
       images: [],
     },
     {
-      title: "Tools & Analytics",
+      title: "Tools & Technical",
       description: (
-        <>Turning raw data into decisions — using the right tools to track behaviour, measure impact, and keep teams aligned.</>
+        <>Turning raw data into decisions, and keeping the team aligned while it happens — with enough hands-on depth to work alongside engineering without losing the thread.</>
       ),
       tags: [
         { name: "Jira" },
+        { name: "Azure DevOps (familiar)" },
         { name: "Confluence" },
         { name: "Miro" },
         { name: "Figma" },
-        { name: "PostHog" },
+        { name: "Excel" },
         { name: "SQL" },
-        { name: "Excel (Advanced)" },
-        { name: "Dashboard Design" },
-        { name: "Claude" },
-        { name: "GitHub Copilot" },
-        { name: "Git / GitHub" },
+        { name: "PostHog" },
+        { name: "AI-Assisted Drafting & Workflow Automation" },
+        { name: "Next.js / TypeScript" },
+        { name: "Git / CI/CD Concepts" },
       ],
       images: [],
     },
