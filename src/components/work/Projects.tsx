@@ -2,12 +2,21 @@ import { getPosts } from "@/utils/utils";
 import { Column } from "@once-ui-system/core";
 import { ProjectCard } from "@/components";
 
+/**
+ * Display order for the headline projects. Current engagements lead, which
+ * start dates alone would not produce — On a Vibe began before Drivn, and
+ * PM Career Ops began after both but has ended. Anything not listed here
+ * falls in behind, newest first.
+ */
+export const PROJECT_ORDER = ["on-a-vibe", "drivn", "pm-career-ops", "ruby-pizza-n-wings"];
+
 interface ProjectsProps {
   range?: [number, number?];
   exclude?: string[];
+  order?: string[];
 }
 
-export function Projects({ range, exclude }: ProjectsProps) {
+export function Projects({ range, exclude, order = PROJECT_ORDER }: ProjectsProps) {
   let allProjects = getPosts(["src", "app", "work", "projects"]);
 
   // Exclude by slug (exact match)
@@ -15,7 +24,14 @@ export function Projects({ range, exclude }: ProjectsProps) {
     allProjects = allProjects.filter((post) => !exclude.includes(post.slug));
   }
 
+  const rank = (slug: string) => {
+    const i = order.indexOf(slug);
+    return i === -1 ? order.length : i;
+  };
+
   const sortedProjects = allProjects.sort((a, b) => {
+    const byOrder = rank(a.slug) - rank(b.slug);
+    if (byOrder !== 0) return byOrder;
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 

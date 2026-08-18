@@ -128,31 +128,33 @@ const about: About = {
         achievements: [
           <>
             <strong>On a Vibe</strong> — Product Owner ·{" "}
-            <a href="/work/on-a-vibe">case study</a> · Dec 2025 – Present. Own end-to-end delivery
-            direction for a Toronto mobile beverage cart — leading stakeholder discovery,
-            requirements gathering, backlog prioritization, and feature definition as the business
-            scales. Led discovery with the business owner to define scope and success criteria for a
-            QR-code ordering system with <strong>3D product viewability</strong>, translating
-            operator needs into a structured feature set with acceptance criteria.
+            <a href="/work/on-a-vibe">case study</a> · Dec 2024 – Present · Milton, ON (hybrid,
+            contract full-time). Own end-to-end delivery direction for a Toronto mobile beverage
+            cart business — a QR-code digital ordering system with{" "}
+            <strong>3D product viewability</strong>, supporting{" "}
+            <strong>$60,000+ in sales</strong> across <strong>25+ live events</strong> and{" "}
+            <strong>14% revenue growth</strong>. Led stakeholder discovery and translated operator
+            needs into a scoped feature set covering menu display, live order routing, and
+            staff-facing order management; delivered wireframes, mockups, and a prioritized product
+            roadmap.
           </>,
           <>
-            <strong>drivn</strong> — Founder & Product Owner ·{" "}
-            <a href="https://getdrivn.app">getdrivn.app</a> · Jan 2025 – Present. Owned the full
-            delivery lifecycle for a customer-facing productivity platform — authoring epics, user
-            stories, acceptance criteria, and PRDs, and directing sprint planning across 4 shipped
-            versions — reaching <strong>40 DAUs</strong>, <strong>72% activation</strong>,{" "}
-            <strong>83% day-7 retention</strong>, and a <strong>62% task-completion rate</strong>{" "}
-            with zero paid acquisition. Instrumented web analytics (PostHog, SQL) to define KPIs and
-            drive data-informed prioritization; built in Next.js 14, TypeScript, and Supabase.
+            <strong>drivn</strong> — Product Owner ·{" "}
+            <a href="https://getdrivn.app">getdrivn.app</a> · Jan 2025 – Present · Toronto, ON
+            (remote). Owned the full delivery lifecycle for an AI-powered productivity PWA —
+            authoring PRDs and owning the full backlog — scaling from zero to{" "}
+            <strong>40 daily active users</strong> with zero paid acquisition, at a{" "}
+            <strong>72% activation rate</strong>, <strong>83% day-7 retention</strong>, and a{" "}
+            <strong>62% task-completion rate</strong> across <strong>4 versioned releases</strong>{" "}
+            shipped in Jira. Built the Next Best Action engine and instrumented a behavioural
+            analytics pipeline (PostHog, SQL); built on Next.js 14, TypeScript, and Supabase.
           </>,
           <>
-            <strong>PM Career Ops</strong> — Founder & Product Owner ·{" "}
+            <strong>PM Career Ops</strong> — Product Owner ·{" "}
             <a href="https://pm-career-ops.vercel.app">pm-career-ops.vercel.app</a> · Jul 2025 –
-            Feb 2026. Led the full delivery lifecycle for an AI-powered job application tracker —
-            owning vision, delivery planning, roadmap, milestones, dependency mapping, and risk
-            tracking, and producing UAT plans and post-launch assessments to validate and iterate.
-            Architected and shipped an AI-assisted data extraction pipeline (URL → company, role,
-            ATS keywords) and an <strong>8-stage pipeline tracker</strong> with fit scoring.
+            Feb 2026 (ended, planned end-of-life). Took an AI-powered PM career tool from concept to
+            live product within the first quarter, authoring <strong>20+ user stories</strong>{" "}
+            across <strong>3 core feature sets</strong> and tracking adoption against OKRs.
           </>,
           <>
             <strong>Ruby Pizza N' Wings</strong> — Freelance Web Developer · Oct 2023 – Jan 2024.
