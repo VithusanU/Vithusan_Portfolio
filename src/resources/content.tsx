@@ -16,7 +16,7 @@ const person: Person = {
 const newsletter: Newsletter = {
   display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>Thoughts on product, delivery, and building in public — coming soon.</>,
+  description: <>Thoughts on product, delivery, and building in public, coming soon.</>,
 };
 
 const social: Social = [
@@ -76,7 +76,7 @@ headline: (
   subline: (
     <>
       Turning ambiguous problems into documented requirements and{" "}
-      <strong>shipped solutions</strong> — blending product ownership
+      <strong>shipped solutions</strong>, blending product ownership
       with hands-on engineering.
     </>
   ),
@@ -87,7 +87,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name} — Certified Scrum Product Owner based in Toronto, ON`,
+  description: `Meet ${person.name}, Certified Scrum Product Owner based in Toronto, ON`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -106,8 +106,8 @@ const about: About = {
     <>
       Vithusan is a Certified Scrum Product Owner with hands-on experience shipping live products,
       writing user stories with clear acceptance criteria, and using AI tools (Claude) to draft,
-      critique, and refine specs before they reach the team. His technical background — SQL data
-      analysis, business analysis, and full-stack development in MERN and TypeScript — means he can
+      critique, and refine specs before they reach the team. His technical background in SQL data
+      analysis, business analysis, and full-stack development in MERN and TypeScript means he can
       partner directly with a Tech Lead on complex story scoping without losing the thread.
       <br /><br />
       That grounding came from five years at a Toronto delivery company, where he moved from the
@@ -132,7 +132,7 @@ const about: About = {
             <strong>On a Vibe</strong> — Product Owner ·{" "}
             <a href="/work/on-a-vibe">case study</a> · Dec 2024 – Present · Milton, ON (hybrid,
             contract full-time). Own end-to-end delivery direction for a Toronto mobile beverage
-            cart business — a QR-code digital ordering system with{" "}
+            cart business, a QR-code digital ordering system with{" "}
             <strong>3D product viewability</strong>, supporting{" "}
             <strong>$85,000+ in sales</strong> across <strong>100+ events</strong> and{" "}
             <strong>14% revenue growth</strong>. Led stakeholder discovery and translated operator
@@ -143,8 +143,8 @@ const about: About = {
           <>
             <strong>drivn</strong> — Product Owner ·{" "}
             <a href="https://getdrivn.app">getdrivn.app</a> · Jan 2025 – Present · Toronto, ON
-            (remote). Owned the full delivery lifecycle for an AI-powered productivity PWA —
-            authoring PRDs and owning the full backlog — scaling from zero to{" "}
+            (remote). Owned the full delivery lifecycle for an AI-powered productivity PWA,
+            authoring PRDs and owning the full backlog, scaling from zero to{" "}
             <strong>40 daily active users</strong> with zero paid acquisition, at a{" "}
             <strong>72% activation rate</strong>, <strong>83% day-7 retention</strong>, and a{" "}
             <strong>62% task-completion rate</strong> across <strong>4 versioned releases</strong>{" "}
@@ -191,7 +191,7 @@ const about: About = {
             <strong>20% efficiency gain</strong> across a 12-person team over six months.
           </>,
           <>
-            Influenced cross-functional direction without direct authority — coordinating delivery
+            Influenced cross-functional direction without direct authority, coordinating delivery
             planning, resource allocation, and business case development with ops leadership to
             drive process improvements and budget optimization.
           </>,
@@ -216,7 +216,7 @@ const about: About = {
           <>
             Worked directly with drivers and dispatchers to surface what was actually slowing the
             operation down, and carried findings to operations and logistics leadership as written
-            reports — the habit that eventually led into the business analyst role.
+            reports. That habit eventually led into the business analyst role.
           </>,
         ],
         images: [],
@@ -230,12 +230,12 @@ const about: About = {
       {
         name: "York University",
         description: (
-          <>Bachelor of Commerce — GPA 3.5. Sep 2022 – Jul 2026.</>
+          <>Bachelor of Commerce, GPA 3.5. Sep 2022 – Jul 2026.</>
         ),
       },
       {
         name: "University of Toronto, SCS",
-        description: <>Full-Stack Computer Science Certificate — Apr 2023 – Oct 2023.</>,
+        description: <>Full-Stack Computer Science Certificate, Apr 2023 – Oct 2023.</>,
       },
       {
         name: "Professional Development",
@@ -255,7 +255,7 @@ const about: About = {
     items: [
       {
         name: "Certified Scrum Product Owner (CSPO)",
-        description: <>Scrum Alliance — completed July 2026.</>,
+        description: <>Scrum Alliance, completed July 2026.</>,
       },
       {
         name: "IBM Product Manager Professional Certificate",
@@ -263,7 +263,7 @@ const about: About = {
       },
       {
         name: "Introduction to Agile Development and Scrum",
-        description: <>IBM — completed July 2026.</>,
+        description: <>IBM, completed July 2026.</>,
       },
       {
         name: "IBM AI Product Manager Professional Certificate",
@@ -271,7 +271,7 @@ const about: About = {
       },
       {
         name: "Professional Scrum Product Owner I (PSPO I)",
-        description: <>Scrum.org — currently pursuing.</>,
+        description: <>Scrum.org, currently pursuing.</>,
       },
     ],
   },
@@ -282,7 +282,7 @@ const about: About = {
     {
       title: "Delivery & Product Ownership",
       description: (
-        <>Owning the path from a defined problem to a shipped release — the backlog, the plan, the milestones, and the risks that decide whether a date holds.</>
+        <>Owning the path from a defined problem to a shipped release, covering the backlog, the plan, the milestones, and the risks that decide whether a date holds.</>
       ),
       tags: [
         { name: "Backlog Management" },
@@ -300,7 +300,7 @@ const about: About = {
     {
       title: "Agile Delivery",
       description: (
-        <>Certified Scrum Product Owner — running the ceremonies and the working relationships that turn a spec into shipped software.</>
+        <>Certified Scrum Product Owner, running the ceremonies and the working relationships that turn a spec into shipped software.</>
       ),
       tags: [
         { name: "Scrum" },
@@ -317,7 +317,7 @@ const about: About = {
     {
       title: "Business Analysis",
       description: (
-        <>Getting to the real requirement — talking to the people doing the work, mapping how it actually happens today, and writing it down so a team can build against it.</>
+        <>Getting to the real requirement by talking to the people doing the work, mapping how it actually happens today, and writing it down so a team can build against it.</>
       ),
       tags: [
         { name: "Requirements Elicitation" },
@@ -333,7 +333,7 @@ const about: About = {
     {
       title: "Operations & Leadership",
       description: (
-        <>Running teams, designing processes, and building systems that scale — with a track record of measurable efficiency gains across cross-functional environments.</>
+        <>Running teams, designing processes, and building systems that scale, with a track record of measurable efficiency gains across cross-functional environments.</>
       ),
       tags: [
         { name: "Process Mapping & Redesign" },
@@ -352,7 +352,7 @@ const about: About = {
     {
       title: "Tools & Technical",
       description: (
-        <>Turning raw data into decisions, and keeping the team aligned while it happens — with enough hands-on depth to work alongside engineering without losing the thread.</>
+        <>Turning raw data into decisions and keeping the team aligned while it happens, with enough hands-on depth to work alongside engineering without losing the thread.</>
       ),
       tags: [
         { name: "Jira" },
@@ -372,7 +372,7 @@ const about: About = {
     {
       title: "Finance & Business",
       description: (
-        <>BCom background applied to product and operations — market sizing, business cases, and decision frameworks grounded in commercial reality.</>
+        <>BCom background applied to product and operations, covering market sizing, business cases, and decision frameworks grounded in commercial reality.</>
       ),
       tags: [
         { name: "Financial Analysis" },
@@ -423,7 +423,7 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `From PRD to production — products built end-to-end by ${person.name}`,
+  description: `From PRD to production, products built end-to-end by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
