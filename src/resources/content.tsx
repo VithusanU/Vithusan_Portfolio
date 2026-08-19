@@ -6,7 +6,7 @@ const person: Person = {
   firstName: "Vithusan",
   lastName: "Uruthirakumaran",
   name: `Vithusan Uruthirakumaran`,
-  role: "Business Analyst & Product Owner · Delivery Engineering",
+  role: "Product Owner · CSPO Certified · AI-Assisted Product Development",
   avatar: "/images/avatar.png",
   email: "vithusan.business@gmail.com",
   location: "America/Toronto", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -54,7 +54,7 @@ headline: (
       onBackground="neutral-weak"
       style={{ display: "block", marginTop: "14px", letterSpacing: "0.12em" }}
     >
-      Business Analyst & Product Owner · Delivery Engineering
+      Product Owner · CSPO Certified · AI-Assisted Product Development
     </Text>
   </>
 ),
@@ -87,7 +87,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name} — business analyst and Certified Scrum Product Owner based in Toronto, ON`,
+  description: `Meet ${person.name} — Certified Scrum Product Owner based in Toronto, ON`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -104,16 +104,18 @@ const about: About = {
   title: "Introduction",
   description: (
     <>
-      Vithusan is a business analyst and Certified Scrum Product Owner who works the full arc of
-      delivery — stakeholder discovery, requirements elicitation, and process mapping on one end;
-      backlog ownership, sprint planning, and milestone and risk tracking on the other. A Full-Stack
-      Computer Science certificate and a BCom mean he can write the spec and then build against it.
+      Vithusan is a Certified Scrum Product Owner with hands-on experience shipping live products,
+      writing user stories with clear acceptance criteria, and using AI tools (Claude) to draft,
+      critique, and refine specs before they reach the team. His technical background — SQL data
+      analysis, business analysis, and full-stack development in MERN and TypeScript — means he can
+      partner directly with a Tech Lead on complex story scoping without losing the thread.
       <br /><br />
-      That range came from five years at a Toronto delivery company, where he was promoted off the
-      line into a business analyst role — shadowing drivers, mapping current-state process flows,
-      and partnering with the scrum master and dev team through system and solution design — and
-      from owning his own products since 2023, where he runs delivery end-to-end and measures
-      whether the decisions actually worked.
+      That grounding came from five years at a Toronto delivery company, where he moved from the
+      floor into a business analyst role, shadowing drivers, mapping process flows, and working
+      alongside the scrum master and dev team through system design. Since 2023, he's been running
+      his own products end-to-end, measuring whether the decisions actually held up. CSPO certified
+      and experienced in documentation-heavy environments where compliance requirements get built
+      into the work from the start, not discovered in QA.
     </>
   ),
 },
@@ -132,7 +134,7 @@ const about: About = {
             contract full-time). Own end-to-end delivery direction for a Toronto mobile beverage
             cart business — a QR-code digital ordering system with{" "}
             <strong>3D product viewability</strong>, supporting{" "}
-            <strong>$60,000+ in sales</strong> across <strong>25+ live events</strong> and{" "}
+            <strong>$85,000+ in sales</strong> across <strong>100+ events</strong> and{" "}
             <strong>14% revenue growth</strong>. Led stakeholder discovery and translated operator
             needs into a scoped feature set covering menu display, live order routing, and
             staff-facing order management; delivered wireframes, mockups, and a prioritized product
@@ -169,27 +171,24 @@ const about: About = {
       },
       {
         company: "Atripco Delivery Service",
-        timeframe: "Jul 2019 – Feb 2023",
+        timeframe: "Feb 2023 – Nov 2024",
         role: "Business Analyst · Toronto, ON",
         achievements: [
           <>
-            Conducted stakeholder discovery — shadowed drivers, ran structured interviews, and
-            mapped pain points across the full tracking pipeline — then translated findings into
-            BRDs and process flows. Partnered with the scrum master and dev team through system and
-            solution design discussions, surfacing trade-offs and documenting decisions, to redesign
-            the internal enterprise driver portal, improving tracking visibility, notifications, and
+            Ran discovery interviews and driver shadowing across the full delivery pipeline, then
+            partnered with the scrum master and dev team to translate findings into UX and functional
+            specs for the driver portal, adding order visibility, print capability, and integrated
             routing.
           </>,
           <>
-            Mapped current-state transportation, dispatch, and routing process flows, identified
-            inefficiency gaps through data analysis, and redesigned the process — cutting processing
-            time <strong>40%</strong> and improving on-time delivery <strong>15%</strong>.
+            Identified dispatch inefficiencies through SQL and Excel data analysis and redesigned
+            the end-to-end routing process, cutting processing time <strong>40%</strong> and
+            improving on-time delivery <strong>15%</strong>.
           </>,
           <>
-            Facilitated structured retrospectives across a <strong>12-person team</strong> and
-            partnered with ops leadership to define KPI and performance-monitoring requirements —
-            cutting scheduling conflicts <strong>30%</strong> and reducing routing errors{" "}
-            <strong>~25%</strong>.
+            Partnered with leadership to define KPI and performance-tracking requirements, producing
+            documented specs that cut scheduling conflicts <strong>30%</strong> and drove a{" "}
+            <strong>20% efficiency gain</strong> across a 12-person team over six months.
           </>,
           <>
             Influenced cross-functional direction without direct authority — coordinating delivery
@@ -201,17 +200,23 @@ const about: About = {
       },
       {
         company: "Atripco Delivery Service",
-        timeframe: "Jun 2018 – Jul 2019",
-        role: "Lead Hand · Toronto, ON",
+        timeframe: "Jul 2019 – Feb 2023",
+        role: "Operations Supervisor · Etobicoke, ON",
         achievements: [
           <>
-            Promoted into the role from the line, then led a team through daily sorting and dispatch
-            — identifying bottlenecks on the floor and improving throughput shift over shift.
+            Built and maintained KPI dashboards for high-volume programs (HelloFresh, Chef's Plate,
+            Indigo), using performance data to surface process gaps and redesigns that drove
+            approximately <strong>70% efficiency improvement</strong> and a{" "}
+            <strong>20% reduction in operating expenses</strong>.
+          </>,
+          <>
+            Promoted into the role from the line, then led a team through daily sorting and dispatch,
+            identifying bottlenecks on the floor and improving throughput shift over shift.
           </>,
           <>
             Worked directly with drivers and dispatchers to surface what was actually slowing the
-            operation down, and carried it up to operations and logistics leadership as written
-            reports — the reporting habit that became the business analyst role.
+            operation down, and carried findings to operations and logistics leadership as written
+            reports — the habit that eventually led into the business analyst role.
           </>,
         ],
         images: [],
@@ -225,7 +230,7 @@ const about: About = {
       {
         name: "York University",
         description: (
-          <>Bachelor of Commerce — GPA 3.5. Graduated June 2026.</>
+          <>Bachelor of Commerce — GPA 3.5. Sep 2022 – Jul 2026.</>
         ),
       },
       {
@@ -254,7 +259,11 @@ const about: About = {
       },
       {
         name: "IBM Product Manager Professional Certificate",
-        description: <>Completed 2026.</>,
+        description: <>Completed July 2026.</>,
+      },
+      {
+        name: "Introduction to Agile Development and Scrum",
+        description: <>IBM — completed July 2026.</>,
       },
       {
         name: "IBM AI Product Manager Professional Certificate",
